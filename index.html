@@ -557,7 +557,7 @@
                 <a href="#results">Results</a>
                 <a href="#contact">Contact</a>
             </div>
-            <button class="cta-button">Schedule Consultation</button>
+            <button class="cta-button" onclick="location.href='#contact'">Schedule Consultation</button>
         </nav>
     </header>
     
@@ -565,7 +565,7 @@
     <section class="hero">
         <h1>Voter Intelligence + Action = Victory</h1>
         <p>We turn voter information into actionable strategies that win elections. Combining old+new school techniques, Our data-driven approach helps campaigns of all sizes efficiently operate and ultimately, win.</p>
-        <button class="cta-button">Get Started Today</button>
+        <button class="cta-button" onclick="location.href='#contact'">Get Started Today</button>
     </section>
     
     <!-- Mission Statement Section -->
@@ -800,7 +800,7 @@
                 <div class="team-member">
                     <div class="team-photo"></div>
                     <div class="team-info">
-                        <h3>Your Name</h3>
+                        <h3>Brian Moran</h3>
                         <div class="team-title">Founder & Chief Strategist</div>
                         <p>With extensive experience in political technology and campaign operations, I founded Voter Data House to bring enterprise-level communication tools to campaigns of all sizes. My background combines political strategy with technical expertise in the Genesys Cloud CX platform, allowing me to bridge the gap between campaign goals and technological implementation.</p>
                         <p>I believe that campaigns shouldn't have to choose between sophisticated data tools and practical field operations – they deserve both in one integrated solution.</p>
@@ -821,20 +821,22 @@
                 <div>
                     <div class="contact-info">
                         <h3>Get In Touch</h3>
-                        <p><strong>Email:</strong> info@voterdatahouse.com</p>
+                        <p><strong>Email:</strong> bpmoran@protonmail.com</p>
                         <p><strong>Phone:</strong> (202) 555-0123</p>
-                        <p><strong>Address:</strong> 1234 Campaign Ave, Washington, DC 20001</p>
+                        <p><strong>Address:</strong> Washington, DC Metro Area</p>
                     </div>
                     <div class="contact-info">
                         <h3>Office Hours</h3>
                         <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                         <p>Saturday: 10:00 AM - 2:00 PM</p>
-                        <p>Sunday: Closed</p>
+                        <p>Sunday: Close<p>Sunday: Closed</p>
                     </div>
-</div>
+                </div>
                 <div class="contact-form">
                     <h3>Schedule Your Consultation</h3>
-                    <form>
+                    <form action="https://formsubmit.co/bpmoran@protonmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New VoterDataHouse Consultation Request">
+                        <input type="hidden" name="_next" value="https://voterdatahouse.com/thank-you.html">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
@@ -891,20 +893,20 @@
                 <div class="footer-links">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="#">All-In-One Tech</a></li>
-                        <li><a href="#">NextGen Campaign Operations</a></li>
-                        <li><a href="#">District Mapping & Field Strategy</a></li>
-                        <li><a href="#">Performance Tracking</a></li>
+                        <li><a href="#services">All-In-One Tech</a></li>
+                        <li><a href="#services">NextGen Campaign Operations</a></li>
+                        <li><a href="#services">District Mapping & Field Strategy</a></li>
+                        <li><a href="#services">Performance Tracking</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">Campaign Toolkit</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0);" onclick="alert('Coming soon!')">Blog</a></li>
+                        <li><a href="javascript:void(0);" onclick="alert('Coming soon!')">Case Studies</a></li>
+                        <li><a href="javascript:void(0);" onclick="alert('Coming soon!')">Campaign Toolkit</a></li>
+                        <li><a href="javascript:void(0);" onclick="alert('Coming soon!')">FAQ</a></li>
+                        <li><a href="javascript:void(0);" onclick="alert('Coming soon!')">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -913,5 +915,12 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.footer-bottom p').innerHTML = 
+                '&copy; ' + new Date().getFullYear() + ' Voter Data House. All rights reserved.';
+        });
+    </script>
 </body>
 </html>
