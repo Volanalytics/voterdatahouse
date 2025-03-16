@@ -557,6 +557,73 @@
 .social-link:hover {
     opacity: 0.8;
 }
+/* Add these to your existing CSS in the style section */
+
+/* Better mobile padding */
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 1rem;
+    }
+    
+    .hero {
+        height: auto;
+        min-height: 400px;
+        padding: 3rem 1rem;
+    }
+    
+    .mission-container {
+        padding: 2rem 1rem;
+    }
+
+    .process-step, 
+    .problem-card, 
+    .service-card, 
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    .team-photo img {
+        max-height: 300px;
+        object-position: top 10%;
+    }
+}
+
+/* Better buttons for touch */
+@media (max-width: 768px) {
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem;
+        font-size: 16px; /* Prevents iOS zoom on input */
+    }
+}
+
+/* Improve form layout on small screens */
+@media (max-width: 480px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fix for iOS input styling */
+input, 
+textarea, 
+select {
+    -webkit-appearance: none;
+    border-radius: 4px;
+}
+        
     </style>
 </head>
 <body>
@@ -575,6 +642,81 @@
             </div>
             <button class="cta-button" onclick="location.href='#contact'">Schedule Consultation</button>
         </nav>
+<!-- Add this right after the nav-links div in the header -->
+<div class="mobile-menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Add this CSS to your style section -->
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+<!-- Add this JavaScript before the closing body tag -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Dynamic copyright year
+        document.querySelector('.footer-bottom p').innerHTML = 
+            '&copy; ' + new Date().getFullYear() + ' Voter Data House. All rights reserved.';
+        
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close menu when a link is clicked
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+    });
+</script>
+        
     </header>
     
     <!-- Hero Section -->
