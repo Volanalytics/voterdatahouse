@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Voter Data House</title>
+    <!-- Same CSS as your index page -->
+    <style>
+        :root {
+            --primary: #1a4b8c;
+            --secondary: #e63946;
+            --light: #f1faee;
+            --dark: #1d3557;
+            --accent: #a8dadc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 1rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #c1272d;
+        }
+        
+        section {
+            padding: 4rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .blog-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-date {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .blog-excerpt {
+            margin-bottom: 1.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: white;">Voter<span>Data</span>House</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#mission">Our Mission</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#process">Our Process</a>
+                <a href="index.html#results">Results</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <button class="cta-button" onclick="location.href='index.html#contact'">Schedule Consultation</button>
+        </nav>
+    </header>
+    
+    <!-- Blog Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Campaign Insights Blog</h2>
+                <p>Latest strategies, data-driven insights, and campaign technology trends</p>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-img" style="background-color: #3e6cb1;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">March 10, 2025</span>
+                        <h3>The Future of AI in Political Campaigns</h3>
+                        <p class="blog-excerpt">Artificial intelligence is transforming how campaigns operate, from voter targeting to message optimization. Learn how the latest AI innovations are reshaping political strategy.</p>
+                        <a href="#" class="cta-button">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img" style="background-color: #4682b4;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">February 24, 2025</span>
+                        <h3>5 Data Metrics Every Campaign Manager Should Track</h3>
+                        <p class="blog-excerpt">In the digital age, successful campaigns are driven by data. We break down the five essential metrics that can make or break your electoral success.</p>
+                        <a href="#" class="cta-button">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img" style="background-color: #5d9ad3;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">February 15, 2025</span>
+                        <h3>Omnichannel Communication: Reaching Voters Where They Are</h3>
+                        <p class="blog-excerpt">Modern voters expect seamless experiences across all channels. Discover how to build an integrated communication strategy that meets constituents on their preferred platforms.</p>
+                        <a href="#" class="cta-button">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img" style="background-color: #6fb1e3;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 30, 2025</span>
+                        <h3>The Power of Predictive Analytics in Voter Turnout</h3>
+                        <p class="blog-excerpt">Predictive models are revolutionizing how campaigns approach get-out-the-vote efforts. Learn how to leverage these powerful tools to maximize turnout in your key districts.</p>
+                        <a href="#" class="cta-button">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img" style="background-color: #81c7f4;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 15, 2025</span>
+                        <h3>Campaign Tech Stack: Building vs. Buying Solutions</h3>
+                        <p class="blog-excerpt">Should your campaign invest in custom technology or leverage existing platforms? We examine the pros and cons of both approaches to help you make the right decision.</p>
+                        <a href="#" class="cta-button">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img" style="background-color: #93ddff;"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 5, 2025</span>
+                        <h3>Gamification: Energizing Volunteers in the Digital Era</h3>
+                        <p class="blog-excerpt">Keeping volunteers engaged is crucial for campaign success. Discover how gamification techniques can boost volunteer productivity and create a more motivated team.</p>
+                        <a href="#" class="cta-button">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Voter<span>Data</span>House</div>
+                    <p>Empowering political campaigns with data-driven insights and strategic consulting services.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#mission">Our Mission</a></li>
+                        <li><a href="index.html#results">Results</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="campaign-toolkit.html">Campaign Toolkit</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Voter Data House. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.footer-bottom p').innerHTML = 
+                '&copy; ' + new Date().getFullYear() + ' Voter Data House. All rights reserved.';
+        });
+    </script>
+</body>
+</html>
