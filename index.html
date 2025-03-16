@@ -541,6 +541,22 @@
                 font-size: 1.3rem;
             }
         }
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #0077B5;
+    margin-bottom: 1rem;
+    transition: opacity 0.3s;
+}
+
+.social-link svg {
+    margin-right: 0.5rem;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
     </style>
 </head>
 <body>
@@ -789,25 +805,27 @@
         </div>
     </section>
     
-    <!-- Team Section -->
-    <section id="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>Founder</h2>
-                <p>Meet the visionary behind Voter Data House</p>
-            </div>
-            <div class="team-grid" style="max-width: 600px; margin: 0 auto;">
-                <div class="team-member">
-                    <div class="team-photo"></div>
-                    <div class="team-info">
-                        <h3>Brian Moran</h3>
-                        <div class="team-title">Founder & Chief Strategist</div>
-                        <p>With extensive experience in political technology and campaign operations, I founded Voter Data House to bring enterprise-level communication tools to campaigns of all sizes. My background combines political strategy with technical expertise in the Genesys Cloud CX platform, allowing me to bridge the gap between campaign goals and technological implementation.</p>
-                        <p>I believe that campaigns shouldn't have to choose between sophisticated data tools and practical field operations – they deserve both in one integrated solution.</p>
-                    </div>
+   <!-- Team Section -->
+<section id="team">
+    <div class="container">
+        <div class="section-title">
+            <h2>Founder</h2>
+            <p>Meet the visionary behind Voter Data House</p>
+        </div>
+        <div class="team-grid" style="max-width: 600px; margin: 0 auto;">
+            <div class="team-member">
+                <div class="team-photo" style="background-image: url('20160520_151333_hq.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="team-info">
+                    <h3>Brian Moran</h3>
+                    <div class="team-title">Founder & Chief Strategist</div>
+                    <p><a href="https://www.linkedin.com/in/your-linkedin-profile/" target="_blank" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#0077B5"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg> Connect on LinkedIn</a></p>
+                    <p>With extensive experience in political technology and campaign operations, I founded Voter Data House to bring enterprise-level communication tools to campaigns of all sizes. My background combines political strategy with technical expertise in the Genesys Cloud CX platform, allowing me to bridge the gap between campaign goals and technological implementation.</p>
+                    <p>I believe that campaigns shouldn't have to choose between sophisticated data tools and practical field operations – they deserve both in one integrated solution.</p>
                 </div>
             </div>
         </div>
+    </div>
+
     </section>
     
     <!-- Contact Section -->
