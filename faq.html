@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Voter Data House</title>
+    <!-- Same CSS as your index page with additions for FAQ -->
+    <style>
+        :root {
+            --primary: #1a4b8c;
+            --secondary: #e63946;
+            --light: #f1faee;
+            --dark: #1d3557;
+            --accent: #a8dadc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 1rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #c1272d;
+        }
+        
+        section {
+            padding: 4rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .faq-question.active:after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+            border-top: 1px solid #eee;
+        }
+        
+        .faq-search {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .faq-search input {
+            width: 100%;
+            padding: 1rem;
+            padding-left: 3rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .faq-search:before {
+            content: '🔍';
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: white;">Voter<span>Data</span>House</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#mission">Our Mission</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#process">Our Process</a>
+                <a href="index.html#results">Results</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <button class="cta-button" onclick="location.href='index.html#contact'">Schedule Consultation</button>
+        </nav>
+    </header>
+    
+    <!-- FAQ Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services and approach</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-search">
+                    <input type="text" placeholder="Search frequently asked questions...">
+                </div>
+                
+                <!-- Services FAQ -->
+                <div class="faq-category">
+                    <h3 class="category-title">Our Services</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What services does Voter Data House offer?</div>
+                        <div class="faq-answer">
+                            <p>We offer a comprehensive suite of data-driven campaign services including:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>All-In-One Tech</strong> - Campaign website, communication platforms, and integrated systems</li>
+                                <li><strong>NextGen Campaign Operations</strong> - AI-powered campaign automation and gamification</li>
+                                <li><strong>District Mapping & Field Strategy</strong> - Voter targeting and field operation optimization</li>
+                                <li><strong>Performance Tracking</strong> - Real-time analytics and campaign monitoring</li>
+                            </ul>
+                            <p style="margin-top: 0.5rem;">Each service can be customized to fit your campaign's unique needs and budget.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How much do your services cost?</div>
+                        <div class="faq-answer">
+                            <p>Our service pricing varies based on campaign size, service package, and specific needs. We offer solutions for campaigns of all sizes, from local races to statewide campaigns.</p>
+                            <p style="margin-top: 0.5rem;">We believe in transparent pricing and offer a free initial consultation to understand your needs and provide a detailed proposal. We structure our packages to align with typical campaign budgets at each level.</p>
+                            <p style="margin-top: 0.5rem;">Contact us for a custom quote tailored to your specific campaign requirements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do you work with campaigns of all sizes?</div>
+                        <div class="faq-answer">
+                            <p>Yes! We specifically designed our services to be accessible to campaigns of all sizes. We have experience working with:</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Local races (City Council, School Board, etc.)</li>
+                                <li>County and municipal elections</li>
+                                <li>State legislative campaigns</li>
+                                <li>Congressional and statewide races</li>
+                            </ul>
+                            <p style="margin-top: 0.5rem;">Our scalable approach allows us to right-size our services to match your campaign's scope and budget while still providing the data-driven edge that can make the difference in tight races.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Do you work with both Democratic and Republican campaigns?</div>
+                        <div class="faq-answer">
+                            <p>We believe in the democratic process and the importance of data-driven campaigns regardless of party affiliation. Our services are available to candidates from all major parties who are committed to ethical campaigning.</p>
+                            <p style="margin-top: 0.5rem;">To maintain the highest level of service and avoid conflicts of interest, we do not work with multiple campaigns competing for the same office in the same election cycle.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technology FAQ -->
+                <div class="faq-category">
+                    <h3 class="category-title">Technology & Implementation</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What technology platforms do you use?</div>
+                        <div class="faq-answer">
+                            <p>We leverage the Genesys Cloud CX platform as our core technology foundation, which provides enterprise-grade communication capabilities, AI-powered analytics, and omnichannel integration. We supplement this with custom-developed tools specific to political campaigns.</p>
+                            <p style="margin-top: 0.5rem;">Our system integrates with major CRM platforms, voter file systems, and digital advertising platforms to create a unified campaign technology ecosystem.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How long does implementation take?</div>
+                        <div class="faq-answer">
+                            <p>Implementation timelines vary based on the scope of services and the current state of your campaign's technology infrastructure. Typical timelines include:</p>
