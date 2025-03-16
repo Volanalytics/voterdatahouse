@@ -7,8 +7,8 @@
     <!-- Same CSS as your index page with additions for case studies -->
     <style>
         :root {
-            --primary: #1a4b8c;
-            --secondary: #e63946;
+            --primary: #0b3c7c; /* Darker blue for better contrast */
+            --secondary: #d32836; /* Slightly darker red for better contrast */
             --light: #f1faee;
             --dark: #1d3557;
             --accent: #a8dadc;
@@ -25,6 +25,29 @@
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Skip link for keyboard users */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            padding: 1rem;
+            background-color: var(--dark);
+            color: white;
+            z-index: 999;
+            text-decoration: none;
+        }
+        
+        .skip-link:focus {
+            left: 0;
+        }
+        
+        /* Focus styles for better keyboard navigation */
+        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+            outline: 3px solid #4d90fe;
+            outline-offset: 2px;
         }
         
         header {
@@ -51,6 +74,11 @@
             font-weight: bold;
             display: flex;
             align-items: center;
+        }
+        
+        .logo a {
+            color: white;
+            text-decoration: none;
         }
         
         .logo span {
@@ -82,6 +110,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
+            min-height: 44px;
         }
         
         .cta-button:hover {
@@ -109,7 +138,7 @@
         }
         
         .section-title p {
-            color: #666;
+            color: #444; /* Darkened for better contrast */
             max-width: 800px;
             margin: 0 auto;
         }
@@ -264,64 +293,116 @@
             .case-study-stats {
                 grid-template-columns: 1fr 1fr;
             }
+            
+            /* Adjust spacing for mobile header */
+            nav {
+                justify-content: space-between;
+                gap: 10px;
+            }
+            
+            .cta-button {
+                margin-left: auto;
+                padding: 0.5rem 1rem;
+                min-width: 100px;
+                text-align: center;
+            }
+            
+            /* Mobile menu toggle */
+            .mobile-menu-toggle {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 21px;
+                cursor: pointer;
+            }
+            
+            .mobile-menu-toggle span {
+                display: block;
+                height: 3px;
+                width: 100%;
+                background-color: white;
+                border-radius: 3px;
+            }
+        }
+        
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
         }
     </style>
 </head>
 <body>
+    <!-- Skip to main content link for screen readers and keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header -->
-    <header>
-        <nav>
+    <header role="banner">
+        <nav role="navigation">
             <div class="logo">
-                <a href="index.html" style="text-decoration: none; color: white;">Voter<span>Data</span>House</a>
+                <a href="index.html" aria-label="Voter Data House Home">Voter<span>Data</span>House</a>
             </div>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="index.html#mission">Our Mission</a>
                 <a href="index.html#services">Services</a>
                 <a href="index.html#process">Our Process</a>
                 <a href="index.html#results">Results</a>
                 <a href="index.html#contact">Contact</a>
             </div>
-            <button class="cta-button" onclick="location.href='index.html#contact'">Schedule Consultation</button>
+            <button class="cta-button" onclick="location.href='index.html#contact'" aria-label="Schedule a consultation">Let's Talk</button>
+            
+            <!-- Mobile menu toggle -->
+            <div class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
     
     <!-- Case Studies Section -->
-    <section>
+    <section id="main-content" role="main">
         <div class="container">
             <div class="section-title">
-                <h2>Case Studies</h2>
+                <h1>Case Studies</h1>
                 <p>See how our data-driven approach delivers real results for campaigns of all sizes</p>
             </div>
             
-            <!-- Case Study 1 -->
-            <div class="case-study">
+            <!-- Case Study 1 - New Study -->
+            <article class="case-study">
                 <div class="case-study-header">
-                    <span class="case-study-tag">State Legislature</span>
-                    <h2 class="case-study-title">Turning a Red District Blue</h2>
-                    <p class="case-study-subtitle">How data-driven field operations flipped a traditionally Republican seat</p>
+                    <span class="case-study-tag">Local Campaign</span>
+                    <h2 class="case-study-title">Voter Engagement Transformation</h2>
+                    <p class="case-study-subtitle">How data-driven operations increased participation in a competitive district</p>
                 </div>
                 <div class="case-study-content">
                     <div class="case-study-section">
                         <h3>Challenge</h3>
-                        <p>Our client was running in a district that hadn't elected a Democrat in over 20 years. With limited resources and name recognition, the campaign needed to identify and mobilize every potential supporter.</p>
+                        <p>Our client was running in a high-stakes local election with historically low voter turnout. With limited resources and name recognition, the campaign needed to identify potential supporters and motivate them to participate.</p>
                     </div>
                     
                     <div class="case-study-stats">
                         <div class="stat-item">
-                            <h4>R+7</h4>
-                            <p>Previous partisan lean</p>
+                            <h4>27%</h4>
+                            <p>Previous turnout rate</p>
                         </div>
                         <div class="stat-item">
-                            <h4>$175K</h4>
+                            <h4>$150K</h4>
                             <p>Total campaign budget</p>
                         </div>
                         <div class="stat-item">
-                            <h4>3.2%</h4>
-                            <p>Margin of victory</p>
+                            <h4>+12%</h4>
+                            <p>Increase in voter turnout</p>
                         </div>
                         <div class="stat-item">
-                            <h4>+19%</h4>
-                            <p>Increase in targeted turnout</p>
+                            <h4>5.4%</h4>
+                            <p>Final margin</p>
                         </div>
                     </div>
                     
@@ -329,7 +410,7 @@
                         <h3>Solution</h3>
                         <p>We implemented a comprehensive data strategy that included:</p>
                         <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                            <li>Predictive modeling to identify persuadable voters</li>
+                            <li>Data-driven modeling to identify likely supporters</li>
                             <li>Micro-targeted messaging based on voter issue priorities</li>
                             <li>Optimized canvassing routes that maximized volunteer efficiency</li>
                             <li>Real-time field data collection and analysis</li>
@@ -338,14 +419,14 @@
                     </div>
                     
                     <div class="case-study-quote">
-                        "Voter Data House transformed our field operation. Their targeting algorithms helped us focus on the voters who actually determined the outcome, and their dashboard gave us instant visibility into our progress. We wouldn't have won without them."
+                        "Voter Data House revolutionized our approach to voter engagement. Their targeting algorithms helped us focus on key demographics, and their dashboard gave us instant visibility into our progress. The integrated platform saved us countless hours and made our entire operation more effective."
                     </div>
                     
                     <div class="case-study-section">
                         <h3>Results</h3>
-                        <p>The campaign succeeded in flipping the district with a 3.2% margin of victory. Key results included:</p>
+                        <p>The campaign succeeded in significantly increasing voter participation. Key results included:</p>
                         <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                            <li>19% increase in turnout among identified persuadable voters</li>
+                            <li>12% overall increase in voter turnout compared to previous election</li>
                             <li>47% reduction in wasted canvassing efforts</li>
                             <li>85% contact rate with high-priority voters</li>
                             <li>22% increase in volunteer retention after implementing gamified goals</li>
@@ -353,11 +434,11 @@
                     </div>
                     
                 </div>
-            </div>
+            </article>
             
             <!-- Case Study 2 -->
-            <div class="case-study">
-                <div class="case-study-header" style="background-color: #2a5ca5;">
+            <article class="case-study">
+                <div class="case-study-header" style="background-color: #0b3c7c;">
                     <span class="case-study-tag">Congressional</span>
                     <h2 class="case-study-title">Maximizing Efficiency in a Competitive Race</h2>
                     <p class="case-study-subtitle">How unified communications boosted campaign effectiveness</p>
@@ -371,25 +452,63 @@
                     <div class="case-study-stats">
                         <div class="stat-item">
                             <h4>7</h4>
-<li>89% response rate to text message program</li>
+                            <p>Field offices</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>250+</h4>
+                            <p>Volunteers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>32%</h4>
+                            <p>Efficiency improvement</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>65K</h4>
+                            <p>Voters contacted</p>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study-section">
+                        <h3>Solution</h3>
+                        <p>We implemented our All-In-One Tech solution:</p>
+                        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                            <li>Centralized communications platform for coordinating all field offices</li>
+                            <li>Unified messaging system that maintained consistency across channels</li>
+                            <li>Integrated voter database with real-time updates from field operations</li>
+                            <li>Mobile app for volunteers that provided optimized canvassing routes</li>
+                            <li>Targeted social media campaigns based on geographic and demographic data</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-study-quote">
+                        "The platform Voter Data House built for us solved our biggest challenge: keeping everyone on the same page. With field teams, communications staff, and volunteers all working from the same system, our message discipline improved dramatically, and we were able to respond to developments in real-time."
+                    </div>
+                    
+                    <div class="case-study-section">
+                        <h3>Results</h3>
+                        <p>The integrated approach led to significant improvements:</p>
+                        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                            <li>32% increase in volunteer productivity</li>
+                            <li>65,000 voters contacted through coordinated multi-channel approach</li>
+                            <li>89% response rate to text message program</li>
                             <li>42% of volunteers recruited through peer-to-peer app invitations</li>
                             <li>73% of under-35 voters reported being "very informed" about the candidate's positions</li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
     
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">Voter<span>Data</span>House</div>
                     <p>Empowering political campaigns with data-driven insights and strategic consulting services.</p>
                 </div>
-                <div class="footer-links">
+                <nav class="footer-links" aria-label="Footer Navigation">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html#services">Services</a></li>
@@ -397,8 +516,8 @@
                         <li><a href="index.html#results">Results</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
-                </div>
-                <div class="footer-links">
+                </nav>
+                <nav class="footer-links" aria-label="Resources Navigation">
                     <h3>Resources</h3>
                     <ul>
                         <li><a href="blog.html">Blog</a></li>
@@ -407,7 +526,7 @@
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     </ul>
-                </div>
+                </nav>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Voter Data House. All rights reserved.</p>
@@ -417,8 +536,30 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Dynamic copyright year
             document.querySelector('.footer-bottom p').innerHTML = 
                 '&copy; ' + new Date().getFullYear() + ' Voter Data House. All rights reserved.';
+            
+            // Mobile menu toggle with ARIA support
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const expanded = navLinks.classList.contains('active');
+                    menuToggle.setAttribute('aria-expanded', expanded.toString());
+                });
+                
+                // Close menu when a link is clicked
+                const links = navLinks.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
         });
     </script>
 </body>
