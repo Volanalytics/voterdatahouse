@@ -164,3 +164,670 @@
         
         .mission-description {
             font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+        
+        .problem-solution {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .problem-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .problem-header {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .problem-header h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .problem-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .solution-heading {
+            color: var(--secondary);
+            font-weight: bold;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-image {
+            height: 200px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .service-outcome {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+        
+        .process-step {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            text-align: center;
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 1rem auto;
+        }
+        
+        .process-step h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .testimonials {
+            background-color: var(--accent);
+            padding: 4rem 1rem;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-problem {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 1rem;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .stats {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .team-photo {
+            height: 200px;
+            background-color: #ddd;
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+        }
+        
+        .team-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-title {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .contact {
+            padding: 4rem 1rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+        }
+        
+        .next-steps {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .next-steps h4 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .next-steps ol {
+            padding-left: 1.5rem;
+        }
+        
+        .next-steps li {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .mission-statement {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                Voter<span>Data</span>House
+            </div>
+            <div class="nav-links">
+                <a href="#mission">Our Mission</a>
+                <a href="#services">Services</a>
+                <a href="#process">Our Process</a>
+                <a href="#results">Results</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="cta-button">Schedule Consultation</button>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Voter Intelligence + Action = Victory</h1>
+        <p>We turn voter information into actionable strategies that win elections. Combining old+new school techniques, Our data-driven approach helps campaigns of all sizes efficiently operate and ultimately, win.</p>
+        <button class="cta-button">Get Started Today</button>
+    </section>
+    
+    <!-- Mission Statement Section -->
+    <section id="mission">
+        <div class="container">
+            <div class="mission-container">
+                <div class="mission-icon">🎯</div>
+                <div class="mission-statement">Empowering Campaigns and Constituents with the perfect balance of time-tested tactics and innovative data intelligence.</div>
+                <p class="mission-description">At Voter Data House, we believe that effective campaigns are built on deep understanding of voter behavior and precise targeting. Our mission is to provide low cost, easy to use access to sophisticated data analytics, enabling campaigns of all sizes to make evidence-based decisions that maximize their impact and connect meaningfully with constituents.</p>
+                <p class="mission-description">We combine cutting-edge technology with political expertise to transform raw voter data into winning campaign strategies.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem/Solution Section -->
+    <section style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Campaign Challenges We Solve</h2>
+                <p>Turn your biggest campaign obstacles into strategic advantages</p>
+            </div>
+            <div class="problem-solution">
+                <div class="problem-card">
+                    <div class="problem-header">
+                        <h3>Limited Resources, Unlimited Outreach Needs</h3>
+                        <p>Campaigns struggle to effectively allocate limited time, money, and volunteers.</p>
+                    </div>
+                    <div class="problem-content">
+                        <div class="solution-heading">Our Solution:</div>
+                        <p>Precision targeting that identifies high-priority voters and neighborhoods, ensuring your resources are deployed where they'll have maximum impact. Our district mapping and voter segmentation tools reduce wasted efforts by up to 40%.</p>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-header">
+                        <h3>Message Inconsistency Across Channels</h3>
+                        <p>Campaigns struggle to maintain consistent, compelling messaging across digital ads, direct mail, and field operations.</p>
+                    </div>
+                    <div class="problem-content">
+                        <div class="solution-heading">Our Solution:</div>
+                        <p>VDH's Omnichannel solution integrates all avenues of campaign communications into one easy dashboard, simplifying and turbocharging your operations. Combine with AI to create a holistic and unified rapid-response to your campaign narratives.</p>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-header">
+                        <h3>Data Overload Without Actionable Insights</h3>
+                        <p>Campaigns collect massive amounts of voter data but struggle to translate it into practical campaign strategies.</p>
+                    </div>
+                    <div class="problem-content">
+                        <div class="solution-heading">Our Solution:</div>
+                        <p>Our AI platform will DOGE your campaign operations. No more useless data. Every interaction in your campaign is tracked and meaningful. We deliver real-time recommendations that directly inform your canvassing routes, ad targeting, and messaging priorities.</p>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-header">
+                        <h3>Difficulty Measuring Campaign Effectiveness</h3>
+                        <p>Campaigns struggle to quantify which tactics are working and which need adjustment before it's too late.</p>
+                    </div>
+                    <div class="problem-content">
+                        <div class="solution-heading">Our Solution:</div>
+                        <p>VoterDataHouse uses cutting-edge AI technologies to take campaign outreach to the next level. Whether it be voice, text, chat, e-mail, mailers - Get the pulse of your techniques faster than ever with Natural Language Processing, automating responses to frequently asked questions and increasing engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Services</h2>
+                <p>Comprehensive solutions designed specifically for political campaign success</p>
+            </div>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-image">📊</div>
+                    <div class="service-content">
+                        <h3>All-In-One Tech</h3>
+                        <p>We easily build all the needed tech to run a campaign. From campaign websites to integrated communications platforms, we handle everything without the need for multiple vendors. Our system seamlessly integrates voice, SMS text, web chat, email, and maintains the entire infrastructure so your team can focus on winning.</p>
+                        <div class="service-outcome">Outcome: Free up your campaign staff to focus on strategy rather than managing technical issues or coordinating multiple vendors.</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">🎯</div>
+                    <div class="service-content">
+                        <h3>NextGen Campaign Operations</h3>
+                        <p>Automate and streamline your operations with bleeding-edge AI. Entergize volunteers and constituents with Calls-To-Action that produce results thru gamification. Monitor campaign narratives across social and traditional media in real-time.</p>
+                        <div class="service-outcome">Outcome: Take your Campaign Operations into the blue ocean with strategies you never thought were possible until now.</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">🗺️</div>
+                    <div class="service-content">
+                        <h3>District Mapping & Field Strategy</h3>
+                        <p>Using proprietary algorithms, we identify voting patterns, demographic trends, and engagement opportunities that campaigns typically miss. Our analysis incorporates historical voting behavior, demographic shifts, and predictive modeling to optimize canvassing routes, volunteer deployment, and event locations - maximizing your ground game impact while minimizing wasted effort.</p>
+                        <div class="service-outcome">Outcome: Increase your field operation efficiency by up to 40% through data-optimized deployment.</div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">📈</div>
+                    <div class="service-content">
+                        <h3>Performance Tracking & Optimization</h3>
+                        <p>We implement comprehensive tracking systems that monitor campaign performance across all channels. Our custom dashboards provide real-time insights on voter contact rates, message effectiveness, and resource utilization.</p>
+                        <p>Unlike traditional consultants, we provide ongoing optimization recommendations based on actual performance data, allowing campaigns to pivot quickly when strategies aren't delivering expected results.</p>
+                        <div class="service-outcome">Outcome: Make evidence-based decisions that continuously improve campaign effectiveness.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section id="process" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>A structured, collaborative approach to campaign success</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We begin by thoroughly analyzing your district, voter data, and electoral landscape. This includes reviewing past election results, demographic trends, and voter behavior patterns in your specific region.</p>
+                    <p>We identify key voter segments, potential supporters, persuadable voters, and likely opposition to establish a baseline understanding of your path to victory.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Development</h3>
+                    <p>Based on our analysis, we develop a comprehensive campaign tech platform. Combining our technologies into a unified system for message frameworks, targeting priorities, and resource allocation recommendations.</p>
+                    <p>We work collaboratively with your team to create the strategy, aligning with AI to build efficient experiences for your constituents and volunteers, no matter what the tech is, to be consistently fast.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Implementation</h3>
+                    <p>We don't just hand you a website and walk away. Our team provides ongoing support to help implement our recommendations across your campaign operations.</p>
+                    <p>This includes setting up tracking systems, training your team on data tools, and providing technical and strategic assistance for targeting and message deployment.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Continual Process Improvement</h3>
+                    <p>Throughout your campaign, we continuously monitor performance metrics and electoral dynamics, providing regular updates and recommendation adjustments.</p>
+                    <p>Our agile approach allows your campaign to respond quickly to changing circumstances, emerging issues, and new opportunities as they arise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results Section -->
+    <section id="results" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Powered by Industry-Leading Technology</h2>
+                <p>Our services leverage the proven capabilities of Genesys Cloud CX platform</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-problem">Challenge: Scaling personalized communications across multiple channels</div>
+                    <div class="testimonial-content">
+                        <p>"The Genesys Cloud CX platform helped us increase our contact resolution rates by 20% while reducing our average handling time by 25%. The omnichannel capabilities ensured consistent messaging across all touchpoints with our audience."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div class="author-info">
+                            <h4>Enterprise Organization</h4>
+                            <p>Major Communication Initiative Success Story</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-problem">Challenge: Maintaining consistent voice across digital channels</div>
+                    <div class="testimonial-content">
+                        <p>"Implementing the Genesys AI-powered solutions allowed us to handle 40% more inquiries while maintaining high satisfaction ratings. The platform's analytics gave us real-time insights that helped us continuously refine our outreach strategy."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div class="author-info">
+                            <h4>Large Public Organization</h4>
+                            <p>Digital Transformation Success Story</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-problem">Challenge: Engaging audiences through multiple touchpoints</div>
+                    <div class="testimonial-content">
+                        <p>"The unified interface of Genesys Cloud CX allowed our team to deliver seamless experiences across voice, text, social, and email channels. Implementation was smooth and we saw a 35% improvement in engagement metrics within the first 60 days."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div class="author-info">
+                            <h4>National Organization</h4>
+                            <p>Multi-Channel Engagement Success Story</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2>The Impact of Data-Driven Campaigns</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>87%</h3>
+                    <p>Of winning campaigns utilize integrated data analytics platforms</p>
+                </div>
+                <div class="stat-item">
+                    <h3>+15%</h3>
+                    <p>Average increase in targeted voter turnout with optimized outreach strategies</p>
+                </div>
+                <div class="stat-item">
+                    <h3>40%</h3>
+                    <p>Typical improvement in resource efficiency when using unified communication platforms</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3x</h3>
+                    <p>Faster response times with AI-powered messaging across multiple channels</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Founder</h2>
+                <p>Meet the visionary behind Voter Data House</p>
+            </div>
+            <div class="team-grid" style="max-width: 600px; margin: 0 auto;">
+                <div class="team-member">
+                    <div class="team-photo"></div>
+                    <div class="team-info">
+                        <h3>Your Name</h3>
+                        <div class="team-title">Founder & Chief Strategist</div>
+                        <p>With extensive experience in political technology and campaign operations, I founded Voter Data House to bring enterprise-level communication tools to campaigns of all sizes. My background combines political strategy with technical expertise in the Genesys Cloud CX platform, allowing me to bridge the gap between campaign goals and technological implementation.</p>
+                        <p>I believe that campaigns shouldn't have to choose between sophisticated data tools and practical field operations – they deserve both in one integrated solution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Let's Build Your Winning Strategy</h2>
+                <p>Schedule a consultation with our team of political data experts</p>
+            </div>
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p><strong>Email:</strong> info@voterdatahouse.com</p>
+                        <p><strong>Phone:</strong> (202) 555-0123</p>
+                        <p><strong>Address:</strong> 1234 Campaign Ave, Washington, DC 20001</p>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Office Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p>Saturday: 10:00 AM - 2:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
