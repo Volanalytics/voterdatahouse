@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Voter Data House</title>
+    <!-- Same CSS as your index page with additions for privacy policy -->
+    <style>
+        :root {
+            --primary: #1a4b8c;
+            --secondary: #e63946;
+            --light: #f1faee;
+            --dark: #1d3557;
+            --accent: #a8dadc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 1rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #c1272d;
+        }
+        
+        section {
+            padding: 4rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .policy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .policy-date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 2rem;
+            display: block;
+        }
+        
+        .policy-section {
+            margin-bottom: 2rem;
+        }
+        
+        .policy-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .policy-section p, .policy-section ul, .policy-section ol {
+            margin-bottom: 1rem;
+        }
+        
+        .policy-section ul, .policy-section ol {
+            margin-left: 2rem;
+        }
+        
+        .policy-section ul li, .policy-section ol li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .policy-toc {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        
+        .policy-toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .policy-toc ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .policy-toc ul li a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .policy-toc ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .policy-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: white;">Voter<span>Data</span>House</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#mission">Our Mission</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#process">Our Process</a>
+                <a href="index.html#results">Results</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <button class="cta-button" onclick="location.href='index.html#contact'">Schedule Consultation</button>
+        </nav>
+    </header>
+    
+    <!-- Privacy Policy Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Privacy Policy</h2>
+                <p>How we handle and protect your information</p>
+            </div>
+            
+            <div class="policy-container">
+                <span class="policy-date">Last Updated: March 1, 2025</span>
+                
+                <div class="policy-toc">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#introduction">1. Introduction</a></li>
+                        <li><a href="#information-collected">2. Information We Collect</a></li>
+                        <li><a href="#information-use">3. How We Use Your Information</a></li>
+                        <li><a href="#information-sharing">4. Information Sharing and Disclosure</a></li>
+                        <li><a href="#data-security">5. Data Security</a></li>
+                        <li><a href="#data-retention">6. Data Retention</a></li>
+                        <li><a href="#cookies">7. Cookies and Similar Technologies</a></li>
+                        <li><a href="#your-rights">8. Your Rights and Choices</a></li>
+                        <li><a href="#children">9. Children's Privacy</a></li>
+                        <li><a href="#changes">10. Changes to This Privacy Policy</a></li>
+                        <li><a href="#contact-us">11. Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div id="introduction" class="policy-section">
+                    <h3>1. Introduction</h3>
+                    <p>Voter Data House ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website voterdatahouse.com (the "Site") or use our services.</p>
+                    <p>Please read this Privacy Policy carefully. By accessing or using our Site or services, you acknowledge that you have read, understood, and agree to be bound by all the terms outlined in this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not access the Site or use our services.</p>
+                </div>
+                
+                <div id="information-collected" class="policy-section">
+                    <h3>2. Information We Collect</h3>
+                    <p>We may collect information about you in a variety of ways. The information we collect may include:</p>
+                    
+                    <h4 style="margin-top: 1rem; color: var(--primary);">Personal Data</h4>
+                    <p>When you interact with our Site or services, we may collect personally identifiable information, such as:</p>
+                    <ul>
+                        <li>Name</li>
+                        <li>Email address</li>
+                        <li>Phone number</li>
+                        <li>Mailing address</li>
+                        <li>Job title and organization</li>
+                        <li>Information related to the campaign or organization you represent</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 1rem; color: var(--primary);">Derivative Data</h4>
+                    <p>Our servers automatically collect information when you access our Site, such as your IP address, browser type, operating system, access times, and the pages you have viewed directly before and after accessing the Site.</p>
+                    
+                    <h4 style="margin-top: 1rem; color: var(--primary);">Campaign and Voter Data</h4>
+                    <p>If you use our services, we may collect and process campaign and voter data that you provide to us or authorize us to access on your behalf. This may include voter registration information, demographic data, and campaign-related metrics.</p>
+                </div>
+                
+                <div id="information-use" class="policy-section">
+                    <h3>3. How We Use Your Information</h3>
+                    <p>We may use the information we collect about you for various purposes, including to:</p>
+                    <ul>
+                        <li>Provide, maintain, and improve our services</li>
+                        <li>Process transactions and send related information</li>
+                        <li>Respond to your comments, questions, and requests</li>
+                        <li>Send technical notices, updates, security alerts, and administrative messages</li>
+                        <li>Communicate with you about products, services, offers, promotions, and events</li>
+                        <li>Analyze usage patterns and trends to improve user experience</li>
+                        <li>Develop new products and services</li>
+                        <li>Protect against, identify, and prevent fraud and other illegal activity</li>
+                    </ul>
+                </div>
+                
+                <div id="information-sharing" class="policy-section">
+                    <h3>4. Information Sharing and Disclosure</h3>
+                    <p>We may share information about you in the following circumstances:</p>
+                    
+                    <h4 style="margin-top: 1rem; color: var(--primary);">With Your Consent</h4>
+                    <p>We may share your information when you have given us specific consent to do so.</p>
+                    
+                    <h4 style="margin-top: 1rem; color: var(--primary);">With Service Providers</h4>
+                    <p>We may share your information with third-party vendors, consultants, and other service providers who need access to your information to perform services on our behalf.</p>
+                    
+                    <h4 style="margin-top: 1rem; color: var(--primary);">For Legal Reasons</h4>
+                    <p>We may disclose your information if we believe it is necessary to comply with applicable laws, regulations, legal processes, or governmental requests.</p>
+                    
+                    <h4 style="margin-top: 1rem; color: var(--primary);">Business Transfers</h4>
+                    <p>We may share or transfer your information in connection with a merger, acquisition, reorganization, sale of assets, or bankruptcy.</p>
+                    
+                    <h4 style="margin-top: 1rem; color: var(--primary);">Aggregated or De-identified Data</h4>
+                    <p>We may share aggregated or de-identified information, which cannot reasonably be used to identify you, with third parties for research, marketing, analytics, and other purposes.</p>
+                </div>
+                
+                <div id="data-security" class="policy-section">
+                    <h3>5. Data Security</h3>
+                    <p>We implement appropriate technical and organizational measures to protect the security of your personal information. However, please be aware that no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+                    <p>We use industry-standard encryption technologies when transferring and receiving sensitive data. All campaign and voter data is stored on secure servers with restricted access. We conduct regular security assessments and maintain policies and procedures to handle data securely.</p>
+                </div>
+                
+                <div id="data-retention" class="policy-section">
+                    <h3>6. Data Retention</h3>
+                    <p>We retain personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When determining how long to retain information, we consider the amount, nature, and sensitivity of the information, the potential risk of harm from unauthorized use or disclosure, and applicable legal requirements.</p>
+                    <p>Campaign-specific data is retained according to the terms of our service agreements and applicable campaign finance laws.</p>
+                </div>
+                
+                <div id="cookies" class="policy-section">
+                    <h3>7. Cookies and Similar Technologies</h3>
+                    <p>We use cookies and similar tracking technologies to collect information about your browsing activities over time and across different websites. Cookies are small data files stored on your device that help us improve our Site and your experience, understand which areas and features of our Site are popular, and count visits.</p>
+                    <p>Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject cookies. Please note that if you choose to remove or reject cookies, this could affect certain features of our Site.</p>
+                </div>
+                
+                <div id="your-rights" class="policy-section">
+                    <h3>8. Your Rights and Choices</h3>
+                    <p>Depending on your location, you may have certain rights regarding your personal information. These may include:</p>
+                    <ul>
+                        <li>The right to access your personal information</li>
+                        <li>The right to correct inaccurate information</li>
+                        <li>The right to request deletion of your personal information</li>
+                        <li>The right to restrict or object to processing</li>
+                        <li>The right to data portability</li>
+                        <li>The right to withdraw consent at any time</li>
+                    </ul>
+                    <p>To exercise these rights, please contact us using the information provided in the "Contact Us" section below.</p>
+                </div>
+                
+                <div id="children" class="policy-section">
+                    <h3>9. Children's Privacy</h3>
+                    <p>Our Site and services are not intended for children under the age of 16. We do not knowingly collect personal information from children under 16. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at the address below to request deletion.</p>
+                </div>
+                
+                <div id="changes" class="policy-section">
+                    <h3>10. Changes to This Privacy Policy</h3>
+                    <p>We may update this Privacy Policy from time to time in response to changing legal, technical, or business developments. When we update our Privacy Policy, we will take appropriate measures to inform you, consistent with the significance of the changes we make.</p>
+                    <p>We encourage you to periodically review this page for the latest information on our privacy practices. Your continued use of our Site or services after any changes or revisions to this Privacy Policy indicates your agreement with the terms of the revised Privacy Policy.</p>
+                </div>
+                
+                <div id="contact-us" class="policy-section">
+                    <h3>11. Contact Us</h3>
+                    <p>If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us at:</p>
+                    <p>Voter Data House<br>
+                    PO BOX 79<br>
+                    Mt Juliet, TN 37122<br>
+                    Email: info@voterdatahouse.com<br>
+                    Phone: 615-979-3232</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Voter<span>Data</span>House</div>
+                    <p>Empowering political campaigns with data-driven insights and strategic consulting services.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#mission">Our Mission</a></li>
+                        <li><a href="index.html#results">Results</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="campaign-toolkit.html">Campaign Toolkit</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Voter Data House. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.footer-bottom p').innerHTML = 
+                '&copy; ' + new Date().getFullYear() + ' Voter Data House. All rights reserved.';
+        });
+    </script>
+</body>
+</html>
