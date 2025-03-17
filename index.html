@@ -265,13 +265,15 @@
         .service-image {
             height: 200px;
             background-color: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--primary);
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         
         .service-content {
@@ -367,9 +369,13 @@
             border-radius: 50%;
             background-color: #ddd;
             margin-right: 1rem;
-            background-image: url('https://source.unsplash.com/random/50x50/?headshot,professional');
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .author-info h4 {
@@ -419,9 +425,14 @@
         .team-photo {
             height: 300px;
             background-color: #ddd;
-            background-image: url('https://source.unsplash.com/random/400x300/?business,man,headshot');
-            background-size: cover;
-            background-position: top center;
+            overflow: hidden;
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
         }
         
         .team-info {
@@ -727,6 +738,18 @@
                 text-align: center;
             }
         }
+
+        /* Visually hidden text (for screen readers) */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
     </style>
 </head>
 <body>
@@ -838,7 +861,7 @@
             <div class="services">
                 <article class="service-card">
                     <div class="service-image">
-                        <img src="images/services/u3667838933_omnichannel_communications_--v_6.1_bd1be8c9-c079-4dd7-be94-37ba0fb4ff9c.jpg" alt="All-In-One Tech" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="images/services/u3667838933_omnichannel_communications_--v_6.1_bd1be8c9-c079-4dd7-be94-37ba0fb4ff9c.jpg" alt="All-In-One Tech">
                     </div>
                     <div class="service-content">
                         <h3>All-In-One Tech</h3>
@@ -846,13 +869,9 @@
                         <div class="service-outcome">Outcome: Free up your campaign staff to focus on strategy rather than managing technical issues or coordinating multiple vendors.</div>
                     </div>
                 </article>
-                        <p>We easily build all the needed tech to run a campaign. From campaign websites to integrated communications platforms, we handle everything without the need for multiple vendors. Our system seamlessly integrates voice, SMS text, web chat, email, and maintains the entire infrastructure so your team can focus on winning.</p>
-                        <div class="service-outcome">Outcome: Free up your campaign staff to focus on strategy rather than managing technical issues or coordinating multiple vendors.</div>
-                    </div>
-                </article>
                 <article class="service-card">
                     <div class="service-image">
-                        <img src="images/services/u3667838933_realtime_communications_--v_6.1_0f645fd7-6b1a-4c2f-8ba9-dcc7ab9fda8c.jpg" alt="NextGen Campaign Operations" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="images/services/u3667838933_realtime_communications_--v_6.1_0f645fd7-6b1a-4c2f-8ba9-dcc7ab9fda8c.jpg" alt="NextGen Campaign Operations">
                     </div>
                     <div class="service-content">
                         <h3>NextGen Campaign Operations</h3>
@@ -860,13 +879,9 @@
                         <div class="service-outcome">Outcome: Take your Campaign Operations into the blue ocean with strategies you never thought were possible until now.</div>
                     </div>
                 </article>
-                        <p>Automate and streamline your operations with bleeding-edge AI. Entergize volunteers and constituents with Calls-To-Action that produce results thru gamification. Monitor campaign narratives across social and traditional media in real-time.</p>
-                        <div class="service-outcome">Outcome: Take your Campaign Operations into the blue ocean with strategies you never thought were possible until now.</div>
-                    </div>
-                </article>
                 <article class="service-card">
                     <div class="service-image">
-                        <img src="images/services/u3667838933_volunteer_in_suburbs_with_tablet_--v_6.1_8138c532-9106-4fa5-9bd0-95e4eb0ea1d5.jpg" alt="District Mapping & Field Strategy" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="images/services/u3667838933_volunteer_in_suburbs_with_tablet_--v_6.1_8138c532-9106-4fa5-9bd0-95e4eb0ea1d5.jpg" alt="District Mapping & Field Strategy">
                     </div>
                     <div class="service-content">
                         <h3>District Mapping & Field Strategy</h3>
@@ -874,21 +889,12 @@
                         <div class="service-outcome">Outcome: Increase your field operation efficiency by up to 40% through data-optimized deployment.</div>
                     </div>
                 </article>
-                        <p>Using proprietary algorithms, we identify voting patterns, demographic trends, and engagement opportunities that campaigns typically miss. Our analysis incorporates historical voting behavior, demographic shifts, and predictive modeling to optimize canvassing routes, volunteer deployment, and event locations - maximizing your ground game impact while minimizing wasted effort.</p>
-                        <div class="service-outcome">Outcome: Increase your field operation efficiency by up to 40% through data-optimized deployment.</div>
-                    </div>
-                </article>
                 <article class="service-card">
                     <div class="service-image">
-                        <img src="images/services/u3667838933_social_media_--v_6.1_662d2e09-9e1f-4655-a539-59dbbf010a0a.jpg" alt="Performance Tracking & Optimization" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="images/services/u3667838933_social_media_--v_6.1_662d2e09-9e1f-4655-a539-59dbbf010a0a.jpg" alt="Performance Tracking & Optimization">
                     </div>
                     <div class="service-content">
                         <h3>Performance Tracking & Optimization</h3>
-                        <p>We implement comprehensive tracking systems that monitor campaign performance across all channels. Our custom dashboards provide real-time insights on voter contact rates, message effectiveness, and resource utilization.</p>
-                        <p>Unlike traditional consultants, we provide ongoing optimization recommendations based on actual performance data, allowing campaigns to pivot quickly when strategies aren't delivering expected results.</p>
-                        <div class="service-outcome">Outcome: Make evidence-based decisions that continuously improve campaign effectiveness.</div>
-                    </div>
-                </article>
                         <p>We implement comprehensive tracking systems that monitor campaign performance across all channels. Our custom dashboards provide real-time insights on voter contact rates, message effectiveness, and resource utilization.</p>
                         <p>Unlike traditional consultants, we provide ongoing optimization recommendations based on actual performance data, allowing campaigns to pivot quickly when strategies aren't delivering expected results.</p>
                         <div class="service-outcome">Outcome: Make evidence-based decisions that continuously improve campaign effectiveness.</div>
@@ -949,13 +955,10 @@
                     </blockquote>
                     <footer class="testimonial-author">
                         <div class="author-image">
-                            <img src="images/testimonials/u3667838933_omnichannel_communications_--v_6.1_bd1be8c9-c079-4314-864b-578070c1ca24_0.png" alt="" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+                            <img src="images/testimonials/u3667838933_omnichannel_communications_--v_6.1_bd1be8c9-c079-4314-864b-578070c1ca24_0.png" alt="">
                         </div>
                         <div class="author-info">
                             <h4>Enterprise Organization</h4>
-                            <p>Major Communication Initiative Success Story</p>
-                        </div>
-                    </footer>
                             <p>Major Communication Initiative Success Story</p>
                         </div>
                     </footer>
@@ -967,13 +970,10 @@
                     </blockquote>
                     <footer class="testimonial-author">
                         <div class="author-image">
-                            <img src="images/testimonials/u3667838933_social_media_--v_6.1_662d2e09-9e1f-4655-a539-59dbbf06da09_2 (1).png" alt="" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+                            <img src="images/testimonials/u3667838933_social_media_--v_6.1_662d2e09-9e1f-4655-a539-59dbbf06da09_2 (1).png" alt="">
                         </div>
                         <div class="author-info">
                             <h4>Large Public Organization</h4>
-                            <p>Digital Transformation Success Story</p>
-                        </div>
-                    </footer>
                             <p>Digital Transformation Success Story</p>
                         </div>
                     </footer>
@@ -985,13 +985,10 @@
                     </blockquote>
                     <footer class="testimonial-author">
                         <div class="author-image">
-                            <img src="images/testimonials/u3667838933_voters_interacting_with_volunteers_over_their_cel_948b231f-52c9-4f68-8e6a-7c0ee50e1c77_2.png" alt="" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+                            <img src="images/testimonials/u3667838933_voters_interacting_with_volunteers_over_their_cel_948b231f-52c9-4f68-8e6a-7c0ee50e1c77_2.png" alt="">
                         </div>
                         <div class="author-info">
                             <h4>National Organization</h4>
-                            <p>Multi-Channel Engagement Success Story</p>
-                        </div>
-                    </footer>
                             <p>Multi-Channel Engagement Success Story</p>
                         </div>
                     </footer>
@@ -1021,31 +1018,6 @@
                     <h3>3x</h3>
                     <p>Faster response times with AI-powered messaging across multiple channels</p>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Team Section -->
-    <section id="team" role="region" aria-labelledby="team-heading">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="team-heading">Founder</h2>
-                <p>Meet the visionary behind Voter Data House</p>
-            </div>
-            <div class="team-grid" style="max-width: 600px; margin: 0 auto;">
-                <article class="team-member">
-                    <div class="team-photo" style="height: auto; padding: 0;">
-                        <img src="20160520_151333_hq.jpg" alt="Brian Moran, Founder and Chief Strategist of Voter Data House" style="width: 100%; height: auto; display: block; border-radius: 8px 8px 0 0; object-fit: cover; object-position: top;">
-                    </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>Brian Moran</h3>
-                        <div class="team-title">Founder & Chief Strategist</div>
-                        <p><a href="https://www.linkedin.com/in/brian-m-b595bb120/" target="_blank" class="social-link" aria-label="Connect with Brian Moran on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#0077B5" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg> Connect on LinkedIn</a></p>
-                        <p>With extensive experience in political technology and campaign operations, I founded Voter Data House to bring enterprise-level communication tools to campaigns of all sizes. My background combines political strategy with technical expertise in Next Generation Cloud Technologies, allowing me to bridge the gap between campaign goals and technological implementation.</p>
-                        <p>I believe that campaigns shouldn't have to choose between sophisticated data tools and practical field operations – they deserve both in one integrated solution.</p>
-                    </div>
-                </article>
             </div>
         </div>
     </section>
@@ -1184,22 +1156,6 @@
                     });
                 });
             }
-
-            // Add styles for visually hidden elements (for screen readers)
-            const style = document.createElement('style');
-            style.textContent = `
-                .visually-hidden {
-                    position: absolute;
-                    width: 1px;
-                    height: 1px;
-                    margin: -1px;
-                    padding: 0;
-                    overflow: hidden;
-                    clip: rect(0, 0, 0, 0);
-                    border: 0;
-                }
-            `;
-            document.head.appendChild(style);
         });
     </script>
 </body>
