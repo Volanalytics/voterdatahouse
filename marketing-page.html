@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Intelligence Platform - Features, Pricing & Solutions</title>
+    <style>
+        :root {
+            --primary: #0046ad;
+            --secondary: #e63946;
+            --accent: #ffd166;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #212529;
+            --success: #2a9d8f;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0.5em;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            border-left: 4px solid var(--secondary);
+            padding-left: 12px;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        
+        p {
+            margin-bottom: 1.2em;
+        }
+        
+        .hero-section {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 20px 0 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 35%;
+            height: 100%;
+            background-color: var(--primary);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .nav-tabs li {
+            margin-right: 5px;
+        }
+        
+        .nav-tabs a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-tabs a:hover, .nav-tabs a.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: var(--light);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: var(--primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .plan-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        
+        .plan-popular {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+        
+        .plan-period {
+            font-size: 0.9rem;
+            color: var(--dark);
+            opacity: 0.7;
+        }
+        
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .plan-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .plan-features li:before {
+            content: "✓";
+            margin-right: 10px;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: #003c91;
+            transform: translateY(-2px);
+        }
+        
+        .button.secondary {
+            background-color: var(--light);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        
+        .button.secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .testimonial {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--dark);
+            opacity: 0.7;
+        }
+        
+        .fa-check {
+            color: var(--success);
+            margin-right: 10px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background-color: var(--light);
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .faq-answer {
+            padding-left: 20px;
+            border-left: 2px solid var(--accent);
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-section {
+                padding: 30px 20px;
+            }
+            
+            .hero-bg {
+                display: none;
+            }
+            
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .nav-tabs li {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Campaign Intelligence Platform</h1>
+        <p class="tagline">Unify your voter outreach, staff coordination, and data analytics in one powerful platform.</p>
+    </header>
+    
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h2>Transform Your Campaign's Voter Engagement</h2>
+            <p>In today's competitive political landscape, successful campaigns need more than traditional outreach—they need data-driven strategies powered by intelligent technology.</p>
+            <p>Our Campaign Intelligence Platform delivers the comprehensive tools political consultants need to execute winning campaigns through sophisticated voter data management, multi-channel communications, and actionable analytics.</p>
+            <a href="#pricing" class="button">View Pricing Plans</a>
+            <a href="#demo" class="button secondary">Request Demo</a>
+        </div>
+    </section>
+    
+    <ul class="nav-tabs">
+        <li><a href="#overview" class="active">Overview</a></li>
+        <li><a href="#features">Key Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#comparison">Comparison</a></li>
+        <li><a href="#faq">FAQ</a></li>
+    </ul>
+    
+    <section id="overview">
+        <h2>The Complete Political Consulting Solution</h2>
+        <p>Our platform combines powerful voter data management, field organizing tools, and multi-channel communication capabilities in one unified system. Whether you're running a local race or national campaign, our solution scales to meet your needs while providing the insights that drive electoral success.</p>
+        
+        <img src="/api/placeholder/1200/500" alt="Campaign Intelligence Platform Dashboard">
+        
+        <p>Campaign directors and field organizers deal with countless challenges daily: managing voter outreach across multiple channels, coordinating volunteers, analyzing supporter data, and measuring the effectiveness of campaign messaging.</p>
+        
+        <p>Without the right tools, these essential processes become overwhelming, leaving staff stretched thin and campaigns missing critical opportunities to connect with voters.</p>
+        
+        <p>Our platform streamlines these operations, giving your team the technology edge needed to maximize every interaction, optimize resource allocation, and make data-driven decisions that win elections.</p>
+    </section>
+    
+    <section id="pricing">
+        <h2>Flexible Pricing Plans</h2>
+        <p>Choose the plan that fits your campaign's needs and scale, with options for digital, voice, or combined communications.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
+            <div class="plan-card">
+                <h3>Essentials</h3>
+                <div class="plan-price">$75<span class="plan-period">/user/month</span></div>
+                <p>Perfect for local races and down-ballot campaigns with focused communication needs.</p>
+                <ul class="plan-features">
+                    <li>Voice-only communication center</li>
+                    <li>Intelligent call routing</li>
+                    <li>Interactive voice response (IVR)</li>
+                    <li>Basic analytics and reporting</li>
+                    <li>Volunteer coordination tools</li>
+                </ul>
+                <a href="#contact" class="button">Get Started</a>
+            </div>
+            
+            <div class="plan-card">
+                <div class="plan-popular">Most Popular</div>
+                <h3>Professional</h3>
+                <div class="plan-price">$115<span class="plan-period">/user/month</span></div>
+                <p>Ideal for mid-sized campaigns requiring multiple communication channels.</p>
+                <ul class="plan-features">
+                    <li>Combined voice + digital channels</li>
+                    <li>Email, SMS, and social media integration</li>
+                    <li>Voter journey tracking</li>
+                    <li>Predictive analytics</li>
+                    <li>Targeting and segmentation tools</li>
+                    <li>Interactive dashboards</li>
+                </ul>
+                <a href="#contact" class="button">Get Started</a>
+            </div>
+            
+            <div class="plan-card">
+                <h3>Enterprise</h3>
+                <div class="plan-price">$155<span class="plan-period">/user/month</span></div>
+                <p>Complete solution for major campaigns and multi-race organizations.</p>
+                <ul class="plan-features">
+                    <li>All Professional features</li>
+                    <li>Advanced workforce management</li>
+                    <li>AI-powered volunteer scheduling</li>
+                    <li>Speech and text analytics</li>
+                    <li>Sentiment analysis</li>
+                    <li>Advanced API integrations</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="#contact" class="button">Get Started</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="features">
+        <h2>Platform Capabilities</h2>
+        <p>Our platform delivers comprehensive tools designed specifically for political campaigns and consulting operations:</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Voter Intelligence</h3>
+                <p>Build detailed voter profiles with demographic, geographic, and voting history data to create targeted messaging and outreach strategies.</p>
+                <ul>
+                    <li>Behavioral analytics and propensity modeling</li>
+                    <li>Custom segmentation for targeted messaging</li>
+                    <li>Predictive turnout modeling</li>
+                    <li>Issue-based targeting</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Multi-Channel Outreach</h3>
+                <p>Engage supporters across all communication channels from a single unified platform.</p>
+                <ul>
+                    <li>Phone banking with AI-assisted scripting</li>
+                    <li>Mass texting with personalization</li>
+                    <li>Targeted email campaigns</li>
+                    <li>Social media engagement tracking</li>
+                    <li>Coordinated digital messaging</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Field Operations</h3>
+                <p>Streamline door-to-door canvassing, volunteer management, and event coordination.</p>
+                <ul>
+                    <li>Mobile canvassing applications</li>
+                    <li>Walk list generation and optimization</li>
+                    <li>Real-time volunteer tracking</li>
+                    <li>Geographic heat mapping</li>
+                    <li>Turf cutting and assignment</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>Automation & AI</h3>
+                <p>Leverage artificial intelligence to enhance campaign efficiency and effectiveness.</p>
+                <ul>
+                    <li>Automated supporter journeys</li>
+                    <li>Conversation analysis and insights</li>
+                    <li>Smart volunteer scheduling</li>
+                    <li>Message testing and optimization</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Analytics & Reporting</h3>
+                <p>Gain actionable insights through comprehensive data visualization and analysis.</p>
+                <ul>
+                    <li>Custom dashboard creation</li>
+                    <li>Real-time performance tracking</li>
+                    <li>GOTV effectiveness metrics</li>
+                    <li>Resource allocation optimization</li>
+                    <li>Message effectiveness tracking</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔐</div>
+                <h3>Security & Compliance</h3>
+                <p>Keep sensitive voter data secure and maintain regulatory compliance.</p>
+                <ul>
+                    <li>End-to-end encryption</li>
+                    <li>Role-based access controls</li>
+                    <li>Compliance with data protection regulations</li>
+                    <li>Detailed audit logging</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Featured Technology: Outreach Hub</h2>
+        <img src="/api/placeholder/1200/500" alt="Campaign Outreach Hub Interface">
+        
+        <p>Our platform's Outreach Hub transforms how campaign staff engage with voters by unifying all communication channels in one interface. Staff can seamlessly switch between phone calls, text messages, emails, and social media without losing context.</p>
+        
+        <h3>Smart Communications</h3>
+        <p>With our intelligent voter matching system, incoming contacts are automatically routed to the most appropriate staff member based on the voter's history, preferences, and the staff's expertise. This ensures every interaction is handled by someone equipped to provide the most effective response.</p>
+        
+        <div class="testimonial">
+            <p class="testimonial-quote">"The multi-channel capabilities transformed our voter outreach strategy. Being able to track a constituent across phone, email, and text—and having that full history instantly available—was a game-changer for our messaging consistency."</p>
+            <p class="testimonial-author">Sarah Mendez</p>
+            <p class="testimonial-role">Campaign Manager, State Senate Race</p>
+        </div>
+    </section>
+    
+    <section id="benefits">
+        <h2>Campaign Advantages</h2>
+        <p>Our platform delivers tangible benefits that translate directly to electoral success:</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 25px; margin-top: 30px;">
+            <div class="feature-card">
+                <h3>Data-Driven Decision Making</h3>
+                <p>Transform raw voter information into actionable intelligence that drives campaign strategy. Our platform helps you identify key voter segments, prioritize outreach efforts, and allocate resources where they'll have the greatest impact on election day.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Unified Campaign Operations</h3>
+                <p>Eliminate silos between your field operations, digital outreach, and fundraising efforts. Our platform brings all campaign activities into one cohesive system, ensuring consistent messaging and coordinated strategy across every touchpoint.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Personalized Voter Experience</h3>
+                <p>Create tailored voter journeys that resonate with specific audience segments. By delivering the right message through the right channel at the right time, you'll build stronger connections with your candidate's base and persuadable voters.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Campaign Agility</h3>
+                <p>Respond quickly to changing conditions with real-time analytics and flexible communication tools. When breaking news hits or opponents make unexpected moves, you'll have the infrastructure to pivot messaging and redirect resources immediately.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="comparison">
+        <h2>Platform Comparison</h2>
+        <p>See how our Campaign Intelligence Platform compares to other political technology solutions:</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Features</th>
+                    <th>Our Platform</th>
+                    <th>Traditional CRM</th>
+                    <th>Basic VAN Tools</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Multi-channel communications</td>
+                    <td>✓ (Integrated)</td>
+                    <td>Limited</td>
+                    <td>Basic</td>
+                </tr>
+                <tr>
+                    <td>AI-powered analytics</td>
+                    <td>✓</td>
+                    <td>Limited</td>
+                    <td>×</td>
+                </tr>
+                <tr>
+                    <td>Field operation tools</td>
+                    <td>✓</td>
+                    <td>×</td>
+                    <td>Basic</td>
+                </tr>
+                <tr>
+                    <td>Volunteer management</td>
+                    <td>✓ (Advanced)</td>
+                    <td>Limited</td>
+                    <td>Basic</td>
+                </tr>
+                <tr>
+                    <td>Predictive analytics</td>
+                    <td>✓</td>
+                    <td>×</td>
+                    <td>×</td>
+                </tr>
+                <tr>
+                    <td>Campaign-specific workflows</td>
+                    <td>✓</td>
+                    <td>Limited</td>
+                    <td>Basic</td>
+                </tr>
+                <tr>
+                    <td>API integrations</td>
+                    <td>✓ (Extensive)</td>
+                    <td>Limited</td>
+                    <td>Basic</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <p class="faq-question">How quickly can we get up and running with the platform?</p>
+            <p class="faq-answer">Most campaigns are fully operational within 1-2 weeks. Our onboarding team provides comprehensive training and setup support to ensure a smooth transition.</p>
+        </div>
+        
+        <div class="faq-item">
+            <p class="faq-question">Can we integrate existing voter files and databases?</p>
+            <p class="faq-answer">Yes, our platform is designed to integrate with standard voter file formats, NGP VAN, and most major CRM systems. Our data team will assist with mapping and importing your existing data.</p>
+        </div>
+        
+        <div class="faq-item">
+            <p class="faq-question">Is the platform suitable for local campaigns with limited budgets?</p>
+            <p class="faq-answer">Absolutely. Our Essentials plan is specifically designed for local races with focused needs and smaller teams. We also offer special pricing for down-ballot campaigns.</p>
+        </div>
+        
+        <div class="faq-item">
+            <p class="faq-question">How secure is voter data on your platform?</p>
+            <p class="faq-answer">Security is our top priority. We implement end-to-end encryption, role-based access controls, comprehensive audit logs, and regular security assessments. Our platform complies with all relevant data protection regulations.</p>
+        </div>
+        
+        <div class="faq-item">
+            <p class="faq-question">Can we use the platform for multiple races or campaigns?</p>
+            <p class="faq-answer">Yes, our Enterprise plan supports multi-race management with appropriate data segregation and permissions, making it ideal for consulting firms, party committees, and organizations running multiple campaigns.</p>
+        </div>
+    </section>
+    
+    <section id="demo">
+        <h2>Ready to Transform Your Campaign?</h2>
+        <p>Join the growing number of successful political consultants who trust our platform to power their campaigns. Schedule your personalized demonstration today to see how our technology can transform your approach to voter engagement and campaign management.</p>
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="#contact" class="button">Request Demo</a>
+            <a href="#pricing" class="button secondary">View Pricing</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2025 VoterDataHouse.com | All Rights Reserved</p>
+        <p>The Campaign Intelligence Platform for Modern Political Consulting</p>
+    </footer>
+</body>
+</html>
