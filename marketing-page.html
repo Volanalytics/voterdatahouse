@@ -3,762 +3,995 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOTV Mapping System: Pricing, Plans, Features & Alternatives</title>
+    <title>VoterDataHouse | Omnichannel Campaign Management Platform</title>
     <style>
+        /* Base Styles */
         :root {
-            --primary: #0d47a1;
+            --primary: #0046ad;
+            --primary-light: #5472d3;
+            --primary-dark: #002171;
             --secondary: #e63946;
             --accent: #ffd166;
             --light: #f8f9fa;
             --dark: #343a40;
-            --text: #212529;
+            --text-dark: #212529;
+            --text-light: #fff;
             --success: #2a9d8f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
             font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: var(--text);
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
+            color: var(--text-dark);
+            background-color: #fff;
         }
         
-        h1, h2, h3, h4 {
-            color: var(--primary);
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-            font-weight: 600;
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
         }
         
         h1 {
-            font-size: 2.5rem;
-            margin-top: 0.5em;
+            font-size: 3rem;
         }
         
         h2 {
-            font-size: 1.8rem;
-            border-left: 4px solid var(--secondary);
-            padding-left: 12px;
+            font-size: 2.5rem;
+            margin-top: 1.5rem;
         }
         
         h3 {
-            font-size: 1.4rem;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+            font-size: 1.8rem;
+            color: var(--primary);
         }
         
         p {
-            margin-bottom: 1.2em;
+            margin-bottom: 1rem;
         }
         
-        .article-header {
-            margin-bottom: 30px;
-        }
-        
-        .article-header-breadcrumb {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-        
-        .article-header-breadcrumb li {
-            margin-right: 5px;
-        }
-        
-        .article-header-breadcrumb li:after {
-            content: "›";
-            margin-left: 5px;
-        }
-        
-        .article-header-breadcrumb li:last-child:after {
-            content: "";
-        }
-        
-        .article-header-breadcrumb a {
-            color: #6c757d;
+        a {
+            color: var(--primary);
             text-decoration: none;
         }
         
-        .article-header-breadcrumb a:hover {
+        a:hover {
             text-decoration: underline;
         }
         
-        .article-header-content-meta {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .article-header-content-meta-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .article-header-content-meta-author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 10px;
-        }
-        
-        .article-header-content-meta-author-image img {
+        .container {
             width: 100%;
-            height: auto;
-            margin: 0;
-            border-radius: 0;
-            box-shadow: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .article-header-content-meta-date {
-            color: #6c757d;
-            margin-left: 20px;
-        }
-        
-        .article-header-banner {
-            margin-bottom: 30px;
-        }
-        
-        .article-header-banner img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        
-        .article-body {
-            display: flex;
-        }
-        
-        .article-body-toc {
-            width: 250px;
-            position: sticky;
-            top: 20px;
-            align-self: flex-start;
-            margin-right: 30px;
-        }
-        
-        .article-body-toc-header {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .article-body-toc-list ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .article-body-toc-list li {
-            margin-bottom: 8px;
-        }
-        
-        .article-body-toc-list a {
-            color: var(--text);
-            text-decoration: none;
-        }
-        
-        .article-body-toc-list a:hover, .article-body-toc-list a.active {
-            color: var(--primary);
-        }
-        
-        .article-body-content {
-            flex: 1;
-        }
-        
-        .table-wrap {
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        table th, table td {
-            padding: 12px;
-            border: 1px solid #dee2e6;
-        }
-        
-        table th {
-            background-color: var(--light);
-            font-weight: 600;
-        }
-        
-        .article-author-description {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: var(--light);
-            border-radius: 8px;
-        }
-        
-        .article-author-description-innerwrap {
-            display: flex;
-        }
-        
-        .article-author-description-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 20px;
-        }
-        
-        .article-author-description-image img {
-            width: 100%;
-            height: auto;
-            margin: 0;
-            border-radius: 0;
-            box-shadow: none;
-        }
-        
-        .article-author-description-name {
-            font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        
-        .article-author-description-bio {
-            margin-top: 10px;
-        }
-        
-        .article-author-description-more {
-            margin-top: 10px;
-        }
-        
-        .article-author-description-more a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .faqs-wrapper {
-            margin-top: 40px;
-        }
-        
-        .tab {
-            margin-bottom: 15px;
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .tab-label {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        .tab-label:hover {
-            background-color: var(--light);
-        }
-        
-        .tab-label::after {
-            content: "❯";
-            transform: rotate(90deg);
-            transition: all 0.35s;
-        }
-        
-        .tab-content {
-            max-height: 0;
-            padding: 0 15px;
-            transition: all 0.35s;
-            overflow: hidden;
-        }
-        
-        input:checked ~ .tab-content {
-            max-height: 100vh;
-            padding: 15px;
-        }
-        
-        input:checked ~ .tab-label::after {
-            transform: rotate(270deg);
-        }
-        
-        input[type="checkbox"] {
-            display: none;
-        }
-        
-        .article-subscribe {
-            margin-top: 40px;
-            padding: 30px;
-            background-color: var(--light);
-            border-radius: 8px;
+        .text-center {
             text-align: center;
         }
         
-        .article-subscribe-form {
-            display: flex;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .article-subscribe-form-fieldset {
-            flex: 1;
-        }
-        
-        .article-subscribe-form-fieldset-input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 4px 0 0 4px;
-        }
-        
-        .article-subscribe-form-button {
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
             background-color: var(--primary);
-            color: white;
-            padding: 10px 15px;
+            color: var(--text-light);
             border: none;
-            border-radius: 0 4px 4px 0;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
         }
         
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+        
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-secondary {
+            background-color: #fff;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-light);
+            color: #fff;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            color: var(--text-light);
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            font-size: 3.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            margin-top: 2rem;
+        }
+        
+        .hero-buttons .btn {
+            margin: 0 0.5rem;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .steps {
+            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .step {
+            flex: 0 0 calc(33.333% - 2rem);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .step-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: var(--text-light);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+        
+        .testimonial-slider {
+            margin-top: 3rem;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 8px;
+            margin-right: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Demo Section */
+        .demo {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+        
+        .demo-video {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .demo-video iframe {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
         footer {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #dee2e6;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 3rem 0 1rem;
         }
         
-        @media (max-width: 768px) {
-            .article-body {
-                flex-direction: column;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .social-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .social-links li {
+            margin-right: 1rem;
+        }
+        
+        .social-links a {
+            color: #ccc;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #fff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
             }
             
-            .article-body-toc {
-                width: 100%;
-                position: relative;
-                margin-right: 0;
-                margin-bottom: 30px;
+            h2 {
+                font-size: 2rem;
             }
             
-            .article-header-content-meta {
-                flex-direction: column;
-                align-items: flex-start;
+            .hero {
+                padding: 4rem 0;
             }
             
-            .article-header-content-meta-date {
-                margin-left: 0;
-                margin-top: 10px;
+            .step {
+                flex: 0 0 100%;
             }
             
-            .article-author-description-innerwrap {
-                flex-direction: column;
+            .nav-links {
+                display: none;
             }
             
-            .article-author-description-image {
-                margin-bottom: 15px;
+            .mobile-menu-btn {
+                display: block;
             }
+        }
+        
+        /* Screens */
+        .screens-section {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .screen-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .screen-tab {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .screen-tab.active {
+            background-color: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+        
+        .screen-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .screen-image {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .screen-description {
+            margin-top: 1rem;
+        }
+        
+        .benefit-list {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-item {
+            display: flex;
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-right: 1rem;
+        }
+        
+        .benefit-content h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Custom additions */
+        .feature-icon img {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .mockup-container {
+            position: relative;
+            max-width: 80%;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .mockup-image {
+            width: 100%;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <header class="article-header">
-        <ol class="article-header-breadcrumb">
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/blog/campaign-tools">Campaign Tools</a></li>
-            <li>GOTV Mapping System Review</li>
-        </ol>
-        <div class="article-header-content">
-            <h1 class="article-header-content-title">GOTV Mapping System: Pricing, Plans, Features & Alternatives</h1>
-            <div class="article-header-content-meta">
-                <div class="article-header-content-meta-author">
-                    <div class="article-header-content-meta-author-image">
-                        <img src="/api/placeholder/50/50" alt="Author">
-                    </div>
-                    <div class="article-header-content-meta-author-title">
-                        <span>Written by </span>
-                        <span>Sarah Reynolds</span>
-                    </div>
-                </div>
-                <div class="article-header-content-meta-date">March 23, 2025</div>
-            </div>
-        </div>
-        <div class="article-header-banner">
-            <img src="/api/placeholder/1200/600" alt="GOTV Mapping System Platform Overview">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">VoterData<span>House</span></a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#contact" class="btn">Get Started</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <div class="article-body">
-        <div class="article-body-toc">
-            <div class="article-body-toc-header">
-                Jump to ↓
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Omnichannel Campaign Management Made Simple</h1>
+            <p>Revolutionize your campaign's voter engagement with our unified platform that brings together voice and text-based communication into one powerful system.</p>
+            <div class="mockup-container">
+                <img src="/api/placeholder/1000/600" alt="VoterDataHouse Platform Overview" class="mockup-image">
             </div>
-            <div class="article-body-toc-list">
-                <ul>
-                    <li><a href="#what">Overview</a></li>
-                    <li><a href="#plans">Pricing & Plans</a></li>
-                    <li><a href="#features">Key Features</a></li>
-                    <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#cons">Pros & Cons</a></li>
-                    <li><a href="#alternatives">Alternatives</a></li>
-                    <li><a href="#who">Who Should Use</a></li>
-                    <li><a href="#faqs">FAQs</a></li>
-                </ul>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-large">Request a Demo</a>
+                <a href="#pricing" class="btn btn-large btn-secondary">View Pricing</a>
             </div>
         </div>
+    </section>
 
-        <div class="article-body-content">
-            <p>Campaign field organizers juggle voter databases, canvassing routes, volunteer coordination, voter contact tracking, and performance analytics throughout election cycles.</p>
-            
-            <p>Ineffective field organization tools waste valuable campaign time, provide little support to volunteers, and offer minimal insight into voter outreach effectiveness.</p>
-            
-            <p>When your ground game isn't properly supported, the entire campaign suffers—field directors, volunteers, and ultimately, your candidate's chances of winning.</p>
-            
-            <p><strong>The solution? A comprehensive mapping platform like GOTV Mapping System.</strong></p>
-            
-            <p>This article outlines the GOTV Mapping System, its features, pricing, pros and cons, alternatives, and which campaigns will benefit most from implementing it.</p>
-            
-            <h2 id="what"><strong>What Is GOTV Mapping System?</strong></h2>
-            
-            <p>GOTV Mapping System is a comprehensive voter outreach platform that integrates Google Maps with voter data management to create a powerful Get Out The Vote (GOTV) and canvassing tool. The system allows campaigns to visualize voter data geographically, plan efficient outreach routes, and track progress in real-time.</p>
-            
-            <p>Accessible on both desktop and mobile devices, the platform includes interactive mapping, optimized routing, real-time data synchronization, team management, and detailed analytics.</p>
-            
-            <p>In addition to these core mapping capabilities, GOTV Mapping System features advanced workforce management tools, geocoding functionality, mobile field operations support, and customizable reporting dashboards.</p>
-            
-            <p>Because the system is built on Google's reliable infrastructure with an open API architecture, campaigns can further customize their implementation by integrating with third-party tools like NGP VAN, PDI, or custom voter file systems.</p>
-            
-            <img src="/api/placeholder/800/500" alt="GOTV Mapping System Dashboard">
-            
-            <h2 id="plans"><strong>Pricing & Plans Overview</strong></h2>
-            
-            <p>GOTV Mapping System offers 3 pricing plans from $499 to $1,999 per campaign, providing options for organizations of all sizes:</p>
-            
-            <ul>
-                <li><strong>Basic ($499 per campaign):</strong> Perfect for local campaigns with up to 5,000 voters and 5 user accounts. Includes Google Maps integration, basic geocoding, simple routing, email support, and 30-day access.</li>
-                <li><strong>Standard ($999 per campaign):</strong> Ideal for district-level campaigns with up to 25,000 voters and 15 user accounts. Includes advanced analytics, optimized routing, team management, priority support, 90-day access, and custom team training.</li>
-                <li><strong>Premium ($1,999 per campaign):</strong> For large-scale operations with unlimited voters and users. Includes custom integrations, dedicated support, full campaign cycle access, advanced security features, and custom reporting.</li>
-            </ul>
-            
-            <h2 id="features"><strong>GOTV Mapping System Key Features</strong></h2>
-            
-            <p>Here are the GOTV Mapping System standout features:</p>
-            
-            <ul>
-                <li><a href="#mapping">Interactive mapping</a></li>
-                <li><a href="#routing">Optimized routing</a></li>
-                <li><a href="#mobile">Mobile field operations</a></li>
-                <li><a href="#data">Data synchronization</a></li>
-                <li><a href="#analytics">Analytics and reporting</a></li>
-                <li><a href="#management">Team management</a></li>
-            </ul>
-            
-            <h3 id="mapping"><strong>Interactive Mapping</strong></h3>
-            
-            <p>GOTV Mapping System provides a dynamic visualization of your voter database directly on Google Maps, giving field teams an intuitive way to plan and execute outreach efforts:</p>
-            
-            <ul>
-                <li>Color-coded voter pins based on contact status (Not Contacted, Attempted Contact, Contacted, Will Vote, etc.)</li>
-                <li>Customizable filters for sorting voters by party, status, priority, and other variables</li>
-                <li>Detailed voter information accessible with a single click</li>
-                <li>Real-time updates as canvassers make contacts in the field</li>
-            </ul>
-            
-            <h4><strong>Geocoding Capabilities</strong></h4>
-            
-            <p>Convert voter addresses into precise map coordinates with the system's built-in geocoding functionality:</p>
-            
-            <img src="/api/placeholder/800/400" alt="GOTV Mapping System Geocoding">
-            
-            <p><strong>Geocoding tools:</strong></p>
-            
-            <ul>
-                <li><strong>Batch Processing:</strong> Upload thousands of voter addresses and automatically convert them to map coordinates</li>
-                <li><strong>Address Verification:</strong> Identify and flag potentially incorrect addresses before field deployment</li>
-                <li><strong>Enhanced Location Data:</strong> Add building entrance coordinates, access codes, and parking information for apartments and complex buildings</li>
-            </ul>
-            
-            <h3 id="routing"><strong>Optimized Routing</strong></h3>
-            
-            <p>Generate the most efficient canvassing routes to maximize voter contacts and minimize travel time:</p>
-            
-            <p>The system analyzes voter locations, priority status, and team capacity to create optimal walking or driving routes for each canvasser. Routes can be customized based on transportation method, time constraints, and voter prioritization.</p>
-            
-            <img src="/api/placeholder/800/400" alt="GOTV Mapping System Route Planning">
-            
-            <p><strong>Routing features include:</strong></p>
-            
-            <ul>
-                <li><strong>Multi-Modal Routes:</strong> Create routes optimized for walking, driving, or public transportation</li>
-                <li><strong>Priority-Based Sequencing:</strong> Ensure high-priority voters are contacted first</li>
-                <li><strong>Time-Based Planning:</strong> Generate routes based on available canvassing hours</li>
-                <li><strong>Turn-by-Turn Directions:</strong> Provide canvassers with detailed navigation instructions</li>
-                <li><strong>Route Sharing:</strong> Easily share routes with team members via email or mobile app</li>
-            </ul>
-            
-            <h3 id="mobile"><strong>Mobile Field Operations</strong></h3>
-            
-            <p>The mobile-optimized interface ensures field teams can access all essential functions while canvassing:</p>
-            
-            <ul>
-                <li>Offline capabilities for areas with limited connectivity</li>
-                <li>Real-time location tracking to keep canvassers on route</li>
-                <li>Quick voter status updates with customizable notes</li>
-                <li>Photo and document upload capabilities for capturing relevant information</li>
-            </ul>
-            
-            <img src="/api/placeholder/800/400" alt="GOTV Mapping System Mobile Interface">
-            
-            <p><strong>Mobile tools include:</strong></p>
-            
-            <ul>
-                <li><strong>Progressive Web App:</strong> Works on any device with a modern web browser, no app store download required</li>
-                <li><strong>Battery Optimization:</strong> Reduced GPS polling frequency when stationary and dark mode for OLED screens</li>
-                <li><strong>Weather Adaptation:</strong> Integration with weather forecasts to suggest indoor locations during extreme conditions</li>
-            </ul>
-            
-            <h3 id="data"><strong>Data Synchronization</strong></h3>
-            
-            <p>Keep all team members updated with real-time data syncing between canvassers and campaign headquarters:</p>
-            
-            <p>As canvassers update voter contact information in the field, changes are immediately visible to all team members and campaign leadership, providing up-to-the-minute insights into progress and voter sentiment.</p>
-            
-            <p><strong>Synchronization capabilities:</strong></p>
-            
-            <ul>
-                <li><strong>Incremental Updates:</strong> Efficiently synchronize only changed data to minimize bandwidth usage</li>
-                <li><strong>Conflict Resolution:</strong> Smart handling of simultaneous edits to prevent data loss</li>
-                <li><strong>Offline Mode:</strong> Continue working without connectivity and sync automatically when connection is restored</li>
-                <li><strong>Data Integrity:</strong> Regular checks to ensure data quality and consistency</li>
-            </ul>
-            
-            <h3 id="analytics"><strong>Analytics and Reporting</strong></h3>
-            
-            <p>Gain actionable insights with comprehensive analytics dashboards and reports:</p>
-            
-            <img src="/api/placeholder/800/400" alt="GOTV Mapping System Analytics Dashboard">
-            
-            <p><strong>Analytics capabilities include:</strong></p>
-            
-            <ul>
-                <li><strong>Real-Time Metrics:</strong> Track contacts, commitments, and other key performance indicators as they happen</li>
-                <li><strong>Canvasser Performance:</strong> Evaluate individual and team efficiency with metrics like contacts per hour and conversion rates</li>
-                <li><strong>Geographic Analysis:</strong> Identify areas with high response rates or coverage gaps</li>
-                <li><strong>Trend Analysis:</strong> Monitor changes in voter sentiment and support over time</li>
-                <li><strong>Custom Reports:</strong> Generate tailored reports for different stakeholders and campaign needs</li>
-            </ul>
-            
-            <h3 id="management"><strong>Team Management</strong></h3>
-            
-            <p>Efficiently organize and support your field team with robust management tools:</p>
-            
-            <p><strong>Team management features:</strong></p>
-            
-            <ul>
-                <li><strong>Role-Based Access:</strong> Assign appropriate permissions to administrators, field coordinators, and canvassers</li>
-                <li><strong>Team Communication:</strong> Built-in messaging system for quick coordination and updates</li>
-                <li><strong>Assignment Management:</strong> Create, distribute, and track daily canvassing assignments</li>
-                <li><strong>Performance Tracking:</strong> Monitor team productivity and identify training opportunities</li>
-                <li><strong>Scheduling Tools:</strong> Coordinate team availability and optimize field coverage</li>
-            </ul>
-            
-            <h2 id="benefits"><strong>The Benefits of GOTV Mapping System</strong></h2>
-            
-            <p>Here's how your campaign can benefit from implementing the GOTV Mapping System:</p>
-            
-            <ul>
-                <li>Increased canvassing efficiency</li>
-                <li>Data-driven decision making</li>
-                <li>Improved volunteer experience</li>
-                <li>Enhanced voter engagement</li>
-            </ul>
-            
-            <h3><strong>Increased Canvassing Efficiency</strong></h3>
-            
-            <p>The optimized routing and real-time mapping capabilities dramatically improve the efficiency of your canvassing operation. Campaigns using GOTV Mapping System typically report 30-40% increases in the number of voter contacts per hour compared to traditional paper-based methods.</p>
-            
-            <p>By eliminating wasted travel time and providing clear navigation, canvassers can focus their energy on quality voter interactions rather than finding their next address.</p>
-            
-            <h3><strong>Data-Driven Decision Making</strong></h3>
-            
-            <p>Comprehensive analytics provide campaign leadership with the insights needed to make informed strategic decisions. The system's reporting capabilities allow you to identify which neighborhoods have the highest support levels, which messages are most effective, and where to focus limited resources for maximum impact.</p>
-            
-            <p>This real-time intelligence enables campaigns to quickly adapt strategies based on actual field data rather than intuition or outdated information.</p>
-            
-            <h3><strong>Improved Volunteer Experience</strong></h3>
-            
-            <p>The intuitive mobile interface and clear routing instructions make volunteering a more positive experience, increasing retention and participation. Volunteers appreciate having the tools they need to be successful and the ability to see their impact through the system's tracking metrics.</p>
-            
-            <p>The reduction in administrative overhead also means campaign staff can focus on supporting volunteers rather than managing paperwork.</p>
-            
-            <h3><strong>Enhanced Voter Engagement</strong></h3>
-            
-            <p>By providing canvassers with detailed voter information at their fingertips, the system enables more personalized and effective voter interactions. Canvassers can reference previous contacts, stated issues of concern, and other relevant data to tailor their approach to each voter.</p>
-            
-            <p>This level of personalization leads to higher conversion rates and stronger voter relationships throughout the campaign cycle.</p>
-            
-            <h2 id="cons"><strong>GOTV Mapping System Pros & Cons</strong></h2>
-            
-            <p>Below are the top GOTV Mapping System pros and cons based on our hands-on experience and user reviews:</p>
-            
-            <h3><strong>GOTV Mapping System Pros</strong></h3>
-            
-            <ul>
-                <li>Built on reliable Google Maps infrastructure that volunteers already know how to use</li>
-                <li>Mobile-friendly interface works on any device with a modern web browser</li>
-                <li>Rapid deployment with 30-minute setup for basic implementation</li>
-                <li>Scalable from local campaigns to state-wide operations</li>
-                <li>No special hardware required—works with existing smartphones and computers</li>
-            </ul>
-            
-            <h3><strong>GOTV Mapping System Cons</strong></h3>
-            
-            <ul>
-                <li>Google API costs can increase for very large campaigns with extensive usage</li>
-                <li>Offline mode has limited functionality compared to online experience</li>
-                <li>Learning curve for advanced analytics and custom reporting features</li>
-                <li>Mobile battery usage can be high with continuous GPS tracking</li>
-                <li>Some features require technical knowledge to fully implement and customize</li>
-            </ul>
-            
-            <h2 id="alternatives"><strong>GOTV Mapping System Alternatives</strong></h2>
-            
-            <p>The below voter mapping platforms and canvassing tools are some of the best alternatives to the GOTV Mapping System.</p>
-            
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th><strong>Provider</strong></th>
-                            <th><strong>Pricing</strong></th>
-                            <th><strong>Key Features</strong></th>
-                            <th><strong>Standout Capabilities</strong></th>
-                            <th><strong>Best For</strong></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>MiniVAN</strong></td>
-                            <td>Free with NGP VAN subscription</td>
-                            <td>-Mobile canvassing<br>-NGP VAN integration<br>-Basic mapping</td>
-                            <td>-Deep integration with VAN database<br>-Robust script functionality</td>
-                            <td>Democratic campaigns already using NGP VAN</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Ecanvasser</strong></td>
-                            <td>3 plans from $150 to $350 monthly</td>
-                            <td>-Voter mapping<br>-Mobile app<br>-Team management<br>-Voter database</td>
-                            <td>-Integrated fundraising tools<br>-Comprehensive voter database</td>
-                            <td>Campaigns needing an all-in-one solution</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Organizer</strong></td>
-                            <td>Custom pricing based on campaign size</td>
-                            <td>-Canvassing app<br>-Advanced targeting<br>-Real-time analytics</td>
-                            <td>-Advanced predictive models<br>-Integrated phone banking</td>
-                            <td>Data-driven campaigns with multiple outreach channels</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Crowdskout</strong></td>
-                            <td>Starting at $500 monthly</td>
-                            <td>-Voter mapping<br>-Data visualization<br>-Multi-channel outreach</td>
-                            <td>-Advanced data integration capabilities<br>-Robust API ecosystem</td>
-                            <td>Campaigns with complex data integration needs</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features for Effective Campaigns</h2>
+                <p>Streamline your campaign operations and enhance voter experience</p>
             </div>
-            
-            <h2 id="who"><strong>Who Should Consider GOTV Mapping System?</strong></h2>
-            
-            <p>GOTV Mapping System is ideal for campaigns looking to enhance their field operations with efficient routing, real-time data synchronization, and geographic voter visualization. The platform excels for organizations that need to coordinate multiple canvassers across diverse territories while maintaining consistent data and messaging.</p>
-            
-            <p>The Basic plan is particularly well-suited for local campaigns with limited budgets but who still need professional-grade mapping tools. The Standard plan hits the sweet spot for most district-level campaigns, providing advanced analytics and team management at a reasonable price point.</p>
-            
-            <p>Large campaigns and statewide operations will benefit most from the Premium plan, which offers unlimited scaling and custom integrations with existing campaign infrastructure.</p>
-            
-            <h2 id="faqs"><strong>FAQs</strong></h2>
-            
-            <div class="faqs-wrapper">
-                <div class="tabs">
-                    <div class="tab">
-                        <input type="checkbox" id="chck1">
-                        <label class="tab-label" for="chck1">How long does it take to set up the GOTV Mapping System?</label>
-                        <div class="tab-content">
-                            The basic implementation can be set up in as little as 30 minutes, following the Quick-Start Guide. More advanced configurations with custom integrations and large voter databases may take several hours to fully implement. Most campaigns are up and running within a day.
-                        </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Communication Channels Icon">
                     </div>
-                    <div class="tab">
-                        <input type="checkbox" id="chck2">
-                        <label class="tab-label" for="chck2">Can GOTV Mapping System work offline in areas with poor connectivity?</label>
-                        <div class="tab-content">
-                            Yes, the system includes offline capabilities that allow canvassers to continue working in areas with limited or no connectivity. Maps can be downloaded for offline use, and data is stored locally until connectivity is restored, at which point it automatically syncs with the central database.
-                        </div>
-                    </div>
-                    <div class="tab">
-                        <input type="checkbox" id="chck3">
-                        <label class="tab-label" for="chck3">Does GOTV Mapping System integrate with NGP VAN or other campaign databases?</label>
-                        <div class="tab-content">
-                            Yes, GOTV Mapping System is designed to integrate with common political campaign databases including NGP VAN, PDI, and custom voter file systems. The platform's open API architecture allows for customized integrations with virtually any voter data system.
-                        </div>
-                    </div>
-                    <div class="tab">
-                        <input type="checkbox" id="chck4">
-                        <label class="tab-label" for="chck4">How does the system handle large voter databases?</label>
-                        <div class="tab-content">
-                            The system is optimized to handle large datasets efficiently. For very large databases, the geocoding process is broken into batches to avoid hitting API limits. The Standard plan supports up to 25,000 voters, while the Premium plan can handle unlimited voter records with efficient data management.
-                        </div>
-                    </div>
-                    <div class="tab">
-                        <input type="checkbox" id="chck5">
-                        <label class="tab-label" for="chck5">What kind of training is provided for volunteers?</label>
-                        <div class="tab-content">
-                            The Standard and Premium plans include custom team training sessions conducted by GOTV Mapping System specialists. Additionally, all plans provide access to online documentation, video tutorials, and a comprehensive field guide for canvassers. Most volunteers can learn the basics in under 15 minutes, as the interface is built on the familiar Google Maps platform.
-                        </div>
-                    </div>
+                    <h3>Unified Communication</h3>
+                    <p>Manage voice, email, web chat, SMS, and social media channels from a single interface with seamless transitions between channels.</p>
                 </div>
-            </div>
-            
-            <div class="article-author-description">
-                <div class="article-author-description-innerwrap">
-                    <div class="article-author-description-image">
-                        <img alt="Sarah Reynolds" src="/api/placeholder/80/80">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="AI Icon">
                     </div>
-                    <div class="article-author-description-text">
-                        <div class="article-author-description-name">
-                            Sarah Reynolds
-                        </div>
-                        <div class="article-author-description-bio">
-                            Sarah Reynolds is a Campaign Technology Specialist with over 8 years of experience implementing digital tools for political campaigns. She has managed field operations for congressional and gubernatorial races, specializing in voter outreach technology and volunteer coordination.
-                        </div>
-                        <div class="article-author-description-more">
-                            <a href="#" title="Sarah Reynolds's profile">
-                                More posts from this author
-                            </a>
-                        </div>
-                    </div>
+                    <h3>AI-Powered Automation</h3>
+                    <p>Leverage predictive engagement, routing, and scheduling to optimize campaign resources and maximize voter outreach effectiveness.</p>
                 </div>
-            </div>
-            
-            <div class="article-subscribe">
-                <div class="article-subscribe-text">
-                    <div class="article-subscribe-text-title">Join 10,000+ campaign professionals getting the latest field organizing tips and tools.</div>
-                </div>
-                <form class="article-subscribe-form">
-                    <div class="article-subscribe-form-fieldset">
-                        <input class="article-subscribe-form-fieldset-input" type="email" name="email" placeholder="Email Address">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Self-Service Icon">
                     </div>
-                    <button class="article-subscribe-form-button">Subscribe To The Blog</button>
-                </form>
+                    <h3>Voter Self-Service</h3>
+                    <p>Empower voters with 24/7 access to information through IVR, voicebots, and chatbots that understand natural language queries.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Staff Support Icon">
+                    </div>
+                    <h3>Campaign Staff Support</h3>
+                    <p>Equip your team with AI-assisted tools, voter data, and real-time conversation insights to deliver personalized voter interactions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Analytics Icon">
+                    </div>
+                    <h3>Comprehensive Analytics</h3>
+                    <p>Gain actionable insights with real-time and historical reports across all communication channels and campaign performance metrics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Collaboration Icon">
+                    </div>
+                    <h3>Team Collaboration</h3>
+                    <p>Facilitate seamless internal communication with direct messaging, group chats, and one-click voice or video calling for your campaign team.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How VoterDataHouse Works</h2>
+                <p>Transforming your campaign's communication strategy in six easy steps</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Set Up Your Channels</h3>
+                    <p>Configure your preferred communication channels including voice, email, SMS, web chat, and social media.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Import Voter Data</h3>
+                    <p>Connect your existing voter database or CRM system to provide context for every interaction.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Design Automated Flows</h3>
+                    <p>Create bot conversations, IVR menus, and automated outreach sequences using the drag-and-drop flow builder.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Configure Routing</h3>
+                    <p>Set up rules for how voter inquiries are distributed to the right staff members based on expertise and capacity.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Train Your Team</h3>
+                    <p>Onboard your campaign staff with the intuitive platform, supported by AI-assisted suggestions for responses.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Analyze and Optimize</h3>
+                    <p>Use real-time analytics to monitor performance and continuously refine your campaign's outreach strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screens Section -->
+    <section class="screens-section" id="screens">
+        <div class="container">
+            <div class="section-header">
+                <h2>See It In Action</h2>
+                <p>Explore how VoterDataHouse transforms your campaign's communication</p>
+            </div>
+            <div class="screen-tabs">
+                <div class="screen-tab active">Staff Workspace</div>
+                <div class="screen-tab">Bot Flow Builder</div>
+                <div class="screen-tab">Analytics Dashboard</div>
+                <div class="screen-tab">Campaign Hub</div>
+            </div>
+            <div class="screen-content">
+                <img src="/api/placeholder/800/500" alt="VoterDataHouse Staff Workspace" class="screen-image">
+                <div class="screen-description">
+                    <h3>Intuitive Staff Workspace</h3>
+                    <p>The VoterDataHouse staff workspace provides a unified interface for managing all voter communications. Team members can easily toggle between channels while maintaining context and accessing AI-suggested responses for more effective interactions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose VoterDataHouse?</h2>
+                <p>Our platform delivers unique advantages for political campaigns</p>
+            </div>
+            <div class="benefit-list">
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Flexibility for Voters</h4>
+                        <p>Let constituents interact with your campaign through their preferred communication channels, with seamless transitions between methods.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Fast and Personalized Engagement</h4>
+                        <p>Deliver custom voter journeys across channels with data-driven personalization and intelligent routing.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Simplified Staff Experience</h4>
+                        <p>Empower your team with AI-supported intelligence, abundant voter data, and one-click functionality.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Insights to Guide Decisions</h4>
+                        <p>Make informed campaign choices with AI-tracked KPIs, trends, and comprehensive analytics.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Customizable Options</h4>
+                        <p>Choose voice-only, digital-only, or comprehensive plans to match your campaign's specific needs and budget.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Open API Architecture</h4>
+                        <p>Integrate with your existing campaign tools and enhance capabilities with custom solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Success stories from campaigns using VoterDataHouse</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"This mapping system transformed our GOTV effort. We increased our voter contacts by 35% while reducing volunteer burnout. The optimized routes saved us countless hours of planning."</p>
+                    </div>
+                    <div class="testimonial-author">Sarah Johnson, Campaign Manager</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The real-time updates from the field were game-changing. We could immediately see which areas needed more attention and redirect resources accordingly. Worth every penny."</p>
+                    </div>
+                    <div class="testimonial-author">Michael Rodriguez, Field Director</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a small campaign with limited resources, this system gave us the power of tools typically only available to major campaigns. The setup was simple and our volunteers loved using it."</p>
+                    </div>
+                    <div class="testimonial-author">Lisa Chen, City Council Candidate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the plan that fits your campaign's needs</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>VoterData 1</h3>
+                    <div class="price">$75<span class="price-period">/user/month</span></div>
+                    <p>Voice Only</p>
+                    <ul class="pricing-features">
+                        <li>Voice-only campaign center</li>
+                        <li>Intelligent routing</li>
+                        <li>Drag-and-drop IVR flow builder</li>
+                        <li>Automatic callbacks</li>
+                        <li>Real-time and historical reporting</li>
+                        <li>Open-API architecture</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>VoterData 2</h3>
+                    <div class="price">$115<span class="price-period">/user/month</span></div>
+                    <p>Digital + Voice</p>
+                    <ul class="pricing-features">
+                        <li>All Voice features</li>
+                        <li>Email, chat messaging, SMS</li>
+                        <li>WhatsApp & Facebook Messenger</li>
+                        <li>Staff interface with conversation context</li>
+                        <li>Voter self-service tools</li>
+                        <li>Customizable knowledge base</li>
+                        <li>Conversational analytics</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>VoterData 3</h3>
+                    <div class="price">$155<span class="price-period">/user/month</span></div>
+                    <p>Voice + Digital + Workforce Management</p>
+                    <ul class="pricing-features">
+                        <li>All Digital + Voice features</li>
+                        <li>Staff digital dashboard with KPI trackers</li>
+                        <li>AI-powered scheduling and forecasting</li>
+                        <li>Speech and text analytics</li>
+                        <li>Trend and sentiment detection</li>
+                        <li>Staff mobile app for shift trading</li>
+                        <li>Built-in coaching modules</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>See the System in Action</h2>
+                <p>Watch our demo video to see how VoterDataHouse transforms campaign communications</p>
+            </div>
+            <div class="demo-video">
+                <img src="/api/placeholder/800/450" alt="Demo Video Placeholder" style="width:100%; max-width:800px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Campaign Communications?</h2>
+            <p>Get started today and see the difference our omnichannel platform can make for your voter engagement strategy.</p>
+            <a href="#" class="btn btn-large">Schedule a Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2025 GOTV Mapping System. All rights reserved.</p>
-        <p>The information contained in this article is for informational purposes only and should not be construed as official campaign advice. Each campaign should consult with their compliance and technology officers to ensure proper implementation.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>VoterDataHouse</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">VoterData 1</a></li>
+                        <li><a href="#">VoterData 2</a></li>
+                        <li><a href="#">VoterData 3</a></li>
+                        <li><a href="#">Enterprise Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Knowledge Base</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect With Us</h4>
+                    <ul class="social-links">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 VoterDataHouse. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-</body>
-</html>
+
+    <script>
+        // Simple script to handle the screen tabs functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.screen-tab');
+            const screenImages = [
+                '/api/placeholder/800/500',  // Staff Workspace
+                '/api/placeholder/800/500',  // Bot Flow Builder
+                '/api/placeholder/800/500',  // Analytics Dashboard
+                '/api/placeholder/800/500'   // Campaign Hub
+            ];
+            const screenTitles = [
+                'Intuitive Staff Workspace',
+                'Powerful Bot Flow Builder',
+                'Comprehensive Analytics Dashboard',
+                'Personalized Campaign Hub'
+            ];
+            const screenDescriptions = [
+                'The VoterDataHouse staff workspace provides a unified interface for managing all voter communications. Team members can easily toggle between channels while maintaining context and accessing AI-suggested responses for more effective interactions.',
+                'Create automated conversation flows for IVR, chatbots, and voicebots with our drag-and-drop interface. The Bot Flow Builder lets you design complex self-service options without coding knowledge.',
+                'Monitor real-time campaign performance with customizable dashboards showing key metrics across all channels. Identify trends, track sentiment, and optimize your outreach strategy.',
+                'Give your staff a personalized hub that aggregates schedules, evaluations, learning content, and performance metrics. The Campaign Hub boosts productivity and improves team coordination.'
+            ];
+            
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', function() {
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update content
+                    const screenContent = document.querySelector('.screen-content');
+                    screenContent.innerHTML = `
+                        <img src="${screenImages[index]}" alt="${screenTitles[index]}" class="screen-image">
+                        <div class="screen-description">
+                            <h3>${screenTitles[index]}</h3>
+                            <p>${screenDescriptions[index]}</p>
+                        </div>
+                    `;
+                });
+            });
+        });
+    </script>
