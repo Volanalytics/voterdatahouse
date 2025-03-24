@@ -619,25 +619,37 @@
             color: white;
             text-align: center;
         }
+        .carousel-slide {
+    flex: 0 0 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.slide-content {
+    padding: 20px;
+    max-width: 80%;
+    position: relative;
+    z-index: 2;
+}
         
-        .slide1 {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        var(--primary-light);
-        }
-        
-        .slide2 {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        var(--primary);
-        }
-        
-        .slide3 {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        var(--primary-dark);
-        }
-        
-        .slide4 {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        var(--secondary);
         }
         
         .slide-content {
@@ -757,13 +769,61 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-indicators" id="carouselIndicators">
-                    <div class="carousel-indicator active" data-index="0"></div>
-                    <div class="carousel-indicator" data-index="1"></div>
-                    <div class="carousel-indicator" data-index="2"></div>
-                    <div class="carousel-indicator" data-index="3"></div>
-                </div>
-            </div>
+                <!-- Replace this HTML -->
+<div class="carousel-container" id="carouselContainer">
+    <div class="carousel-slide slide1">
+        <div class="slide-content">
+            <h2>Unified Communication Platform</h2>
+            <p>Manage all voter interactions across channels from a single dashboard</p>
+        </div>
+    </div>
+    <div class="carousel-slide slide2">
+        <div class="slide-content">
+            <h2>Intelligent SMS & Messaging</h2>
+            <p>Engage voters through their preferred messaging channels with smart automation</p>
+        </div>
+    </div>
+    <div class="carousel-slide slide3">
+        <div class="slide-content">
+            <h2>AI-Powered Agent Assistance</h2>
+            <p>Empower your team with real-time suggestions and voter insights</p>
+        </div>
+    </div>
+    <div class="carousel-slide slide4">
+        <div class="slide-content">
+            <h2>Social Media Integration</h2>
+            <p>Connect with voters across Facebook, Twitter, and other social platforms</p>
+        </div>
+    </div>
+</div>
+
+<!-- With this HTML -->
+<div class="carousel-container" id="carouselContainer">
+    <div class="carousel-slide" style="background-image: url('/images/texting-sms-genesys.webp');">
+        <div class="slide-content">
+            <h2>Unified Communication Platform</h2>
+            <p>Manage all voter interactions across channels from a single dashboard</p>
+        </div>
+    </div>
+    <div class="carousel-slide" style="background-image: url('/images/Genesys-Agent-Assist.webp');">
+        <div class="slide-content">
+            <h2>Intelligent SMS & Messaging</h2>
+            <p>Engage voters through their preferred messaging channels with smart automation</p>
+        </div>
+    </div>
+    <div class="carousel-slide" style="background-image: url('/images/facebook-genesys.webp');">
+        <div class="slide-content">
+            <h2>AI-Powered Agent Assistance</h2>
+            <p>Empower your team with real-time suggestions and voter insights</p>
+        </div>
+    </div>
+    <div class="carousel-slide" style="background-image: url('/images/wem-nov-2022-genesys-.webp');">
+        <div class="slide-content">
+            <h2>Social Media Integration</h2>
+            <p>Connect with voters across Facebook, Twitter, and other social platforms</p>
+        </div>
+    </div>
+</div>
             
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-large">Request a Demo</a>
