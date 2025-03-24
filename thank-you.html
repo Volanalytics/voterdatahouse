@@ -4,76 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You | Voter Data House</title>
-    <style>
-        :root {
-            --primary: #1a4b8c;
-            --secondary: #e63946;
-            --light: #f1faee;
-            --dark: #1d3557;
-            --accent: #a8dadc;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            padding: 0 20px;
-        }
-        
-        .thank-you-container {
-            background-color: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            max-width: 600px;
-        }
-        
-        h1 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta-button {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
-        
-        .cta-button:hover {
-            background-color: #c1272d;
-        }
-    </style>
+    <meta name="description" content="Thank you for contacting Voter Data House. Our team of political data experts will be in touch soon to discuss your campaign needs.">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Redirect to homepage after delay -->
+    <meta http-equiv="refresh" content="10;url=/">
 </head>
-<body>
+<body style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; text-align: center; padding: 0 20px; background-color: var(--light);">
     <div class="thank-you-container">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1.5rem; color: #0b3c7c;">
+            <path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18457 2.99721 7.13633 4.39828 5.49707C5.79935 3.85782 7.69279 2.71538 9.79619 2.24015C11.8996 1.76491 14.1003 1.98234 16.07 2.86" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <h1>Thank You for Contacting Us!</h1>
         <p>We've received your consultation request and will get back to you within 1-2 business days.</p>
         <p>In the meantime, feel free to explore more about our services and approach to data-driven campaign strategies.</p>
-        <a href="/" class="cta-button">Return to Homepage</a>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem;">
+            <a href="/" class="cta-button">Return to Homepage</a>
+            <a href="/blog.html" class="cta-button btn-secondary">Read Our Blog</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">You'll be redirected to our homepage in 10 seconds...</p>
     </div>
+    
+    <script>
+        // Add page tracking here if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // Could add conversion tracking or other scripts
+        });
+    </script>
 </body>
 </html>
