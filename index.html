@@ -4,15 +4,754 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoterDataHouse | Campaign Data & Analytics | Tennessee Political Consulting</title>
-    <meta name="description" content="Expert political campaign data analytics and voter targeting services in Tennessee and nationwide. Transform your campaign with data-driven strategy from VoterDataHouse.">
-    <meta name="keywords" content="political campaign, data analytics, voter targeting, campaign technology, election data, political consulting">
-    <meta name="author" content="VoterDataHouse">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+<meta name="description" content="Expert political campaign data analytics and voter targeting services in Tennessee and nationwide. Transform your campaign with data-driven strategy from VoterDataHouse.">
+    <style>
+        :root {
+            --primary: #0b3c7c; /* Darker blue for better contrast */
+            --secondary: #d32836; /* Slightly darker red for better contrast */
+            --light: #f1faee;
+            --dark: #1d3557;
+            --accent: #a8dadc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Skip link for keyboard users */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            padding: 1rem;
+            background-color: var(--dark);
+            color: white;
+            z-index: 999;
+            text-decoration: none;
+        }
+        
+        .skip-link:focus {
+            left: 0;
+        }
+        
+        /* Focus styles for better keyboard navigation */
+        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+            outline: 3px solid #4d90fe;
+            outline-offset: 2px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 1rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            min-height: 44px; /* Minimum touch target size */
+        }
+        
+        .cta-button:hover {
+            background-color: #c1272d;
+        }
+        
+        .hero {
+            /* Fallback solid color */
+            background-color: var(--primary);
+            /* Using the hero image with relative path */
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('images/hero/u3667838933_VoterDataHouse_AI_Powered_Election_Campaigns_--v__cbd9cc47-913a-42be-b96f-f8169736ae03_0.png');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        
+        section {
+            padding: 4rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #444; /* Darkened for better contrast */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .mission-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .mission-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-statement {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+        
+        .mission-description {
+            font-size: 1.1rem;
+            color: #333; /* Darkened for better contrast */
+            margin-bottom: 2rem;
+        }
+        
+        .problem-solution {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .problem-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .problem-header {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .problem-header h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .problem-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .solution-heading {
+            color: var(--secondary);
+            font-weight: bold;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-image {
+            height: 200px;
+            background-color: #f8f9fa;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .service-outcome {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+        
+        .process-step {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            text-align: center;
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 1rem auto;
+        }
+        
+        .process-step h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .testimonials {
+            background-color: var(--accent);
+            padding: 4rem 1rem;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-problem {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 1rem;
+            overflow: hidden;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: #444; /* Darkened for better contrast */
+            font-size: 0.9rem;
+        }
+        
+        .stats {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .team-photo {
+            height: 300px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+        }
+        
+        .team-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-title {
+            color: #444; /* Darkened for better contrast */
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .contact {
+            padding: 4rem 1rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            min-height: 44px; /* Minimum touch target size */
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+        }
+        
+        .form-hint {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.875rem;
+            color: #555;
+        }
+        
+        .next-steps {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .next-steps h4 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .next-steps ol {
+            padding-left: 1.5rem;
+        }
+        
+        .next-steps li {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .mission-statement {
+                font-size: 1.3rem;
+            }
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #0077B5;
+            margin-bottom: 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .social-link svg {
+            margin-right: 0.5rem;
+        }
+
+        .social-link:hover {
+            opacity: 0.8;
+        }
+        
+        /* Better mobile padding */
+        @media (max-width: 768px) {
+            section {
+                padding: 2rem 1rem;
+            }
+            
+            .hero {
+                height: auto;
+                min-height: 400px;
+                padding: 3rem 1rem;
+            }
+            
+            .mission-container {
+                padding: 2rem 1rem;
+            }
+
+            .process-step, 
+            .problem-card, 
+            .service-card, 
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+            
+            .team-photo img {
+                max-height: 300px;
+                object-position: top 10%;
+            }
+        }
+
+        /* Better buttons for touch */
+        @media (max-width: 768px) {
+            .cta-button {
+                padding: 0.75rem 1.5rem;
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.75rem;
+                font-size: 16px; /* Prevents iOS zoom on input */
+            }
+        }
+
+        /* Improve form layout on small screens */
+        @media (max-width: 480px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fix for iOS input styling */
+        input, 
+        textarea, 
+        select {
+            -webkit-appearance: none;
+            border-radius: 4px;
+        }
+        
+        /* Mobile menu toggle styles */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            /* Adjust spacing for mobile header */
+            nav {
+                justify-content: space-between;
+                gap: 10px;
+            }
+            
+            .cta-button {
+                margin-left: auto;
+                padding: 0.5rem 1rem;
+                min-width: 100px;
+                text-align: center;
+            }
+        }
+
+        /* Visually hidden text (for screen readers) */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Skip to main content link for screen readers and keyboard users -->
@@ -28,9 +767,8 @@
                 <a href="#mission">Our Mission</a>
                 <a href="#services">Services</a>
                 <a href="#process">Our Process</a>
-                <a href="#testimonials">Testimonials</a>
+                <a href="#results">Results</a>
                 <a href="#contact">Contact</a>
-                <a href="blog.html">Blog</a>
             </div>
             <button class="cta-button" onclick="location.href='#contact'" aria-label="Schedule a consultation">Let's Talk</button>
             
@@ -97,7 +835,7 @@
                     </div>
                     <div class="problem-content">
                         <h4 class="solution-heading">Our Solution:</h4>
-                        <p>Our AI platform will optimize your campaign operations. No more useless data. Every interaction in your campaign is tracked and meaningful. We deliver real-time recommendations that directly inform your canvassing routes, ad targeting, and messaging priorities.</p>
+                        <p>Our AI platform will DOGE your campaign operations. No more useless data. Every interaction in your campaign is tracked and meaningful. We deliver real-time recommendations that directly inform your canvassing routes, ad targeting, and messaging priorities.</p>
                     </div>
                 </article>
                 <article class="problem-card">
@@ -114,58 +852,58 @@
         </div>
     </section>
     
-    <!-- Services Section -->
-    <section id="services" role="region" aria-labelledby="services-heading">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="services-heading">Our Core Services</h2>
-                <p>Comprehensive solutions designed specifically for political campaign success</p>
-            </div>
-            <div class="services">
-                <article class="service-card">
-                    <div class="service-image">
-                        <img src="images/services/tech.jpg" alt="All-In-One Campaign Technology Platform" width="400" height="200">
-                    </div>
-                    <div class="service-content">
-                        <h3>All-In-One Tech</h3>
-                        <p>We easily build all the needed tech to run a campaign. From campaign websites to integrated communications platforms, we handle everything without the need for multiple vendors. Our system seamlessly integrates voice, SMS text, web chat, email, and maintains the entire infrastructure so your team can focus on winning.</p>
-                        <div class="service-outcome">Outcome: Free up your campaign staff to focus on strategy rather than managing technical issues or coordinating multiple vendors.</div>
-                    </div>
-                </article>
-                <article class="service-card">
-                    <div class="service-image">
-                        <img src="images/services/operations.jpg" alt="AI-Powered Campaign Operations" width="400" height="200">
-                    </div>
-                    <div class="service-content">
-                        <h3>NextGen Campaign Operations</h3>
-                        <p>Automate and streamline your operations with bleeding-edge AI. Energize volunteers and constituents with Calls-To-Action that produce results through gamification. Monitor campaign narratives across social and traditional media in real-time.</p>
-                        <div class="service-outcome">Outcome: Take your Campaign Operations into the blue ocean with strategies you never thought were possible until now.</div>
-                    </div>
-                </article>
-                <article class="service-card">
-                    <div class="service-image">
-                        <img src="images/services/mapping.jpg" alt="Voter District Mapping and Analysis" width="400" height="200">
-                    </div>
-                    <div class="service-content">
-                        <h3>District Mapping & Field Strategy</h3>
-                        <p>Using proprietary algorithms, we identify voting patterns, demographic trends, and engagement opportunities that campaigns typically miss. Our analysis incorporates historical voting behavior, demographic shifts, and predictive modeling to optimize canvassing routes, volunteer deployment, and event locations - maximizing your ground game impact while minimizing wasted effort.</p>
-                        <div class="service-outcome">Outcome: Increase your field operation efficiency by up to 40% through data-optimized deployment.</div>
-                    </div>
-                </article>
-                <article class="service-card">
-                    <div class="service-image">
-                        <img src="images/services/tracking.jpg" alt="Campaign Performance Analytics Dashboard" width="400" height="200">
-                    </div>
-                    <div class="service-content">
-                        <h3>Performance Tracking & Optimization</h3>
-                        <p>We implement comprehensive tracking systems that monitor campaign performance across all channels. Our custom dashboards provide real-time insights on voter contact rates, message effectiveness, and resource utilization.</p>
-                        <p>Unlike traditional consultants, we provide ongoing optimization recommendations based on actual performance data, allowing campaigns to pivot quickly when strategies aren't delivering expected results.</p>
-                        <div class="service-outcome">Outcome: Make evidence-based decisions that continuously improve campaign effectiveness.</div>
-                    </div>
-                </article>
-            </div>
+ <!-- Services Section -->
+<section id="services" role="region" aria-labelledby="services-heading">
+    <div class="container">
+        <div class="section-title">
+            <h2 id="services-heading">Our Core Services</h2>
+            <p>Comprehensive solutions designed specifically for political campaign success</p>
         </div>
-    </section>
+        <div class="services">
+            <article class="service-card">
+                <div class="service-image">
+                    <img src="images/services/tech.png" alt="All-In-One Tech" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="service-content">
+                    <h3>All-In-One Tech</h3>
+                    <p>We easily build all the needed tech to run a campaign. From campaign websites to integrated communications platforms, we handle everything without the need for multiple vendors. Our system seamlessly integrates voice, SMS text, web chat, email, and maintains the entire infrastructure so your team can focus on winning.</p>
+                    <div class="service-outcome">Outcome: Free up your campaign staff to focus on strategy rather than managing technical issues or coordinating multiple vendors.</div>
+                </div>
+            </article>
+            <article class="service-card">
+                <div class="service-image">
+                    <img src="images/services/operations.png" alt="NextGen Campaign Operations" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="service-content">
+                    <h3>NextGen Campaign Operations</h3>
+                    <p>Automate and streamline your operations with bleeding-edge AI. Entergize volunteers and constituents with Calls-To-Action that produce results thru gamification. Monitor campaign narratives across social and traditional media in real-time.</p>
+                    <div class="service-outcome">Outcome: Take your Campaign Operations into the blue ocean with strategies you never thought were possible until now.</div>
+                </div>
+            </article>
+            <article class="service-card">
+                <div class="service-image">
+                    <img src="images/services/mapping.png" alt="District Mapping & Field Strategy" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="service-content">
+                    <h3>District Mapping & Field Strategy</h3>
+                    <p>Using proprietary algorithms, we identify voting patterns, demographic trends, and engagement opportunities that campaigns typically miss. Our analysis incorporates historical voting behavior, demographic shifts, and predictive modeling to optimize canvassing routes, volunteer deployment, and event locations - maximizing your ground game impact while minimizing wasted effort.</p>
+                    <div class="service-outcome">Outcome: Increase your field operation efficiency by up to 40% through data-optimized deployment.</div>
+                </div>
+            </article>
+            <article class="service-card">
+                <div class="service-image">
+                    <img src="images/services/tracking.png" alt="Performance Tracking & Optimization" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="service-content">
+                    <h3>Performance Tracking & Optimization</h3>
+                    <p>We implement comprehensive tracking systems that monitor campaign performance across all channels. Our custom dashboards provide real-time insights on voter contact rates, message effectiveness, and resource utilization.</p>
+                    <p>Unlike traditional consultants, we provide ongoing optimization recommendations based on actual performance data, allowing campaigns to pivot quickly when strategies aren't delivering expected results.</p>
+                    <div class="service-outcome">Outcome: Make evidence-based decisions that continuously improve campaign effectiveness.</div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
             
     <!-- Process Section -->
     <section id="process" style="background-color: #f8f9fa;" role="region" aria-labelledby="process-heading">
@@ -204,7 +942,7 @@
     </section>
     
     <!-- Results Section -->
-    <section id="testimonials" class="testimonials" role="region" aria-labelledby="results-heading">
+    <section id="results" class="testimonials" role="region" aria-labelledby="results-heading">
         <div class="container">
             <div class="section-title">
                 <h2 id="results-heading">Powered by Industry-Leading Technology</h2>
@@ -218,7 +956,7 @@
                     </blockquote>
                     <footer class="testimonial-author">
                         <div class="author-image">
-                            <img src="images/testimonials/testimonial-1.jpg" alt="Enterprise organization representative">
+                            <img src="images/testimonials/u3667838933_omnichannel_communications_--v_6.1_bd1be8c9-c079-4314-864b-578070c1ca24_0.png" alt="">
                         </div>
                         <div class="author-info">
                             <h4>Enterprise Organization</h4>
@@ -233,7 +971,7 @@
                     </blockquote>
                     <footer class="testimonial-author">
                         <div class="author-image">
-                            <img src="images/testimonials/testimonial-2.jpg" alt="Public organization representative">
+                            <img src="images/testimonials/u3667838933_social_media_--v_6.1_662d2e09-9e1f-4655-a539-59dbbf06da09_2 (1).png" alt="">
                         </div>
                         <div class="author-info">
                             <h4>Large Public Organization</h4>
@@ -248,7 +986,7 @@
                     </blockquote>
                     <footer class="testimonial-author">
                         <div class="author-image">
-                            <img src="images/testimonials/testimonial-3.jpg" alt="National organization representative">
+                            <img src="images/testimonials/u3667838933_voters_interacting_with_volunteers_over_their_cel_948b231f-52c9-4f68-8e6a-7c0ee50e1c77_2.png" alt="">
                         </div>
                         <div class="author-info">
                             <h4>National Organization</h4>
@@ -363,7 +1101,7 @@
                     <ul>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#mission">Our Mission</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#results">Results</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -393,7 +1131,6 @@
         </div>
     </footer>
     
-    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Dynamic copyright year
