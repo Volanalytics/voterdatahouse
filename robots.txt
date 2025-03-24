@@ -1,0 +1,14 @@
+# robots.txt for VoterDataHouse.com
+User-agent: *
+Allow: /
+
+# Don't index thank you pages and other utility pages
+Disallow: /thank-you.html
+
+# Allow search engines to access CSS, JS, and images
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Specify sitemap location
+Sitemap: https://voterdatahouse.com/sitemap.xml
