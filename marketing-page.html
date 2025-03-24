@@ -776,30 +776,29 @@
     </section>
 
     <!-- Screens Section -->
-    <section class="screens-section" id="screens">
-        <div class="container">
-            <div class="section-header">
-                <h2>See It In Action</h2>
-                <p>Explore how VoterDataHouse transforms your campaign's communication</p>
-            </div>
-            <div class="screen-tabs">
-                <button class="screen-tab active" onclick="changeTab(0)">Staff Workspace</button>
-                <button class="screen-tab" onclick="changeTab(1)">Bot Flow Builder</button>
-                <button class="screen-tab" onclick="changeTab(2)">Analytics Dashboard</button>
-                <button class="screen-tab" onclick="changeTab(3)">Campaign Hub</button>
-            </div>
-            <div class="screen-content">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" class="screen-image" id="screenImage">
-        <!-- Initial content will be replaced by JavaScript -->
-    </svg>
-    <div class="screen-description">
-        <h3 id="screenTitle">Intuitive Staff Workspace</h3>
-        <p id="screenDescription">The VoterDataHouse staff workspace provides a unified interface for managing all voter communications. Team members can easily toggle between channels while maintaining context and accessing AI-suggested responses for more effective interactions.</p>
-    </div>
-</div>
+<section class="screens-section" id="screens">
+    <div class="container">
+        <div class="section-header">
+            <h2>See It In Action</h2>
+            <p>Explore how VoterDataHouse transforms your campaign's communication</p>
+        </div>
+        <div class="screen-tabs">
+            <button class="screen-tab active" onclick="changeTab(0)">Staff Workspace</button>
+            <button class="screen-tab" onclick="changeTab(1)">Bot Flow Builder</button>
+            <button class="screen-tab" onclick="changeTab(2)">Analytics Dashboard</button>
+            <button class="screen-tab" onclick="changeTab(3)">Campaign Hub</button>
+        </div>
+        <div class="screen-content">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" class="screen-image" id="screenImage">
+                <!-- Initial content will be replaced by JavaScript -->
+            </svg>
+            <div class="screen-description">
+                <h3 id="screenTitle">Intuitive Staff Workspace</h3>
+                <p id="screenDescription">The VoterDataHouse staff workspace provides a unified interface for managing all voter communications. Team members can easily toggle between channels while maintaining context and accessing AI-suggested responses for more effective interactions.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Benefits Section -->
     <section class="benefits">
@@ -1021,145 +1020,204 @@
     </footer>
 
     <script>
-        // SVG content for each tab
-        const screenSVGs = [
-            // Staff Workspace SVG
-            `<rect width="800" height="500" fill="#f8f9fa" />
-            <rect x="20" y="20" width="760" height="60" rx="5" fill="#0046ad" />
-            <rect x="40" y="35" width="120" height="30" rx="15" fill="#ffffff" opacity="0.2" />
-            <rect x="180" y="35" width="120" height="30" rx="15" fill="#ffffff" opacity="0.2" />
-            <rect x="320" y="35" width="120" height="30" rx="15" fill="#ffffff" opacity="0.5" />
-            <rect x="460" y="35" width="120" height="30" rx="15" fill="#ffffff" opacity="0.2" />
-            
-            <rect x="20" y="100" width="200" height="380" rx="5" fill="#f0f0f0" />
-            <rect x="30" y="120" width="180" height="50" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="30" y="180" width="180" height="50" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="30" y="240" width="180" height="50" rx="5" fill="#0046ad" stroke="#dddddd" />
-            <rect x="30" y="300" width="180" height="50" rx="5" fill="#ffffff" stroke="#dddddd" />
-            
-            <rect x="240" y="100" width="320" height="380" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="260" y="120" width="280" height="40" rx="5" fill="#f8f9fa" />
-            <circle cx="280" cy="140" r="15" fill="#0046ad" />
-            <rect x="300" y="130" width="220" height="20" rx="5" fill="#e6e6e6" />
-            <rect x="260" y="170" width="280" height="80" rx="5" fill="#f8f9fa" />
-            <rect x="260" y="260" width="280" height="80" rx="5" fill="#f8f9fa" />
-            <rect x="260" y="350" width="280" height="40" rx="5" fill="#e6e6e6" />
-            <rect x="430" y="350" width="100" height="40" rx="5" fill="#0046ad" />
-            
-            <rect x="580" y="100" width="200" height="380" rx="5" fill="#f0f0f0" />
-            <rect x="590" y="120" width="180" height="120" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="600" y="130" width="160" height="20" rx="2" fill="#e6e6e6" />
-            <rect x="600" y="160" width="160" height="10" rx="2" fill="#e6e6e6" />
-            <rect x="600" y="180" width="160" height="10" rx="2" fill="#e6e6e6" />
-            <rect x="600" y="200" width="160" height="10" rx="2" fill="#e6e6e6" />
-            
-            <rect x="590" y="250" width="180" height="120" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="600" y="260" width="160" height="20" rx="2" fill="#e6e6e6" />
-            <circle cx="610" cy="310" r="30" fill="#5472d3" />
-            <rect x="650" y="290" width="110" height="10" rx="2" fill="#e6e6e6" />
-            <rect x="650" y="310" width="110" height="10" rx="2" fill="#e6e6e6" />
-            <rect x="650" y="330" width="110" height="10" rx="2" fill="#e6e6e6" />`,
-            
-            // Bot Flow Builder SVG
-            `<rect width="800" height="500" fill="#f8f9fa" />
-            <rect x="20" y="20" width="760" height="60" rx="5" fill="#0046ad" />
-            <text x="40" y="55" font-family="Arial" font-size="20" fill="white">Bot Flow Builder</text>
-            
-            <rect x="20" y="100" width="180" height="380" rx="5" fill="#f0f0f0" />
-            <rect x="30" y="120" width="160" height="40" rx="5" fill="#ffffff" stroke="#0046ad" />
-            <rect x="30" y="170" width="160" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="30" y="220" width="160" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="30" y="270" width="160" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
-            
-            <rect x="220" y="100" width="560" height="380" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <circle cx="350" cy="150" r="30" fill="#0046ad" />
-            <text x="342" y="155" font-family="Arial" font-size="16" fill="white">1</text>
-            <line x1="350" y1="180" x2="350" y2="220" stroke="#0046ad" stroke-width="2" />
-            
-            <rect x="300" y="220" width="100" height="60" rx="5" fill="#e6e6e6" stroke="#0046ad" />
-            <line x1="350" y1="280" x2="350" y2="320" stroke="#0046ad" stroke-width="2" />
-            <line x1="350" y1="320" x2="250" y2="320" stroke="#0046ad" stroke-width="2" />
-            <line x1="350" y1="320" x2="450" y2="320" stroke="#0046ad" stroke-width="2" />
-            
-            <rect x="200" y="320" width="100" height="60" rx="5" fill="#e6e6e6" stroke="#0046ad" />
-            <rect x="400" y="320" width="100" height="60" rx="5" fill="#e6e6e6" stroke="#0046ad" />
-            
-            <circle cx="600" cy="150" r="30" fill="#5472d3" />
-            <text x="592" y="155" font-family="Arial" font-size="16" fill="white">2</text>
-            <rect x="550" y="220" width="100" height="60" rx="5" fill="#e6e6e6" stroke="#5472d3" />
-            <line x1="600" y1="180" x2="600" y2="220" stroke="#5472d3" stroke-width="2" />
-            <line x1="600" y1="280" x2="600" y2="320" stroke="#5472d3" stroke-width="2" />
-            <rect x="550" y="320" width="100" height="60" rx="5" fill="#e6e6e6" stroke="#5472d3" />`,
-            
-            // Analytics Dashboard SVG
-            `<rect width="800" height="500" fill="#f8f9fa" />
-            <rect x="20" y="20" width="760" height="60" rx="5" fill="#0046ad" />
-            <text x="40" y="55" font-family="Arial" font-size="20" fill="white">Analytics Dashboard</text>
-            
-            <rect x="20" y="100" width="370" height="180" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="30" y="110" width="350" height="30" rx="0" fill="#f0f0f0" />
-            <text x="40" y="130" font-family="Arial" font-size="12" fill="#333333">Voter Engagement by Channel</text>
-            <rect x="40" y="150" width="50" height="100" fill="#0046ad" />
-            <rect x="100" y="180" width="50" height="70" fill="#5472d3" />
-            <rect x="160" y="130" width="50" height="120" fill="#8c9eff" />
-            <rect x="220" y="160" width="50" height="90" fill="#0046ad" />
-            <rect x="280" y="140" width="50" height="110" fill="#5472d3" />
-            
-            <rect x="410" y="100" width="370" height="180" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="420" y="110" width="350" height="30" rx="0" fill="#f0f0f0" />
-            <text x="430" y="130" font-family="Arial" font-size="12" fill="#333333">Conversion Rates</text>
-            <circle cx="595" cy="180" r="60" fill="none" stroke="#eee" stroke-width="20" />
-            <path d="M595,180 L595,120 A60,60 0 0,1 649,210 Z" fill="#0046ad" />
-            <circle cx="595" cy="180" r="40" fill="white" />
-            <text x="585" y="185" font-family="Arial" font-size="16" fill="#333333">68%</text>
-            
-            <rect x="20" y="300" width="370" height="180" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="30" y="310" width="350" height="30" rx="0" fill="#f0f0f0" />
-            <text x="40" y="330" font-family="Arial" font-size="12" fill="#333333">Communication Volume</text>
-            <polyline points="40,450 40,350 340,350" fill="none" stroke="#dddddd" stroke-width="1" />
-            <polyline points="40,450 70,420 100,430 130,380 160,390 190,370 220,350 250,370 280,360 310,340" fill="none" stroke="#0046ad" stroke-width="2" />
-            <circle cx="70" cy="420" r="3" fill="#0046ad" />
-            <circle cx="100" cy="430" r="3" fill="#0046ad" />
-            <circle cx="130" cy="380" r="3" fill="#0046ad" />
-            <circle cx="160" cy="390" r="3" fill="#0046ad" />
-            <circle cx="190" cy="370" r="3" fill="#0046ad" />
-            <circle cx="220" cy="350" r="3" fill="#0046ad" />
-            <circle cx="250" cy="370" r="3" fill="#0046ad" />
-            <circle cx="280" cy="360" r="3" fill="#0046ad" />
-            <circle cx="310" cy="340" r="3" fill="#0046ad" />
-            
-            <rect x="410" y="300" width="370" height="180" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <rect x="420" y="310" width="350" height="30" rx="0" fill="#f0f0f0" />
-            <text x="430" y="330" font-family="Arial" font-size="12" fill="#333333">Staff Performance</text>
-            <line x1="430" y1="360" x2="750" y2="360" stroke="#dddddd" stroke-width="1" />
-            <line x1="430" y1="390" x2="750" y2="390" stroke="#dddddd" stroke-width="1" />
-            <line x1="430" y1="420" x2="750" y2="420" stroke="#dddddd" stroke-width="1" />
-            <line x1="430" y1="450" x2="750" y2="450" stroke="#dddddd" stroke-width="1" />
-            <rect x="440" y="370" width="60" height="80" fill="#0046ad" />
-            <rect x="510" y="350" width="60" height="100" fill="#5472d3" />
-            <rect x="580" y="380" width="60" height="70" fill="#0046ad" />
-            <rect x="650" y="340" width="60" height="110" fill="#5472d3" />`,
-            
-            // Campaign Hub SVG
-            `<rect width="800" height="500" fill="#f8f9fa" />
-            <rect x="20" y="20" width="760" height="60" rx="5" fill="#0046ad" />
-            <text x="40" y="55" font-family="Arial" font-size="20" fill="white">Campaign Hub</text>
-            
-            <rect x="20" y="100" width="250" height="380" rx="5" fill="#f0f0f0" />
-            <circle cx="70" cy="150" r="40" fill="#5472d3" />
-            <text x="55" y="155" font-family="Arial" font-size="12" fill="white">JD</text>
-            <text x="120" y="140" font-family="Arial" font-size="16" fill="#333333">John Doe</text>
-            <text x="120" y="160" font-family="Arial" font-size="12" fill="#666666">Field Coordinator</text>
-            
-            <rect x="30" y="200" width="230" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <text x="50" y="225" font-family="Arial" font-size="14" fill="#333333">Dashboard</text>
-            <rect x="30" y="250" width="230" height="40" rx="5" fill="#0046ad" />
-            <text x="50" y="275" font-family="Arial" font-size="14" fill="white">Schedule</text>
-            <rect x="30" y="300" width="230" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <text x="50" y="325" font-family="Arial" font-size="14" fill="#333333">Training</text>
-            <rect x="30" y="350" width="230" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
-            <text x="50" y="375" font-family="Arial" font-size="14" fill="#333333">Reports</text>
-            <rect<!DOCTYPE html>
+    // Screen titles and descriptions for each tab
+    const screenData = [
+        {
+            title: "Intuitive Staff Workspace",
+            description: "The VoterDataHouse staff workspace provides a unified interface for managing all voter communications. Team members can easily toggle between channels while maintaining context and accessing AI-suggested responses for more effective interactions."
+        },
+        {
+            title: "Visual Bot Flow Builder",
+            description: "Create sophisticated conversational flows without coding using our intuitive drag-and-drop interface. Design voter journeys across multiple channels with conditional logic, personalization, and seamless handoffs to live agents."
+        },
+        {
+            title: "Comprehensive Analytics Dashboard",
+            description: "Monitor campaign performance in real-time with detailed metrics and visualizations. Track engagement across channels, analyze conversion rates, and identify trends to continuously optimize your voter outreach strategy."
+        },
+        {
+            title: "Collaborative Campaign Hub",
+            description: "Centralize campaign resources, schedules, and training materials in one accessible location. Enable team collaboration with shared calendars, document management, and integrated communication tools."
+        }
+    ];
+
+    // SVG content for each tab
+    const screenSVGs = [
+        // Staff Workspace SVG
+        `<rect width="800" height="500" fill="#f8f9fa" />
+        <rect x="20" y="20" width="760" height="60" rx="5" fill="#0046ad" />
+        <rect x="40" y="35" width="120" height="30" rx="15" fill="#ffffff" opacity="0.2" />
+        <rect x="180" y="35" width="120" height="30" rx="15" fill="#ffffff" opacity="0.2" />
+        <rect x="320" y="35" width="120" height="30" rx="15" fill="#ffffff" opacity="0.5" />
+        <rect x="460" y="35" width="120" height="30" rx="15" fill="#ffffff" opacity="0.2" />
+        
+        <rect x="20" y="100" width="200" height="380" rx="5" fill="#f0f0f0" />
+        <rect x="30" y="120" width="180" height="50" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="30" y="180" width="180" height="50" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="30" y="240" width="180" height="50" rx="5" fill="#0046ad" stroke="#dddddd" />
+        <rect x="30" y="300" width="180" height="50" rx="5" fill="#ffffff" stroke="#dddddd" />
+        
+        <rect x="240" y="100" width="320" height="380" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="260" y="120" width="280" height="40" rx="5" fill="#f8f9fa" />
+        <circle cx="280" cy="140" r="15" fill="#0046ad" />
+        <rect x="300" y="130" width="220" height="20" rx="5" fill="#e6e6e6" />
+        <rect x="260" y="170" width="280" height="80" rx="5" fill="#f8f9fa" />
+        <rect x="260" y="260" width="280" height="80" rx="5" fill="#f8f9fa" />
+        <rect x="260" y="350" width="280" height="40" rx="5" fill="#e6e6e6" />
+        <rect x="430" y="350" width="100" height="40" rx="5" fill="#0046ad" />
+        
+        <rect x="580" y="100" width="200" height="380" rx="5" fill="#f0f0f0" />
+        <rect x="590" y="120" width="180" height="120" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="600" y="130" width="160" height="20" rx="2" fill="#e6e6e6" />
+        <rect x="600" y="160" width="160" height="10" rx="2" fill="#e6e6e6" />
+        <rect x="600" y="180" width="160" height="10" rx="2" fill="#e6e6e6" />
+        <rect x="600" y="200" width="160" height="10" rx="2" fill="#e6e6e6" />
+        
+        <rect x="590" y="250" width="180" height="120" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="600" y="260" width="160" height="20" rx="2" fill="#e6e6e6" />
+        <circle cx="610" cy="310" r="30" fill="#5472d3" />
+        <rect x="650" y="290" width="110" height="10" rx="2" fill="#e6e6e6" />
+        <rect x="650" y="310" width="110" height="10" rx="2" fill="#e6e6e6" />
+        <rect x="650" y="330" width="110" height="10" rx="2" fill="#e6e6e6" />`,
+        
+        // Bot Flow Builder SVG
+        `<rect width="800" height="500" fill="#f8f9fa" />
+        <rect x="20" y="20" width="760" height="60" rx="5" fill="#0046ad" />
+        <text x="40" y="55" font-family="Arial" font-size="20" fill="white">Bot Flow Builder</text>
+        
+        <rect x="20" y="100" width="180" height="380" rx="5" fill="#f0f0f0" />
+        <rect x="30" y="120" width="160" height="40" rx="5" fill="#ffffff" stroke="#0046ad" />
+        <rect x="30" y="170" width="160" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="30" y="220" width="160" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="30" y="270" width="160" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
+        
+        <rect x="220" y="100" width="560" height="380" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <circle cx="350" cy="150" r="30" fill="#0046ad" />
+        <text x="342" y="155" font-family="Arial" font-size="16" fill="white">1</text>
+        <line x1="350" y1="180" x2="350" y2="220" stroke="#0046ad" stroke-width="2" />
+        
+        <rect x="300" y="220" width="100" height="60" rx="5" fill="#e6e6e6" stroke="#0046ad" />
+        <line x1="350" y1="280" x2="350" y2="320" stroke="#0046ad" stroke-width="2" />
+        <line x1="350" y1="320" x2="250" y2="320" stroke="#0046ad" stroke-width="2" />
+        <line x1="350" y1="320" x2="450" y2="320" stroke="#0046ad" stroke-width="2" />
+        
+        <rect x="200" y="320" width="100" height="60" rx="5" fill="#e6e6e6" stroke="#0046ad" />
+        <rect x="400" y="320" width="100" height="60" rx="5" fill="#e6e6e6" stroke="#0046ad" />
+        
+        <circle cx="600" cy="150" r="30" fill="#5472d3" />
+        <text x="592" y="155" font-family="Arial" font-size="16" fill="white">2</text>
+        <rect x="550" y="220" width="100" height="60" rx="5" fill="#e6e6e6" stroke="#5472d3" />
+        <line x1="600" y1="180" x2="600" y2="220" stroke="#5472d3" stroke-width="2" />
+        <line x1="600" y1="280" x2="600" y2="320" stroke="#5472d3" stroke-width="2" />
+        <rect x="550" y="320" width="100" height="60" rx="5" fill="#e6e6e6" stroke="#5472d3" />`,
+        
+        // Analytics Dashboard SVG
+        `<rect width="800" height="500" fill="#f8f9fa" />
+        <rect x="20" y="20" width="760" height="60" rx="5" fill="#0046ad" />
+        <text x="40" y="55" font-family="Arial" font-size="20" fill="white">Analytics Dashboard</text>
+        
+        <rect x="20" y="100" width="370" height="180" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="30" y="110" width="350" height="30" rx="0" fill="#f0f0f0" />
+        <text x="40" y="130" font-family="Arial" font-size="12" fill="#333333">Voter Engagement by Channel</text>
+        <rect x="40" y="150" width="50" height="100" fill="#0046ad" />
+        <rect x="100" y="180" width="50" height="70" fill="#5472d3" />
+        <rect x="160" y="130" width="50" height="120" fill="#8c9eff" />
+        <rect x="220" y="160" width="50" height="90" fill="#0046ad" />
+        <rect x="280" y="140" width="50" height="110" fill="#5472d3" />
+        
+        <rect x="410" y="100" width="370" height="180" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="420" y="110" width="350" height="30" rx="0" fill="#f0f0f0" />
+        <text x="430" y="130" font-family="Arial" font-size="12" fill="#333333">Conversion Rates</text>
+        <circle cx="595" cy="180" r="60" fill="none" stroke="#eee" stroke-width="20" />
+        <path d="M595,180 L595,120 A60,60 0 0,1 649,210 Z" fill="#0046ad" />
+        <circle cx="595" cy="180" r="40" fill="white" />
+        <text x="585" y="185" font-family="Arial" font-size="16" fill="#333333">68%</text>
+        
+        <rect x="20" y="300" width="370" height="180" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="30" y="310" width="350" height="30" rx="0" fill="#f0f0f0" />
+        <text x="40" y="330" font-family="Arial" font-size="12" fill="#333333">Communication Volume</text>
+        <polyline points="40,450 40,350 340,350" fill="none" stroke="#dddddd" stroke-width="1" />
+        <polyline points="40,450 70,420 100,430 130,380 160,390 190,370 220,350 250,370 280,360 310,340" fill="none" stroke="#0046ad" stroke-width="2" />
+        <circle cx="70" cy="420" r="3" fill="#0046ad" />
+        <circle cx="100" cy="430" r="3" fill="#0046ad" />
+        <circle cx="130" cy="380" r="3" fill="#0046ad" />
+        <circle cx="160" cy="390" r="3" fill="#0046ad" />
+        <circle cx="190" cy="370" r="3" fill="#0046ad" />
+        <circle cx="220" cy="350" r="3" fill="#0046ad" />
+        <circle cx="250" cy="370" r="3" fill="#0046ad" />
+        <circle cx="280" cy="360" r="3" fill="#0046ad" />
+        <circle cx="310" cy="340" r="3" fill="#0046ad" />
+        
+        <rect x="410" y="300" width="370" height="180" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="420" y="310" width="350" height="30" rx="0" fill="#f0f0f0" />
+        <text x="430" y="330" font-family="Arial" font-size="12" fill="#333333">Staff Performance</text>
+        <line x1="430" y1="360" x2="750" y2="360" stroke="#dddddd" stroke-width="1" />
+        <line x1="430" y1="390" x2="750" y2="390" stroke="#dddddd" stroke-width="1" />
+        <line x1="430" y1="420" x2="750" y2="420" stroke="#dddddd" stroke-width="1" />
+        <line x1="430" y1="450" x2="750" y2="450" stroke="#dddddd" stroke-width="1" />
+        <rect x="440" y="370" width="60" height="80" fill="#0046ad" />
+        <rect x="510" y="350" width="60" height="100" fill="#5472d3" />
+        <rect x="580" y="380" width="60" height="70" fill="#0046ad" />
+        <rect x="650" y="340" width="60" height="110" fill="#5472d3" />`,
+        
+        // Campaign Hub SVG
+        `<rect width="800" height="500" fill="#f8f9fa" />
+        <rect x="20" y="20" width="760" height="60" rx="5" fill="#0046ad" />
+        <text x="40" y="55" font-family="Arial" font-size="20" fill="white">Campaign Hub</text>
+        
+        <rect x="20" y="100" width="250" height="380" rx="5" fill="#f0f0f0" />
+        <circle cx="70" cy="150" r="40" fill="#5472d3" />
+        <text x="55" y="155" font-family="Arial" font-size="12" fill="white">JD</text>
+        <text x="120" y="140" font-family="Arial" font-size="16" fill="#333333">John Doe</text>
+        <text x="120" y="160" font-family="Arial" font-size="12" fill="#666666">Field Coordinator</text>
+        
+        <rect x="30" y="200" width="230" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <text x="50" y="225" font-family="Arial" font-size="14" fill="#333333">Dashboard</text>
+        <rect x="30" y="250" width="230" height="40" rx="5" fill="#0046ad" />
+        <text x="50" y="275" font-family="Arial" font-size="14" fill="white">Schedule</text>
+        <rect x="30" y="300" width="230" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <text x="50" y="325" font-family="Arial" font-size="14" fill="#333333">Training</text>
+        <rect x="30" y="350" width="230" height="40" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <text x="50" y="375" font-family="Arial" font-size="14" fill="#333333">Reports</text>
+        
+        <rect x="290" y="100" width="490" height="180" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="300" y="110" width="470" height="30" rx="0" fill="#f0f0f0" />
+        <text x="310" y="130" font-family="Arial" font-size="14" fill="#333333">Upcoming Events</text>
+        <line x1="300" y1="150" x2="770" y2="150" stroke="#dddddd" stroke-width="1" />
+        <rect x="310" y="160" width="450" height="30" rx="0" fill="#f8f9fa" stroke="#dddddd" stroke-width="1" />
+        <rect x="310" y="200" width="450" height="30" rx="0" fill="#f8f9fa" stroke="#dddddd" stroke-width="1" />
+        <rect x="310" y="240" width="450" height="30" rx="0" fill="#f8f9fa" stroke="#dddddd" stroke-width="1" />
+        
+        <rect x="290" y="300" width="490" height="180" rx="5" fill="#ffffff" stroke="#dddddd" />
+        <rect x="300" y="310" width="470" height="30" rx="0" fill="#f0f0f0" />
+        <text x="310" y="330" font-family="Arial" font-size="14" fill="#333333">Team Chat</text>
+        <rect x="300" y="350" width="470" height="90" rx="0" fill="#f8f9fa" />
+        <rect x="300" y="450" width="380" height="30" rx="5" fill="#f0f0f0" />
+        <rect x="690" y="450" width="80" height="30" rx="5" fill="#0046ad" />`
+    ];
+
+    // Function to change active tab
+    function changeTab(tabIndex) {
+        // Update active tab styling
+        const tabs = document.querySelectorAll('.screen-tab');
+        tabs.forEach((tab, index) => {
+            if (index === tabIndex) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+        
+        // Update content
+        document.getElementById('screenImage').innerHTML = screenSVGs[tabIndex];
+        document.getElementById('screenTitle').textContent = screenData[tabIndex].title;
+        document.getElementById('screenDescription').textContent = screenData[tabIndex].description;
+    }
+
+    // Initialize by calling the function when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        changeTab(0);
+    });
+</script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
