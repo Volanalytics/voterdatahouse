@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOTV Mapping System | Voter Outreach Made Simple</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #0d47a1;
+            --primary-light: #5472d3;
+            --primary-dark: #002171;
+            --secondary: #f5f5f5;
+            --accent: #ff3d00;
+            --text-dark: #333;
+            --text-light: #fff;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --danger: #F44336;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: var(--text-light);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+        
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-secondary {
+            background-color: #fff;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-light);
+            color: #fff;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            color: var(--text-light);
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            font-size: 3.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            margin-top: 2rem;
+        }
+        
+        .hero-buttons .btn {
+            margin: 0 0.5rem;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--secondary);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            padding: 5rem 0;
+            background-color: var(--secondary);
+        }
+        
+        .steps {
+            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .step {
+            flex: 0 0 calc(33.333% - 2rem);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .step-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: var(--text-light);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+        
+        .testimonial-slider {
+            margin-top: 3rem;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            padding: 2rem;
+            background-color: var(--secondary);
+            border-radius: 8px;
+            margin-right: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 0;
+            background-color: var(--secondary);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Demo Section */
+        .demo {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+        
+        .demo-video {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .demo-video iframe {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .social-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .social-links li {
+            margin-right: 1rem;
+        }
+        
+        .social-links a {
+            color: #ccc;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #fff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .step {
+                flex: 0 0 100%;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        /* Screens */
+        .screens-section {
+            padding: 5rem 0;
+            background-color: var(--secondary);
+        }
+        
+        .screen-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .screen-tab {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .screen-tab.active {
+            background-color: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+        
+        .screen-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .screen-image {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .screen-description {
+            margin-top: 1rem;
+        }
+        
+        .benefit-list {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-item {
+            display: flex;
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-right: 1rem;
+        }
+        
+        .benefit-content h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Custom additions */
+        .feature-icon img {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .mockup-container {
+            position: relative;
+            max-width: 80%;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .mockup-image {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">GOTV <span>Mapping</span></a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#contact" class="btn">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Voter Outreach Made Simple</h1>
+            <p>Boost your campaign's efficiency with our powerful Google Maps-based voter outreach system. Plan, execute, and track your voter contact strategy all in one place.</p>
+            <div class="mockup-container">
+                <img src="/api/placeholder/1000/600" alt="GOTV Mapping System Interface" class="mockup-image">
+            </div>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-large">Request a Demo</a>
+                <a href="#pricing" class="btn btn-large btn-secondary">View Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features for Effective Campaigns</h2>
+                <p>Everything you need to coordinate your voter outreach efforts</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Map Icon">
+                    </div>
+                    <h3>Interactive Mapping</h3>
+                    <p>Visualize voter data on dynamic maps with customizable filters and real-time updates from the field.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Route Icon">
+                    </div>
+                    <h3>Optimized Routing</h3>
+                    <p>Generate the most efficient canvassing routes to maximize voter contacts and minimize travel time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Mobile Icon">
+                    </div>
+                    <h3>Mobile-Friendly</h3>
+                    <p>Access the system on any device with our responsive web app that works seamlessly in the field.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Data Icon">
+                    </div>
+                    <h3>Data Synchronization</h3>
+                    <p>Keep all team members updated with real-time data syncing between canvassers and campaign headquarters.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Analytics Icon">
+                    </div>
+                    <h3>Performance Analytics</h3>
+                    <p>Track campaign progress with detailed analytics and customizable reports on voter contacts and team performance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/80/80" alt="Security Icon">
+                    </div>
+                    <h3>Secure Access Control</h3>
+                    <p>Manage user permissions with role-based access controls for administrators, coordinators, and canvassers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Set up your voter outreach system in minutes, not days</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Import Your Data</h3>
+                    <p>Upload your voter data into our secure Google Sheets database with easy import tools.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Geocode Addresses</h3>
+                    <p>Our system automatically converts voter addresses into map coordinates for precise visualization.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Create Teams</h3>
+                    <p>Set up your field organization with administrators, coordinators, and canvassers.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Plan Routes</h3>
+                    <p>Generate optimized canvassing routes for your team based on location and voter priorities.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Track Progress</h3>
+                    <p>Monitor real-time updates as your team contacts voters and collects valuable data.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Analyze Results</h3>
+                    <p>Review comprehensive reports to refine your strategy and improve effectiveness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screens Section -->
+    <section class="screens-section" id="screens">
+        <div class="container">
+            <div class="section-header">
+                <h2>See It In Action</h2>
+                <p>Discover how our intuitive interface makes voter outreach efficient</p>
+            </div>
+            <div class="screen-tabs">
+                <div class="screen-tab active">Admin Dashboard</div>
+                <div class="screen-tab">Field View</div>
+                <div class="screen-tab">Route Planning</div>
+                <div class="screen-tab">Voter Details</div>
+            </div>
+            <div class="screen-content">
+                <img src="/api/placeholder/800/500" alt="Admin Dashboard" class="screen-image">
+                <div class="screen-description">
+                    <h3>Powerful Admin Dashboard</h3>
+                    <p>The administrator view provides complete oversight of your campaign's voter outreach efforts. Monitor team performance, track voter contact rates, and manage user permissions all from one central location.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose GOTV Mapping?</h2>
+                <p>Our solution offers unique advantages for campaigns of all sizes</p>
+            </div>
+            <div class="benefit-list">
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Rapid Deployment</h4>
+                        <p>Get up and running in as little as 30 minutes with our quick-start guide.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Cost-Effective</h4>
+                        <p>Built on Google's reliable infrastructure without the price tag of proprietary systems.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Scalable</h4>
+                        <p>Works for teams of any size, from local campaigns to state-wide operations.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>No Special Hardware</h4>
+                        <p>Works on existing smartphones, tablets, and computers with a modern web browser.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Offline Capabilities</h4>
+                        <p>Continue canvassing even in areas with limited connectivity.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <h4>Technical Support</h4>
+                        <p>Our team of experts is available to help you customize and optimize your system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Success stories from campaigns using our GOTV Mapping System</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"This mapping system transformed our GOTV effort. We increased our voter contacts by 35% while reducing volunteer burnout. The optimized routes saved us countless hours of planning."</p>
+                    </div>
+                    <div class="testimonial-author">Sarah Johnson, Campaign Manager</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The real-time updates from the field were game-changing. We could immediately see which areas needed more attention and redirect resources accordingly. Worth every penny."</p>
+                    </div>
+                    <div class="testimonial-author">Michael Rodriguez, Field Director</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a small campaign with limited resources, this system gave us the power of tools typically only available to major campaigns. The setup was simple and our volunteers loved using it."</p>
+                    </div>
+                    <div class="testimonial-author">Lisa Chen, City Council Candidate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the plan that fits your campaign's needs</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">$499<span class="price-period">/campaign</span></div>
+                    <p>Perfect for local campaigns</p>
+                    <ul class="pricing-features">
+                        <li>Up to 5,000 voters</li>
+                        <li>5 user accounts</li>
+                        <li>Basic reports</li>
+                        <li>Email support</li>
+                        <li>30-day access</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Standard</h3>
+                    <div class="price">$999<span class="price-period">/campaign</span></div>
+                    <p>Ideal for district-level campaigns</p>
+                    <ul class="pricing-features">
+                        <li>Up to 25,000 voters</li>
+                        <li>15 user accounts</li>
+                        <li>Advanced analytics</li>
+                        <li>Priority support</li>
+                        <li>90-day access</li>
+                        <li>Custom team training</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">$1,999<span class="price-period">/campaign</span></div>
+                    <p>For large-scale campaign operations</p>
+                    <ul class="pricing-features">
+                        <li>Unlimited voters</li>
+                        <li>Unlimited users</li>
+                        <li>Custom integrations</li>
+                        <li>Dedicated support</li>
+                        <li>Full campaign cycle access</li>
+                        <li>Advanced security features</li>
+                        <li>Custom reporting</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>See the System in Action</h2>
+                <p>Watch our demo video to see how the GOTV Mapping System works</p>
+            </div>
+            <div class="demo-video">
+                <img src="/api/placeholder/800/450" alt="Demo Video Placeholder" style="width:100%; max-width:800px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Voter Outreach?</h2>
+            <p>Get started today and see the difference our mapping system can make for your campaign.</p>
+            <a href="#" class="btn btn-large">Schedule a Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                
