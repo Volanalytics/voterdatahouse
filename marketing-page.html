@@ -1020,6 +1020,32 @@
     </footer>
 
     <script>
+// Hero image rotation
+const heroImages = [
+  "/images/genesys-platform-1.jpg",
+  "/images/genesys-dashboard.jpg",
+  "/images/genesys-analytics.jpg",
+  "/images/genesys-customer-journey.jpg"
+];
+
+let currentHeroIndex = 0;
+
+function rotateHeroImage() {
+  const heroImg = document.getElementById('hero-image');
+  currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+  heroImg.src = heroImages[currentHeroIndex];
+}
+
+// Rotate hero image every 5 seconds
+setInterval(rotateHeroImage, 5000);
+
+// Initialize first image on load
+document.addEventListener('DOMContentLoaded', function() {
+  const heroImg = document.getElementById('hero-image');
+  if (heroImg) {
+    heroImg.src = heroImages[0];
+  }
+);
     // Screen titles and descriptions for each tab
     const screenData = [
         {
