@@ -4,252 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Future of AI in Political Campaigns | Voter Data House</title>
-    <style>
-        :root {
-            --primary: #1a4b8c;
-            --secondary: #e63946;
-            --light: #f1faee;
-            --dark: #1d3557;
-            --accent: #a8dadc;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.5rem 1rem;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-        
-        .cta-button {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .cta-button:hover {
-            background-color: #c1272d;
-        }
-        
-        section {
-            padding: 4rem 1rem;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .blog-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .blog-header h1 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .blog-date {
-            color: #777;
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            display: block;
-        }
-        
-        .blog-content {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .blog-content h2 {
-            color: var(--primary);
-            margin: 1.5rem 0 1rem;
-        }
-        
-        .blog-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .blog-content ul {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-        }
-        
-        .blog-content li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .blog-image {
-            width: 100%;
-            height: 300px;
-            background-color: #3e6cb1;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-        }
-        
-        .back-to-blog {
-            display: block;
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 3rem 1rem;
-            margin-top: 3rem;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-logo span {
-            color: var(--secondary);
-        }
-        
-        .footer-links h3 {
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .blog-header h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <meta name="description" content="Discover how artificial intelligence is transforming political campaigns through personalized outreach, predictive analytics, and AI-powered volunteer support. Learn the latest AI campaign strategies.">
+    <meta name="keywords" content="AI in politics, political campaign AI, artificial intelligence elections, campaign technology, voter targeting AI">
+    <meta name="author" content="VoterDataHouse">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="The Future of AI in Political Campaigns">
+    <meta property="og:description" content="How artificial intelligence is transforming campaign operations, voter outreach, and election strategy">
+    <meta property="og:image" content="https://voterdatahouse.com/images/blog/ai-campaigns.jpg">
+    <meta property="og:url" content="https://voterdatahouse.com/ai-political-campaigns.html">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Future of AI in Political Campaigns">
+    <meta name="twitter:description" content="How artificial intelligence is transforming campaign operations, voter outreach, and election strategy">
+    <meta name="twitter:image" content="https://voterdatahouse.com/images/blog/ai-campaigns.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Skip to main content link for screen readers and keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header -->
-    <header>
-        <nav>
+    <header role="banner">
+        <nav role="navigation">
             <div class="logo">
-                <a href="index.html" style="text-decoration: none; color: white;">Voter<span>Data</span>House</a>
+                <a href="index.html" aria-label="Voter Data House Home">Voter<span>Data</span>House</a>
             </div>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="index.html#mission">Our Mission</a>
                 <a href="index.html#services">Services</a>
                 <a href="index.html#process">Our Process</a>
-                <a href="index.html#results">Results</a>
+                <a href="index.html#testimonials">Testimonials</a>
                 <a href="blog.html">Blog</a>
                 <a href="index.html#contact">Contact</a>
             </div>
-            <button class="cta-button" onclick="location.href='index.html#contact'">Schedule Consultation</button>
+            <button class="cta-button" onclick="location.href='index.html#contact'" aria-label="Schedule a consultation">Let's Talk</button>
+            
+            <!-- Mobile menu toggle -->
+            <div class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
     
     <!-- Blog Post -->
-    <section>
+    <section id="main-content" role="main">
         <div class="container">
             <div class="blog-header">
                 <h1>The Future of AI in Political Campaigns</h1>
                 <span class="blog-date">March 10, 2025</span>
             </div>
             
-            <div class="blog-content">
-                <div class="blog-image"></div>
+            <article class="article-content">
+                <div class="article-image" style="background-image: url('images/blog/ai-campaigns.jpg');" aria-label="AI technology supporting political campaign operations"></div>
                 
                 <p>Artificial intelligence is rapidly transforming the landscape of political campaigning, bringing both unprecedented opportunities and new challenges. As campaigns become increasingly data-driven, AI technologies are becoming essential tools in the modern campaign toolkit.</p>
                 
@@ -303,30 +119,53 @@
                 <h2>Conclusion: The Human-AI Campaign Partnership</h2>
                 <p>The most successful campaigns of the next election cycle will neither ignore AI capabilities nor rely on them exclusively. Instead, they will develop a strategic partnership between human insight and AI-powered tools, leveraging technology to amplify human connection rather than replace it.</p>
                 <p>Our data consistently shows that campaigns combining strong human leadership with strategic AI implementation outperform both traditional campaigns and those that over-automate. This balanced approach represents the true future of AI in political campaigns—a future that's already taking shape in forward-thinking organizations across the political spectrum.</p>
+                
+                <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #eee;">
+                    <h3>Ready to transform your campaign with AI-powered tools?</h3>
+                    <p>Contact our team to discuss how we can help you implement these strategies for your specific campaign needs.</p>
+                    <a href="index.html#contact" class="cta-button" style="margin-top: 1rem;">Schedule a Consultation</a>
+                </div>
+            </article>
+            
+            <div style="display: flex; justify-content: space-between; margin: 2rem 0;">
+                <a href="blog.html" class="cta-button">← Back to Blog</a>
+                <a href="data-metrics.html" class="cta-button">Next Article: Data Metrics →</a>
             </div>
             
-            <a href="blog.html" class="cta-button back-to-blog">Back to Blog</a>
+            <div style="background-color: #f8f9fa; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
+                <h2>Related Articles</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div>
+                        <h3><a href="predictive-analytics.html">The Power of Predictive Analytics in Voter Turnout</a></h3>
+                        <p>Learn how predictive modeling can maximize your GOTV effectiveness.</p>
+                    </div>
+                    <div>
+                        <h3><a href="campaign-tech-stack.html">Campaign Tech Stack: Building vs. Buying Solutions</a></h3>
+                        <p>Should your campaign build custom AI tools or use existing platforms?</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">Voter<span>Data</span>House</div>
                     <p>Empowering political campaigns with data-driven insights and strategic consulting services.</p>
                 </div>
-                <div class="footer-links">
+                <nav class="footer-links" aria-label="Footer Navigation">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="index.html#mission">Our Mission</a></li>
-                        <li><a href="index.html#results">Results</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
-                </div>
-                <div class="footer-links">
+                </nav>
+                <nav class="footer-links" aria-label="Resources Navigation">
                     <h3>Resources</h3>
                     <ul>
                         <li><a href="blog.html">Blog</a></li>
@@ -335,7 +174,7 @@
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     </ul>
-                </div>
+                </nav>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Voter Data House. All rights reserved.</p>
@@ -343,11 +182,64 @@
         </div>
     </footer>
     
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Dynamic copyright year
             document.querySelector('.footer-bottom p').innerHTML = 
                 '&copy; ' + new Date().getFullYear() + ' Voter Data House. All rights reserved.';
+            
+            // Mobile menu toggle with ARIA support
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const expanded = navLinks.classList.contains('active');
+                    menuToggle.setAttribute('aria-expanded', expanded.toString());
+                });
+                
+                // Close menu when a link is clicked
+                const links = navLinks.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
         });
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "The Future of AI in Political Campaigns",
+      "image": "https://voterdatahouse.com/images/blog/ai-campaigns.jpg",
+      "datePublished": "2025-03-10",
+      "dateModified": "2025-03-10",
+      "author": {
+        "@type": "Organization",
+        "name": "Voter Data House",
+        "url": "https://voterdatahouse.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Voter Data House",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://voterdatahouse.com/images/logo.png"
+        }
+      },
+      "description": "How artificial intelligence is transforming political campaigns through personalized outreach, predictive analytics, and AI-powered volunteer support.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://voterdatahouse.com/ai-political-campaigns.html"
+      }
+    }
     </script>
 </body>
 </html>
