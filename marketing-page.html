@@ -879,55 +879,111 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Omnichannel Campaign Management Made Simple</h1>
-            <p>Revolutionize your campaign's voter engagement with our unified platform that brings together voice and text-based communication into one powerful system.</p>
-            
-            <!-- Hero Carousel with actual images -->
-<div class="hero-carousel">
-    <div class="carousel-container" id="carouselContainer">
-        <div class="carousel-slide" style="background-image: url('/images/texting-sms-genesys.webp');">
-            <div class="slide-content">
-                <h2>Unified Communication Platform</h2>
-                <p>Manage all voter interactions across channels from a single dashboard</p>
+<!-- Hero Section with Fixed Mobile Centering -->
+<section class="hero">
+    <div class="container">
+        <h1>Omnichannel Campaign Management Made Simple</h1>
+        <p>Revolutionize your campaign's voter engagement with our unified platform that brings together voice and text-based communication into one powerful system.</p>
+        
+        <!-- Hero Carousel with improved mobile text centering -->
+        <div class="hero-carousel">
+            <div class="carousel-container" id="carouselContainer">
+                <div class="carousel-slide" style="background-image: url('/images/texting-sms-genesys.webp');">
+                    <div class="slide-content">
+                        <h2>Complete Campaign Communication</h2>
+                        <p>Manage all voter interactions from a single dashboard</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('/images/Genesys-Agent-Assist.webp');">
+                    <div class="slide-content">
+                        <h2>Smart Messaging Solutions</h2>
+                        <p>Engage voters through their preferred channels</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('/images/facebook-genesys.webp');">
+                    <div class="slide-content">
+                        <h2>AI-Powered Assistance</h2>
+                        <p>Real-time suggestions and voter insights</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('/images/wem-nov-2022-genesys-.webp');">
+                    <div class="slide-content">
+                        <h2>Social Media Integration</h2>
+                        <p>Connect with voters across all platforms</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators">
+                <div class="carousel-indicator active" data-index="0"></div>
+                <div class="carousel-indicator" data-index="1"></div>
+                <div class="carousel-indicator" data-index="2"></div>
+                <div class="carousel-indicator" data-index="3"></div>
             </div>
         </div>
-        <div class="carousel-slide" style="background-image: url('/images/Genesys-Agent-Assist.webp');">
-            <div class="slide-content">
-                <h2>Intelligent SMS & Messaging</h2>
-                <p>Engage voters through their preferred messaging channels with smart automation</p>
-            </div>
-        </div>
-        <div class="carousel-slide" style="background-image: url('/images/facebook-genesys.webp');">
-            <div class="slide-content">
-                <h2>AI-Powered Agent Assistance</h2>
-                <p>Empower your team with real-time suggestions and voter insights</p>
-            </div>
-        </div>
-        <div class="carousel-slide" style="background-image: url('/images/wem-nov-2022-genesys-.webp');">
-            <div class="slide-content">
-                <h2>Social Media Integration</h2>
-                <p>Connect with voters across Facebook, Twitter, and other social platforms</p>
-            </div>
+        
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-large">Request a Demo</a>
+            <a href="#pricing" class="btn btn-large btn-secondary">View Pricing</a>
         </div>
     </div>
-    <div class="carousel-indicators" id="carouselIndicators">
-        <div class="carousel-indicator active" data-index="0"></div>
-        <div class="carousel-indicator" data-index="1"></div>
-        <div class="carousel-indicator" data-index="2"></div>
-        <div class="carousel-indicator" data-index="3"></div>
-    </div>
-</div>
-            
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-large">Request a Demo</a>
-                <a href="#pricing" class="btn btn-large btn-secondary">View Pricing</a>
-            </div>
-        </div>
-    </section>
-
+</section>
+<!-- Additional CSS to fix mobile centering issues -->
+<style>
+    /* Fix mobile centering for carousel text */
+    .carousel-slide {
+        text-align: center;
+    }
+    
+    .slide-content {
+        padding: 20px;
+        max-width: 90%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .slide-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .slide-content p {
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    
+    /* Improved mobile responsiveness */
+    @media screen and (max-width: 768px) {
+        .slide-content h2 {
+            font-size: 1.8rem;
+        }
+        
+        .carousel-slide {
+            height: 350px;
+        }
+    }
+    
+    @media screen and (max-width: 576px) {
+        .slide-content {
+            max-width: 95%;
+        }
+        
+        .slide-content h2 {
+            font-size: 1.5rem;
+        }
+        
+        .slide-content p {
+            font-size: 1rem;
+        }
+        
+        .carousel-slide {
+            height: 300px;
+        }
+    }
+</style>
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
