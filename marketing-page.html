@@ -1007,7 +1007,9 @@
     </section>
 
 <!-- Contact Form Section -->
-<!-- Contact Form Section -->
+<!-- Replace the Contact Form Section with the Beta Test Section -->
+<!-- Simply remove this section -->
+<!--
 <section class="contact-section" id="contact">
     <div class="container">
         <div class="section-header">
@@ -1016,105 +1018,52 @@
         </div>
         
         <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>Reach out to our team for personalized assistance with your campaign communication needs.</p>
-                
-                <div class="contact-info-item">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Phone</h4>
-                        <p>(800) 555-7890</p>
-                    </div>
+            <!-- Contact form content would be here -->
+<!--
+        </div>
+    </div>
+</section>
+-->
+
+<!-- And replace it with the Beta Test Section from the first file -->
+<section class="beta-test" id="beta-test">
+    <div class="container">
+        <div class="beta-test-container">
+            <h2>JOIN OUR BETA PROGRAM</h2>
+            <h3>Be Among the First to Experience Our Integrated Campaign Solution</h3>
+            <p>We're selecting a limited number of campaigns to receive early access to our GOTV Voter Outreach Tool integrated with the VoterDataHouse platform. Beta participants will receive:</p>
+            <ul class="beta-test-list">
+                <li>Discounted pricing for the election cycle</li>
+                <li>Priority onboarding and personalized setup</li>
+                <li>Direct access to our development team</li>
+                <li>Opportunity to shape future features</li>
+            </ul>
+            <form class="beta-form" id="beta-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                
-                <div class="contact-info-item">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Email</h4>
-                        <p>info@voterdatahouse.com</p>
-                    </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                
-                <div class="contact-info-item">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                    </div>
-                    <div class="contact-details">
-                        <h4>Office</h4>
-                        <p>1234 Democracy Lane<br>Washington, DC 20001</p>
-                    </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
                 </div>
-                
-                <div class="contact-map">
-                    <!-- Replace with an actual map or mockup -->
-                    <div style="background-color: #e9ecef; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <div style="text-align: center;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0046ad" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <p style="margin-top: 10px;">VoterDataHouse Headquarters</p>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="campaign-type">Campaign Type</label>
+                    <select id="campaign-type" name="campaign-type" required>
+                        <option value="">Select Campaign Type</option>
+                        <option value="municipal">Municipal/County</option>
+                        <option value="state-legislative">State Legislative</option>
+                        <option value="statewide">Statewide</option>
+                        <option value="congressional">Congressional</option>
+                        <option value="other">Other</option>
+                    </select>
                 </div>
-            </div>
-            
-            <div class="contact-form">
-                <h3>Send Us a Message</h3>
-                <form action="#" method="POST" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="organization">Organization/Campaign</label>
-                        <input type="text" id="organization" name="organization" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="interest">I'm interested in:</label>
-                        <select id="interest" name="interest" class="form-control" required>
-                            <option value="" selected disabled>Select an option</option>
-                            <option value="demo">Requesting a Demo</option>
-                            <option value="pricing">Pricing Information</option>
-                            <option value="implementation">Implementation Questions</option>
-                            <option value="partnership">Partnership Opportunities</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-large">Send Message</button>
-                </form>
-            </div>
+                <button type="submit" class="btn btn-large" style="width: 100%;">APPLY FOR BETA ACCESS</button>
+            </form>
         </div>
     </div>
 </section>
