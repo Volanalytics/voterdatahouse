@@ -1007,7 +1007,7 @@
     </section>
 
 <!-- Contact Form Section -->
-<!-- Enhanced Beta Test Section with improved styling -->
+<!-- Beta Test Section with FormSubmit Integration -->
 <section class="beta-test" id="beta-test">
     <div class="container">
         <div class="beta-test-container">
@@ -1020,7 +1020,14 @@
                 <li>Direct access to our development team</li>
                 <li>Opportunity to shape future features</li>
             </ul>
-            <form class="beta-form" id="beta-form">
+            
+            <!-- FormSubmit integration -->
+            <form class="beta-form" id="beta-form" action="https://formsubmit.co/info@voterdatahouse.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_next" value="https://voterdatahouse.com/thank-you.html">
+                <input type="hidden" name="_subject" value="New Beta Program Application">
+                <input type="hidden" name="_captcha" value="false">
+                
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" class="form-control" required>
@@ -1050,7 +1057,7 @@
     </div>
 </section>
 
-<!-- Additional CSS to enhance the beta form styling -->
+<!-- The additional styling remains the same as in the previous version -->
 <style>
     .beta-test {
         padding: 5rem 0;
@@ -1151,7 +1158,6 @@
         box-shadow: 0 8px 15px rgba(0,0,0,0.15);
     }
 </style>
-
 <!-- FAQ Section -->
 <section class="faq-section" id="faq">
     <div class="container">
