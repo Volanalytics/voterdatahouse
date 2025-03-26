@@ -478,19 +478,26 @@
         }
         
         /* Responsive Design */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 576px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            word-wrap: break-word;
             }
             
             h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            word-wrap: break-word;
             }
             
-            .hero {
-                padding: 4rem 0;
-            }
-            
+           .hero p {
+            font-size: 1.1rem;
+            padding: 0 10px;
+        }
+           .hero-carousel {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
             .step {
                 flex: 0 0 100%;
             }
@@ -502,7 +509,10 @@
             .mobile-menu-btn {
                 display: block;
             }
-
+            .container {
+            padding: 0 15px;
+        }
+        
             .contact-container {
                 flex-direction: column;
             }
