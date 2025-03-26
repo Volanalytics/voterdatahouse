@@ -863,21 +863,22 @@
     <meta property="twitter:image" content="https://voterdatahouse.com/images/marketing-social-share.jpg">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">VoterData<span>House</span></a>
-                <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact" class="btn">Get Started</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+   <!-- Updated Header Navigation -->
+<header>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">VoterData<span>House</span></a>
+            <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#beta-test">Beta Program</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#beta-test" class="btn">Join Beta</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 <!-- Hero Section with Fixed Mobile Centering -->
 <section class="hero">
@@ -921,11 +922,11 @@
             </div>
         </div>
         
-        <div class="hero-buttons">
-            <a href="#contact" class="btn btn-large">Request a Demo</a>
-            <a href="#pricing" class="btn btn-large btn-secondary">View Pricing</a>
-        </div>
-    </div>
+      <!-- Updated Hero Buttons -->
+<div class="hero-buttons">
+    <a href="#beta-test" class="btn btn-large">Join Our Beta</a>
+    <a href="#features" class="btn btn-large btn-secondary">Explore Features</a>
+</div>
 </section>
 <!-- Additional CSS to fix mobile centering issues -->
 <style>
@@ -1061,6 +1062,47 @@
             </div>
         </div>
     </section>
+<!-- How It Works Section (if not already present) -->
+<section class="how-it-works" id="how-it-works">
+    <div class="container">
+        <div class="section-header">
+            <h2>How VoterDataHouse Works</h2>
+            <p>Transforming your campaign's communication strategy in six easy steps</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Set Up Your Channels</h3>
+                <p>Configure your preferred communication channels including voice, email, SMS, web chat, and social media.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Import Voter Data</h3>
+                <p>Connect your existing voter database or CRM system to provide context for every interaction.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Design Automated Flows</h3>
+                <p>Create bot conversations, IVR menus, and automated outreach sequences using the drag-and-drop flow builder.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Configure Routing</h3>
+                <p>Set up rules for how voter inquiries are distributed to the right staff members based on expertise and capacity.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>Train Your Team</h3>
+                <p>Onboard your campaign staff with the intuitive platform, supported by AI-assisted suggestions for responses.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">6</div>
+                <h3>Analyze and Optimize</h3>
+                <p>Use real-time analytics to monitor performance and continuously refine your campaign's outreach strategy.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Contact Form Section -->
 <!-- Beta Test Section with FormSubmit Integration -->
@@ -1469,4 +1511,36 @@ document.addEventListener('DOMContentLoaded', function() {
         changeTab(0);
     }
 });
+</script>
+<!-- Optional: JavaScript to ensure smooth scrolling to sections -->
+<script>
+    // Smooth scroll function for navigation links
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        
+        // Add click event listener to each link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Prevent default anchor click behavior
+                e.preventDefault();
+                
+                // Get the target section
+                const targetId = this.getAttribute('href');
+                
+                // Skip if the href is just "#"
+                if (targetId === '#') return;
+                
+                const targetSection = document.querySelector(targetId);
+                
+                // Scroll to the section smoothly
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80, // Offset for fixed header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
 </script>
