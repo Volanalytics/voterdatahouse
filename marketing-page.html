@@ -1007,25 +1007,7 @@
     </section>
 
 <!-- Contact Form Section -->
-<!-- Replace the Contact Form Section with the Beta Test Section -->
-<!-- Simply remove this section -->
-<!--
-<section class="contact-section" id="contact">
-    <div class="container">
-        <div class="section-header">
-            <h2>Get in Touch</h2>
-            <p>Have questions or ready to transform your campaign? Contact us today.</p>
-        </div>
-        
-        <div class="contact-container">
-            <!-- Contact form content would be here -->
-<!--
-        </div>
-    </div>
-</section>
--->
-
-<!-- And replace it with the Beta Test Section from the first file -->
+<!-- Enhanced Beta Test Section with improved styling -->
 <section class="beta-test" id="beta-test">
     <div class="container">
         <div class="beta-test-container">
@@ -1041,19 +1023,19 @@
             <form class="beta-form" id="beta-form">
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="campaign-type">Campaign Type</label>
-                    <select id="campaign-type" name="campaign-type" required>
+                    <select id="campaign-type" name="campaign-type" class="form-control" required>
                         <option value="">Select Campaign Type</option>
                         <option value="municipal">Municipal/County</option>
                         <option value="state-legislative">State Legislative</option>
@@ -1067,6 +1049,108 @@
         </div>
     </div>
 </section>
+
+<!-- Additional CSS to enhance the beta form styling -->
+<style>
+    .beta-test {
+        padding: 5rem 0;
+        background-color: #e6f0ff;
+        text-align: center;
+    }
+    
+    .beta-test-container {
+        background-color: white;
+        border-radius: 12px;
+        padding: 3rem;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        border: 1px solid #c0d7ff;
+    }
+    
+    .beta-test h2 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .beta-test h3 {
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        color: var(--primary);
+    }
+    
+    .beta-test-list {
+        list-style-type: none;
+        text-align: left;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding-left: 1rem;
+    }
+    
+    .beta-test-list li {
+        margin-bottom: 1rem;
+        position: relative;
+        padding-left: 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .beta-test-list li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+    }
+    
+    .beta-form {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    
+    .beta-form .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .beta-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .beta-form .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    
+    .beta-form .form-control:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(0,70,173,0.2);
+        outline: none;
+    }
+    
+    .beta-form .btn {
+        background-color: var(--primary);
+        padding: 15px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-radius: 6px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .beta-form .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+</style>
 
 <!-- FAQ Section -->
 <section class="faq-section" id="faq">
