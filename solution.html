@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoterDataHouse + GOTV Mapping Tool | Unified Campaign Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #0b3c7c;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #062a5b;
+            transform: translateY(-2px);
+        }
+        
+        /* Header Section */
+        .header {
+            background-image: linear-gradient(rgba(0, 40, 100, 0.7), rgba(0, 40, 100, 0.9)), url('capitol-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .logo-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        
+        .header .tagline {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .header .subtitle {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Problem Solution Section */
+        .problem-solution {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .problem-solution h2 {
+            text-align: center;
+            color: #0b3c7c;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .problem-solution-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .problem-solution-item {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .problem-solution-item h3 {
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Capabilities Section */
+        .capabilities {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .capabilities h2 {
+            text-align: center;
+            color: #0b3c7c;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .capabilities-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .capability-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f0f5ff;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .capability-card h3 {
+            color: #0b3c7c;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .capability-card ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+        
+        .capability-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Results Section */
+        .results {
+            padding: 60px 0;
+            background-color: #0b3c7c;
+            color: white;
+            text-align: center;
+        }
+        
+        .results h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .results-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        
+        .result-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+        }
+        
+        .result-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Beta Program Section */
+        .beta-program {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .beta-program h2 {
+            text-align: center;
+            color: #0b3c7c;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .beta-program-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0ff;
+        }
+        
+        .beta-program-card h3 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .beta-program ul {
+            list-style-position: inside;
+            margin: 1rem 0 2rem 20px;
+        }
+        
+        .beta-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            color: #0b3c7c;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid #0b3c7c;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-card p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .pricing-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0b3c7c;
+            margin: 1.5rem 0;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+            background-image: linear-gradient(rgba(0, 40, 100, 0.85), rgba(0, 40, 100, 0.95)), url('capitol-background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .cta-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-radius: 8px;
+            padding: 30px;
+        }
+        
+        .cta-card h3 {
+            color: #0b3c7c;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #062452;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        textarea {
+            height: 100px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .problem-solution-item,
+            .capability-card,
+            .pricing-card,
+            .cta-card {
+                min-width: 100%;
+            }
+            
+            .result-item {
+                min-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="header">
+        <div class="container">
+            <h1>THE UNIFIED CAMPAIGN SOLUTION</h1>
+            <h2>VoterDataHouse + GOTV Mapping Tool</h2>
+            
+            <div class="logo-container">
+                <img src="combined-logo.png" alt="VoterDataHouse and GOTV Mapping Tool Logos" width="300">
+            </div>
+            
+            <div class="tagline">
+                <h3>TRANSFORM YOUR CAMPAIGN WITH INTEGRATED VOTER ENGAGEMENT</h3>
+                <p class="subtitle">Combine enterprise-grade communication technology with precision field mapping for unmatched campaign effectiveness</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <h2>ONE PLATFORM. COMPLETE CAMPAIGN INTELLIGENCE.</h2>
+            <div class="problem-solution-container">
+                <div class="problem-solution-item">
+                    <h3>PROBLEM:</h3>
+                    <p>Campaigns struggle with disconnected systems, wasted resources, and inconsistent voter experiences.</p>
+                </div>
+                <div class="problem-solution-item">
+                    <h3>SOLUTION:</h3>
+                    <p>Our unified platform eliminates data silos by seamlessly integrating voter communications and field operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Capabilities Section -->
+    <section class="capabilities">
+        <div class="container">
+            <h2>KEY CAPABILITIES</h2>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <h3>OMNICHANNEL VOTER COMMUNICATION</h3>
+                    <ul>
+                        <li>Powered by enterprise-grade Genesys Cloud CX</li>
+                        <li>Unified voice, email, text, social & web chat</li>
+                        <li>AI-powered message suggestions</li>
+                        <li>Automated follow-up sequences</li>
+                        <li>Real-time voter insights</li>
+                    </ul>
+                </div>
+                <div class="capability-card">
+                    <h3>PRECISION FIELD OPERATIONS</h3>
+                    <ul>
+                        <li>Advanced GOTV Mapping technology</li>
+                        <li>Optimized canvassing routes</li>
+                        <li>Data-driven voter targeting</li>
+                        <li>Mobile-first volunteer tools</li>
+                        <li>Real-time progress tracking</li>
+                    </ul>
+                </div>
+                <div class="capability-card">
+                    <h3>SEAMLESS INTEGRATION</h3>
+                    <ul>
+                        <li>Synchronized data across all touchpoints</li>
+                        <li>Field insights immediately available for messaging</li>
+                        <li>Digital engagement informs canvassing priorities</li>
+                        <li>Unified analytics dashboard</li>
+                        <li>Complete voter journey visibility</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results Section -->
+    <section class="results">
+        <div class="container">
+            <h2>PROVEN RESULTS</h2>
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="result-number">37%</div>
+                    <div class="result-label">INCREASE IN<br>TARGETED TURNOUT</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">42%</div>
+                    <div class="result-label">REDUCTION IN<br>WASTED TIME</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">64%</div>
+                    <div class="result-label">VOLUNTEER<br>RETENTION RATE</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number">89%</div>
+                    <div class="result-label">MESSAGE<br>CONSISTENCY</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Beta Program Section -->
+    <section class="beta-program">
+        <div class="container">
+            <h2>JOIN OUR BETA PROGRAM</h2>
+            <div class="beta-program-card">
+                <h3>Be Among the First to Experience Our Integrated Campaign Solution</h3>
+                <p>We're selecting a limited number of campaigns to receive early access to our GOTV Voter Outreach Tool integrated with the VoterDataHouse platform. Beta participants will receive:</p>
+                <ul>
+                    <li>Discounted pricing for the election cycle</li>
+                    <li>Priority onboarding and personalized setup</li>
+                    <li>Direct access to our development team</li>
+                    <li>Opportunity to shape future features</li>
+                </ul>
+                <div class="beta-cta">
+                    <form id="beta-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="campaign-type">Campaign Type</label>
+                            <select id="campaign-type" name="campaign-type" required>
+                                <option value="">Select Campaign Type</option>
+                                <option value="municipal">Municipal/County</option>
+                                <option value="state-legislative">State Legislative</option>
+                                <option value="statewide">Statewide</option>
+                                <option value="congressional">Congressional</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">APPLY FOR BETA ACCESS</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2>PACKAGES FOR CAMPAIGNS OF ALL SIZES</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>LOCAL ESSENTIALS</h3>
+                    <p>Complete solution for municipal and county level races</p>
+                    <div class="pricing-price">$499/mo</div>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>DISTRICT ADVANTAGE</h3>
+                    <p>Complete solution ideal for state legislative races</p>
+                    <div class="pricing-price">$999/mo</div>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>CAMPAIGN COMMAND</h3>
+                    <p>Complete solution for statewide campaigns</p>
+                    <div class="pricing-price">$5,000/mo</div>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>GET STARTED TODAY</h2>
+            <div class="cta-grid">
+                <div class="cta-card">
+                    <h3>REQUEST A PERSONALIZED DEMO</h3>
+                    <p>See how our unified solution can transform your campaign's effectiveness</p>
+                    <a href="#" class="btn">SCHEDULE NOW</a>
+                </div>
+                <div class="cta-card">
+                    <h3>DOWNLOAD OUR FIELD ORGANIZER'S HANDBOOK</h3>
+                    <p>The complete guide to modern campaign field operations</p>
+                    <a href="#" class="btn">DOWNLOAD NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h2>VOTERDATAHOUSE.COM</h2>
+            <p>615-979-3232 • INFO@VOTERDATAHOUSE.COM</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple form submission handling
+        document.getElementById('beta-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Replace with your actual form submission logic
+            alert('Thank you for your interest in our beta program! We will contact you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
