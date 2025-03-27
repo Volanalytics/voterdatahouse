@@ -34,6 +34,7 @@ jobs:
         branch: gh-pages
         folder: prototypes/dist
         target-folder: prototypes
+
 - name: Debug directory structure
   run: |
     cd prototypes
