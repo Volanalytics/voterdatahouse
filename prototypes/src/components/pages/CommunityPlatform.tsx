@@ -1,3 +1,26 @@
+// Inside your prototype components
+const Navigation = () => (
+  <div className="bg-gray-100 p-3 flex justify-between items-center">
+    <Link to="/" className="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+      </svg>
+      Back to Prototypes
+    </Link>
+    <a href="https://voterdatahouse.com" className="text-gray-600 hover:text-gray-800">
+      VoterDataHouse Main Site
+    </a>
+  </div>
+);
+
+// Add this component at the top of your render method
+return (
+  <div>
+    <Navigation />
+    {/* Rest of your prototype code */}
+  </div>
+);
+
 import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
