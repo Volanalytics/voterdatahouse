@@ -34,3 +34,24 @@ jobs:
         branch: gh-pages
         folder: prototypes/dist
         target-folder: prototypes
+- name: Debug directory structure
+  run: |
+    cd prototypes
+    ls -la src/
+    ls -la src/pages/ || echo "pages directory not found"
+
+- name: Ensure pages directory exists
+  run: |
+    cd prototypes
+    mkdir -p src/pages
+
+- name: Copy component files if needed
+  run: |
+    cd prototypes
+    # If your files are in a different location, adjust these paths
+    if [ -f "src/CommunityPlatform.tsx" ] && [ ! -f "src/pages/CommunityPlatform.tsx" ]; then
+      cp src/CommunityPlatform.tsx src/pages/
+    fi
+    if [ -f "src/ContentAggregation.tsx" ] && [ ! -f "src/pages/ContentAggregation.tsx" ]; then
+      cp src/ContentAggregation.tsx src/pages/
+    fi
