@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Skip to main content link for screen readers and keyboard users -->
@@ -53,12 +54,22 @@
             
             <div class="blog-grid">
                 <article class="blog-card">
-                    <div class="blog-img" style="background-image: url('images/blog/ai-campaigns.jpg');" aria-hidden="true"></div>
+                    <div class="blog-img" style="background-image: url('images/social/ai-political-campaigns-social.jpg');" aria-hidden="true"></div>
                     <div class="blog-content">
-                        <span class="blog-date">March 10, 2025</span>
+                        <span class="blog-date">April 5, 2025</span>
                         <h2>The Future of AI in Political Campaigns</h2>
                         <p class="blog-excerpt">Artificial intelligence is transforming how campaigns operate, from voter targeting to message optimization. Learn how the latest AI innovations are reshaping political strategy.</p>
                         <a href="ai-political-campaigns.html" class="cta-button" aria-label="Read article about AI in political campaigns">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-img" style="background-image: url('images/services/tracking.png');" aria-hidden="true"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">March 29, 2025</span>
+                        <h2>The Power of Predictive Analytics in Voter Turnout</h2>
+                        <p class="blog-excerpt">Predictive models are revolutionizing how campaigns approach get-out-the-vote efforts. Learn how to leverage these powerful tools to maximize turnout in your key districts.</p>
+                        <a href="predictive-analytics.html" class="cta-button" aria-label="Read article about predictive analytics for voter turnout">Read More</a>
                     </div>
                 </article>
                 
@@ -81,11 +92,71 @@
                         <a href="omnichannel-communication.html" class="cta-button" aria-label="Read article about omnichannel voter communication">Read More</a>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Voter<span>Data</span>House</div>
+                    <p>Empowering political campaigns with data-driven insights and strategic consulting services.</p>
+                </div>
+                <nav class="footer-links" aria-label="Footer Navigation">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#mission">Our Mission</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-links" aria-label="Resources Navigation">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="campaign-toolkit.html">Campaign Toolkit</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Voter Data House. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dynamic copyright year
+            document.querySelector('.footer-bottom p').innerHTML = 
+                '&copy; ' + new Date().getFullYear() + ' Voter Data House. All rights reserved.';
+            
+            // Mobile menu toggle with ARIA support
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const expanded = navLinks.classList.contains('active');
+                    menuToggle.setAttribute('aria-expanded', expanded.toString());
+                });
                 
-                <article class="blog-card">
-                    <div class="blog-img" style="background-image: url('/images/services/tracking.png');" aria-hidden="true"></div>
-                    <div class="blog-content">
-                        <span class="blog-date">March 29, 2025</span>
-                        <h2>The Power of Predictive Analytics in Voter Turnout</h2>
-                        <p class="blog-excerpt">Predictive models are revolutionizing how campaigns approach get-out-the-vote efforts. Learn how to leverage these powerful tools to maximize turnout in your key districts.</p>
-                        <a href="predictive-analytics.html" class="cta-button" aria-label="Read article about predictive analytics for voter turnout">Read More
+                // Close menu when a link is clicked
+                const links = navLinks.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
