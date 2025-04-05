@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,6 +82,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
+            text-decoration: none;
         }
         
         .cta-button:hover {
@@ -128,6 +128,8 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         
         .blog-card:hover {
@@ -143,6 +145,9 @@
         
         .blog-content {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .blog-content h3 {
@@ -159,6 +164,7 @@
         
         .blog-excerpt {
             margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
         
         footer {
@@ -258,7 +264,7 @@
             
             <div class="blog-grid">
                 <div class="blog-card">
-                    <div class="blog-img" style="background-image: url('images/social/ai-political-campaigns-social.jpg');" aria-hidden="true">
+                    <div class="blog-img" style="background-image: url('images/social/ai-political-campaigns-social.jpg');" aria-hidden="true"></div>
                     <div class="blog-content">
                         <span class="blog-date">April 5, 2025</span>
                         <h3>The Future of AI in Political Campaigns</h3>
@@ -267,8 +273,8 @@
                     </div>
                 </div>
 
-            <div class="blog-card">
-                    <div class="blog-img" style="background-color: #6fb1e3;"></div>
+                <div class="blog-card">
+                    <div class="blog-img" style="background-image: url('images/social/predictive-analytics-social.jpg');" aria-hidden="true"></div>
                     <div class="blog-content">
                         <span class="blog-date">March 29, 2025</span>
                         <h3>The Power of Predictive Analytics in Voter Turnout</h3>
@@ -278,7 +284,7 @@
                 </div>
                     
                 <div class="blog-card">
-                    <div class="blog-img" style="background-color: #4682b4;"></div>
+                    <div class="blog-img" style="background-image: url('images/social/data-metrics-social.jpg');" aria-hidden="true"></div>
                     <div class="blog-content">
                         <span class="blog-date">February 24, 2025</span>
                         <h3>5 Data Metrics Every Campaign Manager Should Track</h3>
@@ -288,7 +294,7 @@
                 </div>
                 
                 <div class="blog-card">
-                    <div class="blog-img" style="background-color: #5d9ad3;"></div>
+                    <div class="blog-img" style="background-image: url('images/social/omnichannel-social.jpg');" aria-hidden="true"></div>
                     <div class="blog-content">
                         <span class="blog-date">February 15, 2025</span>
                         <h3>Omnichannel Communication: Reaching Voters Where They Are</h3>
@@ -296,10 +302,9 @@
                         <a href="omnichannel-communication.html" class="cta-button">Read More</a>
                     </div>
                 </div>
-                
                               
                 <div class="blog-card">
-                    <div class="blog-img" style="background-color: #81c7f4;"></div>
+                    <div class="blog-img" style="background-image: url('images/social/campaign-tech-stack-social.jpg');" aria-hidden="true"></div>
                     <div class="blog-content">
                         <span class="blog-date">January 15, 2025</span>
                         <h3>Campaign Tech Stack: Building vs. Buying Solutions</h3>
@@ -309,7 +314,7 @@
                 </div>
                 
                 <div class="blog-card">
-                    <div class="blog-img" style="background-color: #93ddff;"></div>
+                    <div class="blog-img" style="background-image: url('images/social/gamification-social.jpg');" aria-hidden="true"></div>
                     <div class="blog-content">
                         <span class="blog-date">January 5, 2025</span>
                         <h3>Gamification: Energizing Volunteers in the Digital Era</h3>
