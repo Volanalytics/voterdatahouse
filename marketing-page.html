@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0046)https://voterdatahouse.com/marketing-page.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoterDataHouse | Complete Campaign Management Platform</title>
     <style>
@@ -269,6 +269,135 @@
         
         .feature-card li {
             margin-bottom: 0.5rem;
+        }
+        
+        /* Feature Comparison Section */
+        .comparison-section {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            font-size: 0.95rem;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        .comparison-table th.feature-column {
+            width: 25%;
+        }
+        
+        .comparison-table th.voterdatahouse-column {
+            background-color: var(--primary-dark);
+        }
+        
+        .comparison-table .category-row {
+            background-color: #f0f5ff;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .comparison-table .check {
+            color: #2a9d8f;
+            font-weight: bold;
+        }
+        
+        .comparison-table .partial {
+            color: #e9c46a;
+        }
+        
+        .comparison-table .no {
+            color: #e63946;
+        }
+        
+        .comparison-table tr:hover:not(.category-row) {
+            background-color: #f9f9f9;
+        }
+        
+        .comparison-table tr:nth-child(even):not(.category-row) {
+            background-color: #fafbff;
+        }
+        
+        .comparison-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .comparison-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 992px) {
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.8rem;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.7rem 0.5rem;
+            }
+            
+            .comparison-table .category-row {
+                font-size: 0.75rem;
+            }
+        }
+        
+        @media screen and (max-width: 576px) {
+            .comparison-section {
+                padding: 3rem 0;
+            }
+            
+            .comparison-table th:not(:first-child):not(:nth-child(2)),
+            .comparison-table td:not(:first-child):not(:nth-child(2)) {
+                display: none;
+            }
+            
+            .comparison-table th.feature-column {
+                width: 40%;
+            }
+            
+            .comparison-cta p {
+                font-size: 1.1rem;
+            }
         }
         
         /* Tools Section */
@@ -660,13 +789,14 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">Voter<span>Data</span>House</a>
+                <a href="https://voterdatahouse.com/marketing-page.html#" class="logo">Voter<span>Data</span>House</a>
                 <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#tools">Campaign Toolsuite</a></li>
-                    <li><a href="#genesys">Enterprise Platform</a></li>
-                    <li><a href="#testimonials">Success Stories</a></li>
-                    <li><a href="#contact" class="btn">Get Started</a></li>
+                    <li><a href="https://voterdatahouse.com/marketing-page.html#features">Features</a></li>
+                    <li><a href="#comparison">Compare Us</a></li>
+                    <li><a href="https://voterdatahouse.com/marketing-page.html#tools">Campaign Toolsuite</a></li>
+                    <li><a href="https://voterdatahouse.com/marketing-page.html#genesys">Enterprise Platform</a></li>
+                    <li><a href="https://voterdatahouse.com/marketing-page.html#testimonials">Success Stories</a></li>
+                    <li><a href="https://voterdatahouse.com/marketing-page.html#contact" class="btn">Get Started</a></li>
                 </ul>
             </nav>
         </div>
@@ -680,26 +810,26 @@
             
             <!-- Hero Carousel with actual images -->
             <div class="hero-carousel">
-                <div class="carousel-container" id="carouselContainer">
-                    <div class="carousel-slide" style="background-image: url('/images/texting-sms-genesys.webp');">
+                <div class="carousel-container" id="carouselContainer" style="transform: translateX(-200%);">
+                    <div class="carousel-slide" style="background-image: url(&#39;/images/texting-sms-genesys.webp&#39;);">
                         <div class="slide-content">
                             <h2>Unified Campaign Platform</h2>
                             <p>Manage all voter interactions across channels from a single dashboard powered by Genesys Cloud CX</p>
                         </div>
                     </div>
-                    <div class="carousel-slide" style="background-image: url('/images/Genesys-Agent-Assist.webp');">
+                    <div class="carousel-slide" style="background-image: url(&#39;/images/Genesys-Agent-Assist.webp&#39;);">
                         <div class="slide-content">
                             <h2>Intelligent Voter Messaging</h2>
                             <p>Engage voters through their preferred channels with smart automation and AI-driven personalization</p>
                         </div>
                     </div>
-                    <div class="carousel-slide" style="background-image: url('/images/facebook-genesys.webp');">
+                    <div class="carousel-slide" style="background-image: url(&#39;/images/facebook-genesys.webp&#39;);">
                         <div class="slide-content">
                             <h2>GOTV Mapping System</h2>
                             <p>Optimize your field operations with data-driven canvassing routes and real-time voter insights</p>
                         </div>
                     </div>
-                    <div class="carousel-slide" style="background-image: url('/images/wem-nov-2022-genesys-.webp');">
+                    <div class="carousel-slide" style="background-image: url(&#39;/images/wem-nov-2022-genesys-.webp&#39;);">
                         <div class="slide-content">
                             <h2>Campaign War Room</h2>
                             <p>Monitor and manage your candidate's reputation with comprehensive digital communications tracking</p>
@@ -707,16 +837,16 @@
                     </div>
                 </div>
                 <div class="carousel-indicators" id="carouselIndicators">
-                    <div class="carousel-indicator active" data-index="0"></div>
+                    <div class="carousel-indicator" data-index="0"></div>
                     <div class="carousel-indicator" data-index="1"></div>
-                    <div class="carousel-indicator" data-index="2"></div>
+                    <div class="carousel-indicator active" data-index="2"></div>
                     <div class="carousel-indicator" data-index="3"></div>
                 </div>
             </div>
             
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-large">Request a Demo</a>
-                <a href="#tools" class="btn btn-large btn-secondary">Explore Toolsuite</a>
+                <a href="https://voterdatahouse.com/marketing-page.html#contact" class="btn btn-large">Request a Demo</a>
+                <a href="https://voterdatahouse.com/marketing-page.html#tools" class="btn btn-large btn-secondary">Explore Toolsuite</a>
             </div>
         </div>
     </section>
@@ -732,10 +862,10 @@
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2" />
-                          <path d="M25,25 L35,25 C37.2,25 39,26.8 39,29 L39,39 C39,41.2 37.2,43 35,43 L25,43 L21,48 L21,43 L19,43 C16.8,43 15,41.2 15,39 L15,29 C15,26.8 16.8,25 19,25 Z" fill="#0046ad"/>
-                          <path d="M45,30 L55,30 C57.2,30 59,31.8 59,34 L59,44 C59,46.2 57.2,48 55,48 L45,48 L41,53 L41,48 L39,48 C36.8,48 35,46.2 35,44 L35,34 C35,31.8 36.8,30 39,30 Z" fill="#5472d3"/>
-                          <path d="M50,20 L60,20 C62.2,20 64,21.8 64,24 L64,34 C64,36.2 62.2,38 60,38 L50,38 L46,43 L46,38 L44,38 C41.8,38 40,36.2 40,34 L40,24 C40,21.8 41.8,20 44,20 Z" fill="#8c9eff"/>
+                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2"></circle>
+                          <path d="M25,25 L35,25 C37.2,25 39,26.8 39,29 L39,39 C39,41.2 37.2,43 35,43 L25,43 L21,48 L21,43 L19,43 C16.8,43 15,41.2 15,39 L15,29 C15,26.8 16.8,25 19,25 Z" fill="#0046ad"></path>
+                          <path d="M45,30 L55,30 C57.2,30 59,31.8 59,34 L59,44 C59,46.2 57.2,48 55,48 L45,48 L41,53 L41,48 L39,48 C36.8,48 35,46.2 35,44 L35,34 C35,31.8 36.8,30 39,30 Z" fill="#5472d3"></path>
+                          <path d="M50,20 L60,20 C62.2,20 64,21.8 64,24 L64,34 C64,36.2 62.2,38 60,38 L50,38 L46,43 L46,38 L44,38 C41.8,38 40,36.2 40,34 L40,24 C40,21.8 41.8,20 44,20 Z" fill="#8c9eff"></path>
                         </svg>
                     </div>
                     <h3>Unified Omnichannel Communication</h3>
@@ -749,15 +879,15 @@
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2" />
-                          <ellipse cx="40" cy="40" rx="25" ry="30" fill="none" stroke="#0046ad" stroke-width="2" />
-                          <path d="M32,30 C32,30 35,35 40,35 C45,35 48,30 48,30" fill="none" stroke="#0046ad" stroke-width="2" />
-                          <path d="M30,48 L50,48" fill="none" stroke="#0046ad" stroke-width="2" />
-                          <circle cx="28" cy="38" r="2" fill="#0046ad" />
-                          <circle cx="52" cy="38" r="2" fill="#0046ad" />
-                          <path d="M25,25 L28,28 M35,20 L35,23 M45,20 L45,23 M55,25 L52,28" stroke="#5472d3" stroke-width="2" />
-                          <path d="M25,55 L28,52 M35,60 L35,57 M45,60 L45,57 M55,55 L52,52" stroke="#5472d3" stroke-width="2" />
-                          <path d="M20,40 L23,40 M57,40 L60,40" stroke="#5472d3" stroke-width="2" />
+                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2"></circle>
+                          <ellipse cx="40" cy="40" rx="25" ry="30" fill="none" stroke="#0046ad" stroke-width="2"></ellipse>
+                          <path d="M32,30 C32,30 35,35 40,35 C45,35 48,30 48,30" fill="none" stroke="#0046ad" stroke-width="2"></path>
+                          <path d="M30,48 L50,48" fill="none" stroke="#0046ad" stroke-width="2"></path>
+                          <circle cx="28" cy="38" r="2" fill="#0046ad"></circle>
+                          <circle cx="52" cy="38" r="2" fill="#0046ad"></circle>
+                          <path d="M25,25 L28,28 M35,20 L35,23 M45,20 L45,23 M55,25 L52,28" stroke="#5472d3" stroke-width="2"></path>
+                          <path d="M25,55 L28,52 M35,60 L35,57 M45,60 L45,57 M55,55 L52,52" stroke="#5472d3" stroke-width="2"></path>
+                          <path d="M20,40 L23,40 M57,40 L60,40" stroke="#5472d3" stroke-width="2"></path>
                         </svg>
                     </div>
                     <h3>AI-Powered Campaign Automation</h3>
@@ -772,14 +902,14 @@
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2" />
-                          <rect x="25" y="18" width="30" height="44" rx="2" ry="2" fill="none" stroke="#0046ad" stroke-width="2" />
-                          <rect x="28" y="22" width="24" height="32" rx="1" ry="1" fill="#e6f0ff" stroke="#0046ad" stroke-width="1" />
-                          <circle cx="40" cy="60" r="2" fill="#0046ad" />
-                          <line x1="32" y1="28" x2="48" y2="28" stroke="#5472d3" stroke-width="2" />
-                          <line x1="32" y1="34" x2="48" y2="34" stroke="#5472d3" stroke-width="2" />
-                          <line x1="32" y1="40" x2="42" y2="40" stroke="#5472d3" stroke-width="2" />
-                          <path d="M40,12 L40,16 M33,14 L35,17 M47,14 L45,17" stroke="#0046ad" stroke-width="2" />
+                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2"></circle>
+                          <rect x="25" y="18" width="30" height="44" rx="2" ry="2" fill="none" stroke="#0046ad" stroke-width="2"></rect>
+                          <rect x="28" y="22" width="24" height="32" rx="1" ry="1" fill="#e6f0ff" stroke="#0046ad" stroke-width="1"></rect>
+                          <circle cx="40" cy="60" r="2" fill="#0046ad"></circle>
+                          <line x1="32" y1="28" x2="48" y2="28" stroke="#5472d3" stroke-width="2"></line>
+                          <line x1="32" y1="34" x2="48" y2="34" stroke="#5472d3" stroke-width="2"></line>
+                          <line x1="32" y1="40" x2="42" y2="40" stroke="#5472d3" stroke-width="2"></line>
+                          <path d="M40,12 L40,16 M33,14 L35,17 M47,14 L45,17" stroke="#0046ad" stroke-width="2"></path>
                         </svg>
                     </div>
                     <h3>Optimized Field Operations</h3>
@@ -794,13 +924,13 @@
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2" />
-                          <circle cx="40" cy="30" r="10" fill="#5472d3" />
-                          <path d="M25,60 C25,49.5 31.7,42 40,42 C48.3,42 55,49.5 55,60" fill="#0046ad" />
-                          <path d="M50,32 C50,32 55,34 58,28" fill="none" stroke="#0046ad" stroke-width="2" stroke-linecap="round" />
-                          <path d="M58,28 C58.5,27 60,23 56,22" fill="none" stroke="#0046ad" stroke-width="2" stroke-linecap="round" />
-                          <path d="M56,22 C55,21.8 53,21.5 52,23.5" fill="none" stroke="#0046ad" stroke-width="2" stroke-linecap="round" />
-                          <path d="M52,23.5 C51.5,24.5 51,28 52,30" fill="none" stroke="#0046ad" stroke-width="2" stroke-linecap="round" />
+                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2"></circle>
+                          <circle cx="40" cy="30" r="10" fill="#5472d3"></circle>
+                          <path d="M25,60 C25,49.5 31.7,42 40,42 C48.3,42 55,49.5 55,60" fill="#0046ad"></path>
+                          <path d="M50,32 C50,32 55,34 58,28" fill="none" stroke="#0046ad" stroke-width="2" stroke-linecap="round"></path>
+                          <path d="M58,28 C58.5,27 60,23 56,22" fill="none" stroke="#0046ad" stroke-width="2" stroke-linecap="round"></path>
+                          <path d="M56,22 C55,21.8 53,21.5 52,23.5" fill="none" stroke="#0046ad" stroke-width="2" stroke-linecap="round"></path>
+                          <path d="M52,23.5 C51.5,24.5 51,28 52,30" fill="none" stroke="#0046ad" stroke-width="2" stroke-linecap="round"></path>
                         </svg>
                     </div>
                     <h3>Reputation Management</h3>
@@ -815,18 +945,18 @@
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2" />
-                          <rect x="20" y="20" width="40" height="40" rx="2" ry="2" fill="none" stroke="#0046ad" stroke-width="2" />
-                          <line x1="20" y1="50" x2="60" y2="50" stroke="#0046ad" stroke-width="2" />
-                          <rect x="25" y="40" width="5" height="10" fill="#0046ad" />
-                          <rect x="35" y="30" width="5" height="20" fill="#5472d3" />
-                          <rect x="45" y="35" width="5" height="15" fill="#8c9eff" />
-                          <rect x="55" y="25" width="5" height="25" fill="#0046ad" />
-                          <circle cx="25" cy="30" r="3" fill="#5472d3" />
-                          <circle cx="37" cy="25" r="3" fill="#0046ad" />
-                          <line x1="25" y1="30" x2="37" y2="25" stroke="#5472d3" stroke-width="1" />
-                          <circle cx="47" cy="28" r="3" fill="#5472d3" />
-                          <line x1="37" y1="25" x2="47" y2="28" stroke="#5472d3" stroke-width="1" />
+                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2"></circle>
+                          <rect x="20" y="20" width="40" height="40" rx="2" ry="2" fill="none" stroke="#0046ad" stroke-width="2"></rect>
+                          <line x1="20" y1="50" x2="60" y2="50" stroke="#0046ad" stroke-width="2"></line>
+                          <rect x="25" y="40" width="5" height="10" fill="#0046ad"></rect>
+                          <rect x="35" y="30" width="5" height="20" fill="#5472d3"></rect>
+                          <rect x="45" y="35" width="5" height="15" fill="#8c9eff"></rect>
+                          <rect x="55" y="25" width="5" height="25" fill="#0046ad"></rect>
+                          <circle cx="25" cy="30" r="3" fill="#5472d3"></circle>
+                          <circle cx="37" cy="25" r="3" fill="#0046ad"></circle>
+                          <line x1="25" y1="30" x2="37" y2="25" stroke="#5472d3" stroke-width="1"></line>
+                          <circle cx="47" cy="28" r="3" fill="#5472d3"></circle>
+                          <line x1="37" y1="25" x2="47" y2="28" stroke="#5472d3" stroke-width="1"></line>
                         </svg>
                     </div>
                     <h3>Comprehensive Analytics</h3>
@@ -841,13 +971,13 @@
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2" />
-                          <circle cx="25" cy="30" r="8" fill="#5472d3" />
-                          <circle cx="55" cy="30" r="8" fill="#0046ad" />
-                          <circle cx="40" cy="55" r="8" fill="#8c9eff" />
-                          <line x1="31" y1="35" x2="38" y2="48" stroke="#0046ad" stroke-width="2" />
-                          <line x1="49" y1="35" x2="42" y2="48" stroke="#0046ad" stroke-width="2" />
-                          <line x1="31" y1="30" x2="47" y2="30" stroke="#5472d3" stroke-width="2" />
+                          <circle cx="40" cy="40" r="38" fill="#f0f5ff" stroke="#0046ad" stroke-width="2"></circle>
+                          <circle cx="25" cy="30" r="8" fill="#5472d3"></circle>
+                          <circle cx="55" cy="30" r="8" fill="#0046ad"></circle>
+                          <circle cx="40" cy="55" r="8" fill="#8c9eff"></circle>
+                          <line x1="31" y1="35" x2="38" y2="48" stroke="#0046ad" stroke-width="2"></line>
+                          <line x1="49" y1="35" x2="42" y2="48" stroke="#0046ad" stroke-width="2"></line>
+                          <line x1="31" y1="30" x2="47" y2="30" stroke="#5472d3" stroke-width="2"></line>
                         </svg>
                     </div>
                     <h3>Enterprise-Grade Security</h3>
@@ -859,6 +989,208 @@
                         <li>Regular security audits and updates</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Comparison Section -->
+    <section class="comparison-section" id="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Compare</h2>
+                <p>See how VoterDataHouse's integrated GOTV Voter Outreach Tool and Genesys Cloud CX platform outperforms other solutions</p>
+            </div>
+            
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-column">Features</th>
+                            <th class="voterdatahouse-column">VoterDataHouse</th>
+                            <th>Standard Political CRMs</th>
+                            <th>Generic Call Centers</th>
+                            <th>DIY Solutions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Communication Features -->
+                        <tr class="category-row">
+                            <td colspan="5">Communication Features</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">True Omnichannel Integration</td>
+                            <td><span class="check">✓</span> Seamless across all channels</td>
+                            <td><span class="partial">○</span> Limited channels</td>
+                            <td><span class="partial">○</span> Multiple channels, not integrated</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Channel Pivoting With Context</td>
+                            <td><span class="check">✓</span> Full conversation history</td>
+                            <td><span class="no">✕</span></td>
+                            <td><span class="partial">○</span> Limited history</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">AI-Powered Response Suggestions</td>
+                            <td><span class="check">✓</span> Campaign-specific AI</td>
+                            <td><span class="no">✕</span></td>
+                            <td><span class="partial">○</span> Generic AI</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Social Media Integration</td>
+                            <td><span class="check">✓</span> All major platforms</td>
+                            <td><span class="partial">○</span> Basic integration</td>
+                            <td><span class="partial">○</span> Limited platforms</td>
+                            <td><span class="partial">○</span> Manual management</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">SMS Mass Texting</td>
+                            <td><span class="check">✓</span> Advanced targeting</td>
+                            <td><span class="check">✓</span> Basic capabilities</td>
+                            <td><span class="partial">○</span> Generic tools</td>
+                            <td><span class="partial">○</span> Third-party tools</td>
+                        </tr>
+                        
+                        <!-- Voter Data Features -->
+                        <tr class="category-row">
+                            <td colspan="5">Voter Data Management</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Voter Profile Unification</td>
+                            <td><span class="check">✓</span> 360° voter view</td>
+                            <td><span class="partial">○</span> Basic profiles</td>
+                            <td><span class="no">✕</span></td>
+                            <td><span class="partial">○</span> Manual tracking</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Interaction History Across Channels</td>
+                            <td><span class="check">✓</span> Complete timeline</td>
+                            <td><span class="partial">○</span> Channel-specific only</td>
+                            <td><span class="partial">○</span> Limited history</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Voter Database Integration</td>
+                            <td><span class="check">✓</span> NGP VAN, NationBuilder, etc.</td>
+                            <td><span class="check">✓</span> Native integration</td>
+                            <td><span class="partial">○</span> Custom API required</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Real-time Data Synchronization</td>
+                            <td><span class="check">✓</span> Live updates</td>
+                            <td><span class="partial">○</span> Scheduled sync</td>
+                            <td><span class="partial">○</span> Delayed sync</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        
+                        <!-- Campaign Specific Features -->
+                        <tr class="category-row">
+                            <td colspan="5">Campaign-Specific Capabilities</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">GOTV Targeting & Prioritization</td>
+                            <td><span class="check">✓</span> AI-driven targeting</td>
+                            <td><span class="check">✓</span> Basic targeting</td>
+                            <td><span class="no">✕</span></td>
+                            <td><span class="partial">○</span> Manual lists</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Campaign Compliance Tools</td>
+                            <td><span class="check">✓</span> Built-in compliance</td>
+                            <td><span class="partial">○</span> Basic compliance</td>
+                            <td><span class="no">✕</span></td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Canvassing Integration</td>
+                            <td><span class="check">✓</span> Digital + field coordination</td>
+                            <td><span class="check">✓</span> Field focus</td>
+                            <td><span class="no">✕</span></td>
+                            <td><span class="partial">○</span> Separate systems</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Fundraising Capabilities</td>
+                            <td><span class="check">✓</span> Multi-channel donation flows</td>
+                            <td><span class="check">✓</span> Basic donation tracking</td>
+                            <td><span class="no">✕</span></td>
+                            <td><span class="partial">○</span> Third-party tools</td>
+                        </tr>
+                        
+                        <!-- Technology Features -->
+                        <tr class="category-row">
+                            <td colspan="5">Advanced Technology</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Natural Language Processing IVR</td>
+                            <td><span class="check">✓</span> Campaign-trained AI</td>
+                            <td><span class="no">✕</span></td>
+                            <td><span class="partial">○</span> Basic capability</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Conversational Chatbots</td>
+                            <td><span class="check">✓</span> Political issue awareness</td>
+                            <td><span class="partial">○</span> Basic scripts</td>
+                            <td><span class="partial">○</span> Generic bots</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Predictive Analytics</td>
+                            <td><span class="check">✓</span> Voter behavior prediction</td>
+                            <td><span class="partial">○</span> Basic analytics</td>
+                            <td><span class="partial">○</span> Contact analytics</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Staff Performance Metrics</td>
+                            <td><span class="check">✓</span> Comprehensive dashboard</td>
+                            <td><span class="partial">○</span> Limited metrics</td>
+                            <td><span class="check">✓</span> Call center metrics</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        
+                        <!-- Operational Features -->
+                        <tr class="category-row">
+                            <td colspan="5">Operational Efficiency</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Workflow Automation</td>
+                            <td><span class="check">✓</span> Campaign-specific workflows</td>
+                            <td><span class="partial">○</span> Basic automation</td>
+                            <td><span class="check">✓</span> Call flows only</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Resource Optimization</td>
+                            <td><span class="check">✓</span> AI-driven scheduling</td>
+                            <td><span class="no">✕</span></td>
+                            <td><span class="partial">○</span> Basic scheduling</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Training & Onboarding</td>
+                            <td><span class="check">✓</span> Campaign-specific training</td>
+                            <td><span class="partial">○</span> Basic documentation</td>
+                            <td><span class="partial">○</span> Generic training</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Scalability for Election Day</td>
+                            <td><span class="check">✓</span> Elastic scaling</td>
+                            <td><span class="partial">○</span> Limited scaling</td>
+                            <td><span class="check">✓</span> Resource scaling</td>
+                            <td><span class="no">✕</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="comparison-cta">
+                <p>See how our integrated solution can transform your campaign's voter engagement strategy</p>
+                <a href="#contact" class="btn btn-large">Request a Demo</a>
             </div>
         </div>
     </section>
@@ -899,7 +1231,7 @@
                         </div>
                     </div>
                     
-                    <img src="/images/Genesys-Agent-Assist.webp" alt="Unified Communications Platform" class="tool-image">
+                    <img src="./marketing-page_files/Genesys-Agent-Assist.webp" alt="Unified Communications Platform" class="tool-image">
                 </div>
             </div>
             
@@ -1091,7 +1423,7 @@
                 </div>
                 
                 <div class="genesys-image">
-                    <img src="/images/facebook-genesys.webp" alt="Genesys Cloud CX Platform">
+                    <img src="./marketing-page_files/facebook-genesys.webp" alt="Genesys Cloud CX Platform">
                 </div>
             </div>
         </div>
@@ -1107,7 +1439,7 @@
             <div class="testimonial-slider">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"The GOTV Mapping System transformed our field operations. We increased our door-to-door contact rate by 35% while reducing volunteer burnout. The optimized routes saved us countless hours of planning and the real-time data sync meant our headquarters always had the latest information."</p>
+                        <p>"The GOTV Mapping Syste<p>"The GOTV Mapping System transformed our field operations. We increased our door-to-door contact rate by 35% while reducing volunteer burnout. The optimized routes saved us countless hours of planning and the real-time data sync meant our headquarters always had the latest information."</p>
                     </div>
                     <div class="testimonial-author">Sarah Johnson, Campaign Manager</div>
                 </div>
@@ -1134,7 +1466,7 @@
         <div class="container">
             <h2>Ready to Transform Your Campaign?</h2>
             <p>Get started today and see the difference our comprehensive platform can make for your voter engagement strategy.</p>
-            <a href="#" class="btn btn-large btn-accent">Schedule a Demo</a>
+            <a href="https://voterdatahouse.com/marketing-page.html#" class="btn btn-large btn-accent">Schedule a Demo</a>
         </div>
     </section>
 
@@ -1145,51 +1477,51 @@
                 <div class="footer-col">
                     <h4>VoterDataHouse</h4>
                     <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">About Us</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Careers</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Press</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Products</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Unified Communications</a></li>
-                        <li><a href="#">GOTV Mapping System</a></li>
-                        <li><a href="#">Campaign War Room</a></li>
-                        <li><a href="#">Enterprise Solutions</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Unified Communications</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">GOTV Mapping System</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Campaign War Room</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Enterprise Solutions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Resources</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Knowledge Base</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Webinars</a></li>
-                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Knowledge Base</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Blog</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Webinars</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Case Studies</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Security</a></li>
-                        <li><a href="#">Compliance</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Privacy Policy</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Terms of Service</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Security</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Compliance</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Connect With Us</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">YouTube</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Facebook</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">Twitter</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">LinkedIn</a></li>
+                        <li><a href="https://voterdatahouse.com/marketing-page.html#">YouTube</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 VoterDataHouse. All rights reserved.</p>
+                <p>© 2025 VoterDataHouse. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1235,3 +1567,4 @@
             setInterval(rotateCarousel, 5000);
         });
     </script>
+</body></html>
