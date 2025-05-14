@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign War Room - Candidate Reputation Management | Voter Data House</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        /* Maintain compatibility with existing site styling */
+        .hero-section {
+            background-color: #0d6efd;
+            color: white;
+            padding: 60px 0;
+        }
+        .feature-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 0.75rem;
+            background-color: #0d6efd;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .testimonial {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0d6efd;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stat-box {
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-4 fw-bold mb-4">Campaign War Room</h1>
+                    <h2 class="h3 mb-4">Comprehensive Reputation Management for Political Candidates</h2>
+                    <p class="lead mb-4">Transform your campaign's digital communications into actionable intelligence with our centralized command center for reputation management.</p>
+                    <a href="#contact" class="btn btn-light btn-lg px-4 me-md-2">Get Started Today</a>
+                </div>
+                <div class="col-lg-5">
+                    <img src="/api/placeholder/600/400" alt="Campaign War Room Dashboard" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <h2 class="text-center mb-5">The Challenge</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="bi bi-tsunami text-primary fs-2 me-3"></i>
+                                </div>
+                                <div>
+                                    <h4>Information Overload</h4>
+                                    <p>Thousands of social mentions, emails, and digital interactions flooding in daily with no system to organize them.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="bi bi-lightning-charge text-primary fs-2 me-3"></i>
+                                </div>
+                                <div>
+                                    <h4>Rapid Response Requirements</h4>
+                                    <p>Moments of crisis that demand immediate, coordinated action from your campaign team.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="bi bi-people text-primary fs-2 me-3"></i>
+                                </div>
+                                <div>
+                                    <h4>Resource Constraints</h4>
+                                    <p>Limited staff trying to monitor multiple platforms simultaneously while juggling other campaign responsibilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="bi bi-shield-exclamation text-primary fs-2 me-3"></i>
+                                </div>
+                                <div>
+                                    <h4>Reputation Vulnerabilities</h4>
+                                    <p>Missed messages or delayed responses that can damage your campaign's credibility and momentum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">How Campaign War Room Works</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-inbox"></i>
+                        </div>
+                        <h5>Unified Communications Hub</h5>
+                        <p>Automatically converts incoming emails, social mentions, and digital communications into actionable forum posts.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-tag"></i>
+                        </div>
+                        <h5>Intelligent Categorization</h5>
+                        <p>Instantly classifies communications as Urgent, Email Action, Social Media, or General based on content analysis.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-bar-chart"></i>
+                        </div>
+                        <h5>Real-Time Monitoring</h5>
+                        <p>Integrated with Brandwatch.com for enhanced social media intelligence across all major platforms.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-tools"></i>
+                        </div>
+                        <h5>Actionable Widgets</h5>
+                        <p>Contextual action tools that enable immediate response based on message type and urgency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Features</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="bi bi-filter text-primary me-2"></i> Instant Triage</h4>
+                            <p class="card-text">Prioritize communications with intelligent categorization, ensuring urgent matters receive immediate attention while routine items are efficiently queued.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="bi bi-globe text-primary me-2"></i> Brandwatch Integration</h4>
+                            <p class="card-text">Leverage industry-leading social listening capabilities to monitor your reputation across all major platforms, identifying potential issues before they escalate.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="bi bi-people text-primary me-2"></i> Team Collaboration</h4>
+                            <p class="card-text">Assign tasks to specific team members, track completion status, and maintain accountability with a transparent workflow system.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="bi bi-chat-dots text-primary me-2"></i> Response Management</h4>
+                            <p class="card-text">Draft, review, and deploy responses directly within the platform, maintaining message consistency and rapid deployment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="bi bi-shield-check text-primary me-2"></i> Crisis Prevention</h4>
+                            <p class="card-text">Identify potential reputation threats early with real-time monitoring and alerts when sensitive topics emerge in your ecosystem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Real Results for Real Campaigns</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="stat-box bg-white">
+                        <div class="stat-number">87%</div>
+                        <p class="mb-0">reduction in response time to critical communications</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-box bg-white">
+                        <div class="stat-number">73%</div>
+                        <p class="mb-0">increase in team efficiency through centralized workflow</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-box bg-white">
+                        <div class="stat-number">92%</div>
+                        <p class="mb-0">of users report improved confidence in their digital reputation management</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p class="lead fst-italic mb-2">"Campaign War Room transformed our digital operations. Instead of scrambling to respond to social media crises, we're now able to proactively manage our reputation across all channels."</p>
+                <div class="fw-bold">— Campaign Manager, Winning Senate Campaign 2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Why Campaign War Room?</h2>
+                    <p class="lead">Unlike generic social monitoring tools, Campaign War Room was built specifically for political campaigns.</p>
+                    <p>With features designed to address the unique challenges of candidate reputation management, every aspect of the platform supports your campaign's success:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Politics-specific monitoring parameters</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Instant categorization of voter communications</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Rapid response templates for common campaign scenarios</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Team assignment features aligned with campaign hierarchy</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Integration with Brandwatch for comprehensive social monitoring</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/api/placeholder/600/400" alt="Campaign War Room Dashboard" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white" id="contact">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-10">
+                    <h2 class="mb-4">Get Started Today</h2>
+                    <p class="lead mb-4">Contact Voter Data House to deploy your personalized Campaign War Room and transform your campaign's reputation management strategy.</p>
+                    <a href="mailto:info@voterdatahouse.com" class="btn btn-light btn-lg px-4 me-2">
+                        <i class="bi bi-envelope me-2"></i>info@voterdatahouse.com
+                    </a>
+                    <a href="tel:+1234567890" class="btn btn-outline-light btn-lg px-4">
+                        <i class="bi bi-telephone me-2"></i>Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
